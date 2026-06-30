@@ -28,6 +28,33 @@
     ]
   },
   "work": [
+        {
+      "name": "Groupe pharmaceutique international — Supply Chain / Manufacturing & Accounting",
+      "position": "Senior Data Specialist & Project Manager — Consultant indépendant",
+      "startDate": "2022-03",
+      "endDate": "",
+      "location": "Lille Area, France",
+      "summary": "Business Intelligence & Data Architecture Advisor pour projets complexes multi-culturels en environnement supply chain manufacturing. Architecture organisationnelle, migration de contenus (ECM), migration comptable. Data sciences pour recherche qualitative et quantitative. Conception de rapports Power BI (Power Automate & Apps). Process Mining avec Celonis (Value Stream Mapping). Accompagnement à la migration SAP ECC vers S/4HANA — conception d'un outil de suivi des tests utilisateurs. Redesign des processus Achats (BPMN, LeanIX). Conception de Data Products (Snowflake). Architecture IA agentique (Dataiku Recipes, AI & OCR pour gestion des contrats fournisseurs).",
+      "highlights": [
+        "Mise en œuvre d'un nouveau modèle opérationnel pour restructurer la comptabilité analytique",
+        "Conception d'un ensemble de rapports de process mining et process intelligence (Celonis) pour la Value Stream Map supply chain",
+        "Conception d'un outil de suivi et pilotage des tests utilisateurs pour la migration SAP ECC vers S/4HANA",
+        "Modélisation du flux d'achat et d'approvisionnement pour préparer les données à la migration S/4HANA (data products)",
+        "Architecture IA agentique : Dataiku Recipes avec AI & OCR pour la gestion des contrats fournisseurs"
+      ]
+    },
+    {
+      "name": "Cabinet de conseil Big 4",
+      "position": "Consultant indépendant — Avant-vente & Réponse à appels d'offres",
+      "startDate": "2021-09",
+      "endDate": "2022-03",
+      "location": "Lille Area, France",
+      "summary": "Sous-traitance pour un cabinet Big 4 : participation à la réponse à appels d'offres et avant-vente pour des projets de transformation digitale et de préparation à la migration SAP S/4HANA.",
+      "highlights": [
+        "Rédaction et chiffrage de réponses à appels d'offres pour des projets de transformation digitale",
+        "Avant-vente technique et fonctionnelle pour des missions de préparation à la migration SAP S/4HANA"
+      ]
+    },
     {
       "name": "delaware International",
       "position": "Consultant SAP",
