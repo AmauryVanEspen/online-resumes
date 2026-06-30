@@ -1,18 +1,23 @@
 {
+  "$schema": "https://raw.githubusercontent.com/jsonresume/jsonresume.org/master/packages/schema/schema.json",
   "meta": {
-    "theme": "elegant"
+    "version": "v1.2.1",
+    "canonical": "https://raw.githubusercontent.com/jsonresume/jsonresume.org/master/packages/schema/schema.json",
+    "lastModified": "2026-06-30T11:00:00"
   },
   "basics": {
     "name": "Amaury Van Espen",
-    "label": "Consultant Data. BI (Business Intelligence) - Décisionnel | SAP & Microsoft | Distribution et Logistique | Manufacturing, Supply & Retail",
-    "image": "",
+    "label": "Data & Solutions Architect | Accompagnement des dirigeants et MOA en BI, Process Intelligence, ERP et Architecture IA agentique",
+    "image": "https://gravatar.com/avatar/22064228229d737b142217f77c754af1",
     "email": "vanespen.amaury@gmail.com",
     "phone": "0033663051423",
-    "url": "https://gravatar.com/avatar/22064228229d737b142217f77c754af1",
-    "summary": "Actuellement j’occupe un poste au sein d'une société de services, delaware Consulting France, spécialiste dans la mise en place de solutions de gestion intégrée de l'information. \nNous vous aidons à \n-\tindustrialiser vos processus métiers\n-\ttirer parti de la richesse de l'information \n-\tconstruire avec vous des outils performants d'aide à la prise de décision.\nJe propose à mes clients une diversité de compétences, aujourd'hui plus que nécessaire dans des environnements à la fois dynamiques et mouvants. Mon parcours atypique est orienté par une forte culture opérationnelle ainsi qu'un attrait pour la formation continue. Je suis dans d’une posture d’apprentissage constant pour mieux satisfaire vos attentes avec des outils et méthodes robustes.\nMon parcours est marqué par les sciences de gestion et le management, spécialisé dans le PME/PMI, avec une dimension recherche. J’ai pratiqué le Contrôle de Gestion, statistiques, ainsi que le Droit Comptable et Financier. J'utilise les connaissances et postures entrepreneuriales pour animer les projets et équipes à l'image d'une petite entreprise, grâce à mes premières expériences en tant que chef d'entreprise. \nPrécédemment, j'évoluais au sein d'un groupe de représentation d'intérêts, en charge notamment du pilotage administratif et financier en étroite collaboration avec la direction. Contribuant également aux prises de décisions stratégiques ainsi qu’à leur mise en œuvre, j'ai pris plaisir à apporter outils et méthodes ainsi qu'une vision différente de la gouvernance.\n\nAujourd'hui orienté \"data\", j'œuvre grâce à quelques compétences techniques dans les systèmes d'information à accompagner les responsables dans la prise de décision et les actions opérationnelles. J'assiste la maîtrise d'ouvrage dans la conception et me charge de la maîtrise d'œuvre et des analyses avec un soin particulier à la qualité.\n\nJe souhaite continuer dans cette voie technico-fonctionnelle, en y apportant le meilleur de moi-même, de mes compétences acquises et à venir, pour votre plus grande satisfaction.\n\nSpécialités: \n- Consultation en Organisation et Management Stratégique\n- Intégration de systèmes d'aide à la prise de décision\n- Automatisation et reporting.\n\nAu-delà des activités opérationnelles, je reste passionné par la triptyque : Intelligence Stratégique, Intelligence Collective, Intelligence Économique et réalise une veille importante sur ces sujets ainsi qu’en matière d’innovation.",
+    "url": "https://about.me/amaury.vanespen",
     "location": {
       "countryCode": "FR",
-      "address": "France"
+      "address": "France",
+      "postalCode": "59320",
+      "city": "Haubourdin",
+      "region": "Hauts De France"
     },
     "profiles": [
       {
@@ -25,587 +30,371 @@
         "username": "AmauryVanEspen",
         "url": "https://twitter.com/AmauryVanEspen"
       }
-    ]
+    ],
+    "summary": "Je transforme les processus et les donn├⌐es en actifs m├⌐tiers durables.\nData & Solutions Architect, j'accompagne les directions, ma├«trises d'ouvrage et ├⌐quipes dans la conception d'architectures robustes ΓÇö de l'analyse des processus ├á la mise en ┼ôuvre op├⌐rationnelle des projets.\n\nMa m├⌐thode : des entretiens, des observations et des ateliers structur├⌐s pour transcrire les imp├⌐ratifs m├⌐tiers en sp├⌐cifications techniques, en passant par une approche analytique des processus, des donn├⌐es et des syst├¿mes d'information. Mon r├┤le est de pr├⌐parer, anticiper et abstraire la complexit├⌐ technique pour que chacun ΓÇö du d├⌐cideur ├á l'op├⌐rateur ΓÇö garde une vision claire et progresse efficacement.\n\nOuvert ├á des missions d'architecture data & solutions, d'accompagnement MOA et de conseil en transformation data, process et IA."
   },
   "work": [
-        {
-      "name": "Groupe pharmaceutique international — Supply Chain / Manufacturing & Accounting",
-      "position": "Senior Data Specialist & Project Manager — Consultant indépendant",
+    {
+      "name": "Groupe pharmaceutique international ΓÇö Supply Chain / Manufacturing & Accounting",
+      "position": "Senior Data Specialist & Project Manager ΓÇö Consultant ind├⌐pendant",
       "startDate": "2022-03",
       "endDate": "",
       "location": "Lille Area, France",
-      "summary": "Business Intelligence & Data Architecture Advisor pour projets complexes multi-culturels en environnement supply chain manufacturing. Architecture organisationnelle, migration de contenus (ECM), migration comptable. Data sciences pour recherche qualitative et quantitative. Conception de rapports Power BI (Power Automate & Apps). Process Mining avec Celonis (Value Stream Mapping). Accompagnement à la migration SAP ECC vers S/4HANA — conception d'un outil de suivi des tests utilisateurs. Redesign des processus Achats (BPMN, LeanIX). Conception de Data Products (Snowflake). Architecture IA agentique (Dataiku Recipes, AI & OCR pour gestion des contrats fournisseurs).",
+      "summary": "Business Intelligence & Data Architecture Advisor pour projets complexes multi-culturels en environnement supply chain manufacturing. Architecture organisationnelle, migration de contenus (ECM), migration comptable. Data sciences pour recherche qualitative et quantitative. Conception de rapports Power BI (Power Automate & Apps). Process Mining avec Celonis (Value Stream Mapping). Accompagnement ├á la migration SAP ECC vers S/4HANA ΓÇö conception d'un outil de suivi des tests utilisateurs. Redesign des processus Achats (BPMN, LeanIX). Conception de Data Products (Snowflake). Architecture IA agentique (Dataiku Recipes, AI & OCR pour gestion des contrats fournisseurs).",
       "highlights": [
-        "Mise en œuvre d'un nouveau modèle opérationnel pour restructurer la comptabilité analytique",
+        "Mise en ┼ôuvre d'un nouveau mod├¿le op├⌐rationnel pour restructurer la comptabilit├⌐ analytique",
         "Conception d'un ensemble de rapports de process mining et process intelligence (Celonis) pour la Value Stream Map supply chain",
         "Conception d'un outil de suivi et pilotage des tests utilisateurs pour la migration SAP ECC vers S/4HANA",
-        "Modélisation du flux d'achat et d'approvisionnement pour préparer les données à la migration S/4HANA (data products)",
+        "Mod├⌐lisation du flux d'achat et d'approvisionnement pour pr├⌐parer les donn├⌐es ├á la migration S/4HANA (data products)",
         "Architecture IA agentique : Dataiku Recipes avec AI & OCR pour la gestion des contrats fournisseurs"
       ]
     },
     {
       "name": "Cabinet de conseil Big 4",
-      "position": "Consultant indépendant — Avant-vente & Réponse à appels d'offres",
+      "position": "Consultant ind├⌐pendant ΓÇö Avant-vente & R├⌐ponse ├á appels d'offres",
       "startDate": "2021-09",
       "endDate": "2022-03",
       "location": "Lille Area, France",
-      "summary": "Sous-traitance pour un cabinet Big 4 : participation à la réponse à appels d'offres et avant-vente pour des projets de transformation digitale et de préparation à la migration SAP S/4HANA.",
+      "summary": "Sous-traitance pour un cabinet Big 4 : participation ├á la r├⌐ponse ├á appels d'offres et avant-vente pour des projets de transformation digitale et de pr├⌐paration ├á la migration SAP S/4HANA.",
       "highlights": [
-        "Rédaction et chiffrage de réponses à appels d'offres pour des projets de transformation digitale",
-        "Avant-vente technique et fonctionnelle pour des missions de préparation à la migration SAP S/4HANA"
+        "R├⌐daction et chiffrage de r├⌐ponses ├á appels d'offres pour des projets de transformation digitale",
+        "Avant-vente technique et fonctionnelle pour des missions de pr├⌐paration ├á la migration SAP S/4HANA"
       ]
     },
     {
       "name": "delaware International",
-      "position": "Consultant SAP",
-      "startDate": "2017-06-30",
-      "endDate": "",
-      "highlights": [],
-      "summary": "As SAP Consultant, I'm Designing & Modeling InfoObject, Mapping and Building it from back to front the next gen BI dashboard Tools & Technologies.\n\nMoreover, I'm Involved in :\n- Implementation of SAP Customer Activty Repository on Brownfield and Greenfield landscape\n- Customizing SAP CAR Point Of Sales Data Management (POSDM)\n- Interfacing SAP CAR Point Of Sales Data Transfer & Audit (POS DTA) for Phygital Retail Solution\n- Customizing SAP Supply Chain Management - Forecast & Replenishment (SAP SCM F&R)\n- Building custom data model for SAP SCM Extended Warehouse Management\n- Customizing SAP ECC (ERP Central Component - Material Management)\n- Monitoring and Mapping Specification for SAP Process Integration / Process Orchestration (SAP PI/PO)\n- Enchancement of IDOC and ABAP scripting\n- Building Monitoring & Alerting Custom App for Sales & Quantities gap in data sets\n- Performance Analysis et Optimisation\n- SAP HANA and SAP Business Warehouse Modelisation\n- Design SAP Analytics Cloud Dashboards from various sources :\n- Data Warehouse Cloud\n- Amazon S3 files server and Redshift databases\n\nin large companies managing more than 1500+ stores in 50+ countries and 70+ Warehouses\n\nFinally, I've been involved to set up few deployment pipelines, including Git, Talend, Python and R, Jenkins as Data Sciences and Machine Learning Operations team member.",
-      "url": "https://www.delaware.pro",
-      "location": "Lille Area, France"
+      "position": "Project Manager ΓÇö Data Analyst ΓÇö Business Process Expert SAP",
+      "startDate": "2017-06",
+      "endDate": "2021-09",
+      "summary": "Chez Decathlon, conception et mise en ┼ôuvre de processus m├⌐tiers SAP en contexte Supply Chain Management & Planning pour un grand compte international multi-sites (1500+ magasins, 50+ pays, 70+ entrep├┤ts).\n\nP├⌐rim├¿tre technique : impl├⌐mentation de SAP Customer Activity Repository (Brownfield & Greenfield), param├⌐trage SAP CAR POSDM, interface SAP CAR POS DTA pour solution Phygital Retail. Param├⌐trage SAP SCM Forecast & Replenishment. Mod├¿le de donn├⌐es SAP SCM Extended Warehouse Management (EWM). Param├⌐trage SAP ECC (Materials Management). Sp├⌐cifications de monitoring SAP PI/PO. Am├⌐liorations IDOC et scripts ABAP. Application de monitoring & alerting Control Tower pour les ├⌐carts ventes/quantit├⌐s. Analyse et optimisation de performance. Mod├⌐lisation SAP HANA et SAP Business Warehouse (BW). Conception de dashboards SAP Analytics Cloud (SAC) depuis Data Warehouse Cloud (DWC/DataSphere), HANA, OpenSQL, PostgreSQL, Amazon S3 et Redshift.\n\nParticipation ├á la mise en place de pipelines de d├⌐ploiement (Git/gCTS, Talend, Python, R, Jenkins) en tant que membre de l'├⌐quipe Data Sciences & MLOps.",
+      "highlights": [
+        "Impl├⌐mentation de SAP Customer Activity Repository sur p├⌐rim├¿tre Brownfield et Greenfield",
+        "Conception d'une application Control Tower pour le monitoring des ├⌐carts ventes/quantit├⌐s",
+        "D├⌐ploiement de pipelines CI/CD data (Git, Talend, Jenkins) pour l'├⌐quipe Data Sciences & MLOps",
+        "Mod├⌐lisation de donn├⌐es SAP HANA et BW pour le reporting analytique cross-canal"
+      ],
+      "location": "Lille Area, France",
+      "url": "https://www.delaware.pro"
     },
     {
-      "name": "Institut International de Prospective sur les Écosystèmes Innovants",
-      "position": "Mandataire",
-      "startDate": "2015-04-30",
-      "endDate": "2017-06-30",
-      "highlights": [],
-      "url": ""
+      "name": "Institut International de Prospective sur les ├ëcosyst├¿mes Innovants",
+      "position": "Mandataire ΓÇö Charg├⌐ d'├⌐tudes et d'audit",
+      "startDate": "2015-04",
+      "endDate": "2017-06",
+      "summary": "├ëtudes et audit des capacit├⌐s des ├⌐cosyst├¿mes innovants r├⌐gionaux europ├⌐ens. Audit et reporting des principales caract├⌐ristiques des ├⌐cosyst├¿mes et de leurs acteurs. Conduite de plus de 100 entretiens, visite de plus de 60 sites, animation de plus de 25 ateliers. Conception et gestion de base de donn├⌐es (design, op├⌐rations, maintenance).",
+      "highlights": [
+        "100+ entretiens et 60+ sites audit├⌐s dans les ├⌐cosyst├¿mes innovants europ├⌐ens",
+        "Animation de 25+ ateliers de travail collaboratif",
+        "Conception et gestion d'une base de donn├⌐es d├⌐di├⌐e aux ├⌐cosyst├¿mes"
+      ]
     },
     {
       "name": "AG2R LA MONDIALE",
-      "position": "Software Asset Manager",
-      "startDate": "2013-12-31",
-      "endDate": "2014-12-31",
-      "highlights": [],
-      "summary": "En qualité de contrôleur de gestion, je suis en charge du reporting concernant l'acquisition, l'installation et l'utilisation des ressources logicielles de l'entreprise et de ses filiales.\nAnalyse des contrats,\nRéférencement des logiciels\nVentilation et analyse systémique des modèles de commercialisation\nConception, réalisation et exploitation d'une base de données de licence\nConception et réalisation des visualisations pour le reporting stratégique et opérationnel\nConception des agents de collecte et des métriques d'usage",
-      "url": "https://www.ag2rlamondiale.fr",
+      "position": "Software Asset Manager ΓÇö Contr├┤leur de gestion",
+      "startDate": "2013-12",
+      "endDate": "2014-12",
+      "summary": "Reporting sur l'acquisition, l'installation et l'utilisation des ressources logicielles de l'entreprise et de ses filiales. Analyse des contrats, r├⌐f├⌐rencement des logiciels, analyse syst├⌐mique des mod├¿les de commercialisation. Conception et exploitation d'une base de donn├⌐es de licences. Conception de visualisations pour le reporting strat├⌐gique et op├⌐rationnel. Conception d'agents de collecte et de m├⌐triques d'usage.",
+      "highlights": [
+        "Conception et exploitation d'une base de donn├⌐es de licences logiciel",
+        "Mise en place de visualisations pour le reporting strat├⌐gique et op├⌐rationnel",
+        "Conception d'agents de collecte automatis├⌐s et de m├⌐triques d'usage"
+      ],
       "location": "Lille Area, France"
     },
     {
-      "name": "Jeunesses En Europe | Youth In Europe",
-      "position": "Représentant au sein de la délégation Française",
-      "startDate": "2012-09-30",
-      "endDate": "2013-06-30",
-      "highlights": [],
-      "summary": "Voir Projet \"Jeunesses En Europe | Youth In Europe - Projet Européen Jeunesse en Action (PEJA)\"\n\nContribution à la pertinence des contenus thématiques et à la participation des réseaux d'acteurs.\nSuggestion dans l'animation des séances de travail.\nAppui technique sur les dispositifs et l'utilisation des outils numériques pour le travail co-élaboratif.\nAmélioration des méthodes et modes de communication entre jeunes investis et équipes européennes.\nCouverture du plan média.",
-      "url": ""
+      "name": "Jeunesses En Europe | Youth In Europe ΓÇö Projet Europ├⌐en Jeunesse en Action (PEJA)",
+      "position": "Repr├⌐sentant au sein de la d├⌐l├⌐gation Fran├ºaise",
+      "startDate": "2012-09",
+      "endDate": "2013-06",
+      "summary": "Projet europ├⌐en dans le cadre du programme Jeunesse en Action. Contribution ├á la pertinence des contenus th├⌐matiques et ├á la participation des r├⌐seaux d'acteurs. Suggestion dans l'animation des s├⌐ances de travail. Appui technique sur les dispositifs et l'utilisation des outils num├⌐riques pour le travail co-├⌐laboratif. Am├⌐lioration des m├⌐thodes de communication entre jeunes et ├⌐quipes europ├⌐ennes. Couverture du plan m├⌐dia.",
+      "highlights": [
+        "Participation ├á un projet europ├⌐en multi-pays (France, Belgique, Roumanie, Espagne, Portugal)",
+        "Organisation d'une restitution au Parlement europ├⌐en ΓÇö simulation d'une s├⌐ance parlementaire",
+        "Co-r├⌐daction d'un Livre Blanc et d'une r├⌐solution soumise au Parlement Europ├⌐en"
+      ]
     },
     {
-      "name": "Fédération Européenne des Ordres Infirmiers",
+      "name": "F├⌐d├⌐ration Europ├⌐enne des Ordres Infirmiers",
       "position": "Policy & Press Officer",
-      "startDate": "2012-05-31",
-      "endDate": "2012-08-31",
-      "highlights": [],
-      "summary": "Gestion du Secrétariat Social et Administratif\nManagement de l'Information et Veille (Actualités, Politique, Juridique)\nGestion de la Comptabilité et de la Trésorerie - ONG\nTravaux préparatoires au Lobbying\nCollaboration & Contributions au Management Stratégique de l'Organisation",
+      "startDate": "2012-05",
+      "endDate": "2012-08",
+      "summary": "Gestion du Secr├⌐tariat Social et Administratif. Management de l'Information et Veille strat├⌐gique (Actualit├⌐s, Politique, Juridique). Gestion de la Comptabilit├⌐ et de la Tr├⌐sorerie ΓÇö ONG. Travaux pr├⌐paratoires au Lobbying. Collaboration et contributions au Management Strat├⌐gique de l'Organisation.",
+      "highlights": [
+        "Veille strat├⌐gique et analyse des politiques europ├⌐ennes impactant la profession infirmi├¿re",
+        "Participation aux travaux pr├⌐paratoires de lobbying institutionnel aupr├¿s des instances europ├⌐ennes"
+      ],
       "url": "https://enc-eu.org"
     },
     {
-      "name": "European Higher Engineering and Technical Professionals Association",
+      "name": "F├⌐d├⌐ration Europ├⌐enne des Ing├⌐nieurs",
       "position": "Policy & Press Officer",
-      "startDate": "2012-05-31",
-      "endDate": "2012-08-31",
-      "highlights": [],
-      "summary": "Gestion du Secrétariat Administratif\nManagement de l'Information et Veille (Actualités, Politique, Juridique)\nTravaux préparatoires au Lobbying",
+      "startDate": "2012-05",
+      "endDate": "2012-08",
+      "summary": "Gestion du Secr├⌐tariat Administratif. Management de l'Information et Veille strat├⌐gique (Actualit├⌐s, Politique, Juridique). Travaux pr├⌐paratoires au Lobbying.",
+      "highlights": [
+        "Veille sectorielle et analyse des politiques europ├⌐ennes pour la profession d'ing├⌐nieur"
+      ],
       "url": "https://eureta.org"
     },
     {
-      "name": "Conseil Européen des Professions Libérales",
+      "name": "Conseil Europ├⌐en des Professions Lib├⌐rales",
       "position": "Project Manager",
-      "startDate": "2012-01-31",
-      "endDate": "2012-08-31",
-      "highlights": [],
-      "summary": "Gestion du Secrétariat Social et Administratif\nManagement de l'Information et Veille (Actualités, Politique, Juridique)\nGestion de la Comptabilité et de la Trésorerie - ONG\nTravaux préparatoires au Lobbying\nCollaboration & Contributions au Management Stratégique de l'Organisation",
+      "startDate": "2012-01",
+      "endDate": "2012-08",
+      "summary": "Gestion du Secr├⌐tariat Social et Administratif. Management de l'Information et Veille strat├⌐gique (Actualit├⌐s, Politique, Juridique). Gestion de la Comptabilit├⌐ et de la Tr├⌐sorerie ΓÇö ONG. Travaux pr├⌐paratoires au Lobbying. Collaboration et contributions au Management Strat├⌐gique de l'Organisation.",
+      "highlights": [
+        "Management de l'information et veille strat├⌐gique au niveau europ├⌐en",
+        "Gestion comptable et administrative d'une organisation fa├«ti├¿re europ├⌐enne"
+      ],
       "url": "https://www.ceplis.org"
     },
     {
-      "name": "SMENO",
-      "position": "Responsable et Animateur des équipes des Intervention & Prévention",
-      "startDate": "2010-04-30",
-      "endDate": "2011-10-31",
-      "highlights": [],
-      "summary": "- Responsable des Interventions : Intervenant - Management d'Unités Commerciales (Formation et suivi des conseillers) - Gestion logistique de la campagne.\n- Prévention : Alcool/Tabac/Stupéfiant - Relations Sexuelles et Affectives - Hygiène de Vie.",
+      "name": "Groupe Mutualiste",
+      "position": "Responsable et Animateur des ├⌐quipes d'Intervention & Pr├⌐vention",
+      "startDate": "2010-04",
+      "endDate": "2011-10",
+      "summary": "Responsable des Interventions : intervenant, management d'unit├⌐s commerciales (formation et suivi des conseillers), gestion logistique de la campagne. Pr├⌐vention : Alcool/Tabac/Stup├⌐fiant, Relations Sexuelles et Affectives, Hygi├¿ne de Vie.",
+      "highlights": [
+        "Management d'├⌐quipes commerciales : formation, suivi et animation",
+        "Gestion logistique de campagne nationale de pr├⌐vention"
+      ],
       "url": "https://smeno.com",
       "location": "Nord - Pas-De-Calais, France"
-    }
-  ],
-  "volunteer": [
-    {
-      "organization": "Conseil Lillois de la Jeunesse (CLJ)",
-      "position": "Conseiller",
-      "startDate": "2010-12-31",
-      "endDate": "2014-12-31",
-      "summary": "Le Conseil Lillois de la Jeunesse est l'une des instances représentative au sein de l'initiative de démocratie participative de la Ville de Lille.\nDe nombreux projets et actions d'insertion, de communication et d'influence des politiques publiques ont été conçues et mises en œuvre au travers de l'énergie déployer par la jeunesse lilloise et les équipes de la ville ainsi que les élu(e)s.",
-      "highlights": [],
-      "url": "https://www.linkedin.com/company/73406174"
     },
     {
-      "organization": "Crous de Lille Nord-Pas-de-Calais",
-      "position": "Administrateur",
-      "startDate": "2014-12-31",
-      "endDate": "2016-12-31",
-      "summary": "Le Centre Régional des Oeuvres Universitaires et Scolaires anime la vie universitaire et des étudiants de l'enseignement supérieur au travers de son réseau de restauration, d'hébergement, de santé et services sociaux, d'infrastructures sportives, culturelles et de loisirs.\nAdministrateur est une fonction de supervision et de contrôle de la bonne gestion et de la gouvernance des ressources et emplois. Le réseau des œuvres réalise avec ses ressources propres et subventions des prouesses pour offrir à chacun un cadre d'étude et de vie satisfaisant en continuant de développer des projets innovants au profit du plus grand nombre mais aussi et surtout des moins aisés.",
-      "highlights": [],
-      "url": "https://www.linkedin.com/company/71242420"
+      "name": "Defense et Renseignement",
+      "position": "Acquisition et traitement du renseignement ΓÇö Conduite d'op├⌐rations",
+      "startDate": "2005-01",
+      "endDate": "2012-01",
+      "summary": "Exp├⌐rience en conduite d'op├⌐rations centr├⌐e sur l'acquisition et le traitement du renseignement. Culture de l'analyse, de la rigueur et de l'action en environnement contraint."
     }
   ],
   "education": [
     {
-      "institution": "EPSI",
-      "area": "Information Technology",
-      "studyType": "Post Master",
-      "startDate": "2017-12-31",
-      "endDate": "2017-12-31",
-      "score": "",
-      "courses": []
+      "institution": "EPSI ΓÇö ├ëcole d'ing├⌐nierie informatique",
+      "area": "Information Technology ΓÇö ERP Management & Business Processes",
+      "studyType": "Post Master (Cycle Ing├⌐nieur ΓÇö non diplom├⌐)",
+      "startDate": "2017",
+      "endDate": "2017",
+      "url": "https://www.epsi.fr"
     },
     {
-      "institution": "Institut d'Administration des Entreprises",
-      "area": "Management Control",
-      "studyType": "Master's degree",
-      "startDate": "2011-12-31",
-      "endDate": "2014-12-31",
-      "score": "",
-      "courses": []
+      "institution": "IAE Toulouse ΓÇö ├ëcole de Management de l'Universit├⌐ Toulouse 1 Capitole",
+      "area": "M├⌐thodologie de recherche ΓÇö M├⌐thodes qualitatives & quantitatives",
+      "studyType": "Post Master ΓÇö MsC Management",
+      "startDate": "2015",
+      "endDate": "2016",
+      "url": "https://www.iae-toulouse.fr"
     },
     {
-      "institution": "Télécom SudParis",
-      "area": "Computer Systems Networking and Telecommunications",
-      "studyType": "MOOC",
-      "startDate": "2014-12-31",
-      "endDate": "2014-12-31",
-      "score": "Apprenant",
-      "courses": []
-    },
-    {
-      "institution": "IAE Valenciennes",
+      "institution": "IAE Valenciennes ΓÇö Universit├⌐ de Valenciennes et du Hainaut-Cambr├⌐sis",
       "area": "Sciences du Management, Management des Organisations, Entrepreneuriat et Management des PMI/PME",
       "studyType": "Master",
-      "startDate": "2011-12-31",
-      "endDate": "2013-12-31",
-      "score": "",
+      "startDate": "2011",
+      "endDate": "2014",
+      "url": "https://www.uphf.fr/iae",
       "courses": [
         "Les Acteurs Externes de l'Accompagnement",
-        "Comptabilité Générale et Analytique",
-        "Analyse des Problematiques Organisationnelles",
-        "Droit des Affaires & des Sociétés",
+        "Comptabilit├⌐ G├⌐n├⌐rale et Analytique",
+        "Analyse des Probl├⌐matiques Organisationnelles",
+        "Droit des Affaires & des Soci├⌐t├⌐s",
         "Analyse et Diagnostic Financier",
         "Marketing des Produits et des Services",
-        "L'Accompagnement Stratégique des PME",
+        "L'Accompagnement Strat├⌐gique des PME",
         "Gestion des Ressources Humaines",
-        "Développement Structurel de la PME/PMI",
-        "Développement de la Conduite du Changement",
-        "Méthodologie de Recherche",
-        "Macro et Micro Economie",
-        "Manager les Équipes dans les PME/PMI",
-        "Analyse des Systèmes",
+        "D├⌐veloppement Structurel de la PME/PMI",
+        "D├⌐veloppement de la Conduite du Changement",
+        "M├⌐thodologie de Recherche",
+        "Macro et Micro ├ëconomie",
+        "Manager les ├ëquipes dans les PME/PMI",
+        "Analyse des Syst├¿mes",
         "Management Interculturel",
         "Management des Risques",
-        "Analyse des Systemes de Gestion",
-        "Analyse des Problemes Economiques",
+        "Analyse des Syst├¿mes de Gestion",
+        "Analyse des Probl├¿mes ├ëconomiques",
         "Entrepreneuriat",
-        "Contrôle de Gestion"
+        "Contr├┤le de Gestion",
+        "Management Control & Risk Audit"
       ]
     },
     {
-      "institution": "IAE Toulouse, Ecole de Management de l'Université Toulouse 1 Capitole",
-      "area": "Méthodologie de recherche - méthodes qualitatives & quantitatives",
-      "studyType": "Post Master - MsC Management",
-      "startDate": "2015-12-31",
-      "endDate": "2016-12-31",
-      "score": "",
-      "courses": []
+      "institution": "Universit├⌐ Catholique de Lille",
+      "area": "Comptabilit├⌐ et Droit Financier",
+      "studyType": "Licence (Bachelor)",
+      "startDate": "2008",
+      "endDate": "2010",
+      "url": "https://www.univ-catholille.fr"
+    },
+    {
+      "institution": "T├⌐l├⌐com SudParis",
+      "area": "Computer Systems Networking and Telecommunications",
+      "studyType": "MOOC",
+      "startDate": "2014",
+      "endDate": "2014",
+      "url": "https://www.telecom-sudparis.eu"
     },
     {
       "institution": "Open ClassRoom",
       "area": "Information Technology",
       "studyType": "MOOC",
-      "startDate": "2014-12-31",
-      "endDate": "2014-12-31",
-      "score": "Apprenant",
-      "courses": []
+      "startDate": "2014",
+      "endDate": "2014",
+      "url": "https://openclassrooms.com"
     },
     {
       "institution": "ESGI",
-      "area": "Computer and Information Sciences and Support Services",
+      "area": "Computer and Information Sciences",
       "studyType": "MOOC",
-      "startDate": "2014-12-31",
-      "endDate": "2014-12-31",
-      "score": "Certified",
-      "courses": []
+      "startDate": "2014",
+      "endDate": "2014",
+      "url": "https://www.esgi.fr"
     },
     {
-      "institution": "Ecole centrale de Lille",
+      "institution": "├ëcole Centrale de Lille",
       "area": "Gestion de Projets",
       "studyType": "MOOC",
-      "startDate": "2013-12-31",
-      "endDate": "2013-12-31",
-      "score": "Apprenant",
-      "courses": []
-    },
-    {
-      "institution": "Université de Valenciennes et du Hainaut-Cambrésis",
-      "area": "Management",
-      "studyType": "Master's degree",
-      "startDate": "2011-12-31",
-      "endDate": "2014-12-31",
-      "score": "Alumni",
-      "courses": []
+      "startDate": "2013",
+      "endDate": "2013",
+      "url": "https://centralelille.fr"
     }
   ],
-  "awards": [],
   "certificates": [
-    {
-      "name": "CLES II Anglais - Certificat de compétences en langue de l'enseignement supérieur, Anglais, du Cadre Européen Commun de Référence",
-      "issuer": "UVHC - Université de Valenciennes et du Haut Cambrésis",
-      "startDate": "2012-06-30"
-    },
-    {
-      "name": "EDCL/PCIE - European Computer Driving Licence/Passeport de Compétences Informatique Européen",
-      "issuer": "European Computer Driving Licence Fondation",
-      "startDate": "2011-05-31"
-    },
-    {
-      "name": "edX Certificate for Découvrir la science politique",
-      "issuer": "edX",
-      "url": "https://s3.amazonaws.com/verify.edx.org/downloads/d69a32f62e0540df81df5d775e4e3aff/Certificate.pdf"
-    },
     {
       "name": "Introduction to R",
       "issuer": "DataCamp",
-      "startDate": "2017-02-28",
-      "url": "https://www.datacamp.com/courses/free-introduction-to-r?utm_source=LinkedIn&utm_medium=Certificate&utm_content=Certificate&utm_campaign=Linkedin-Certificate"
+      "date": "2017-02",
+      "url": "https://www.datacamp.com/courses/free-introduction-to-r"
     },
     {
-      "name": "SAP Leonardo - Enabling the Intelligent Enterprise",
+      "name": "SAP Leonardo ΓÇö Enabling the Intelligent Enterprise",
       "issuer": "SAP",
-      "startDate": "2018-08-31",
+      "date": "2018-08",
       "url": "https://open.sap.com/verify/xesib-kelad-zomit-vikyb-tutys"
     },
     {
-      "name": "SAP Leonardo Design-Led Engagements Demystified",
+      "name": "SAP Leonardo ΓÇö Design-Led Engagements Demystified",
       "issuer": "SAP",
-      "startDate": "2018-08-31",
+      "date": "2018-08",
       "url": "https://open.sap.com/verify/xeder-razih-nadur-dulyr-lomuk"
     },
     {
       "name": "The Impact of Digitization on Leadership and Work",
       "issuer": "SAP",
-      "startDate": "2017-04-30",
+      "date": "2017-04",
       "url": "https://open.sap.com/verify/xebok-zityc-dadeb-vykev-nivit"
     },
     {
       "name": "SAP Solution Manager for SAP S/4HANA Implementation in a Nutshell",
       "issuer": "SAP",
-      "startDate": "2017-04-30",
+      "date": "2017-04",
       "url": "https://open.sap.com/verify/xudor-hihyg-bozyn-fypap-pakob"
     },
     {
       "name": "Getting Started with SAP BusinessObjects Roambi",
       "issuer": "SAP",
-      "startDate": "2017-04-30",
+      "date": "2017-04",
       "url": "https://open.sap.com/verify/xuger-dibef-tusam-cufih-hufih"
     },
     {
       "name": "Spatial Analysis with SAP HANA Platform",
       "issuer": "SAP",
-      "startDate": "2017-04-30",
+      "date": "2017-04",
       "url": "https://open.sap.com/verify/xezet-secad-mycym-tydih-disub"
+    },
+    {
+      "name": "CLES II Anglais ΓÇö Certificat de comp├⌐tences en langue de l'enseignement sup├⌐rieur",
+      "issuer": "UVHC ΓÇö Universit├⌐ de Valenciennes et du Hainaut-Cambr├⌐sis",
+      "date": "2012-06"
+    },
+    {
+      "name": "EDCL/PCIE ΓÇö European Computer Driving Licence",
+      "issuer": "European Computer Driving Licence Foundation",
+      "date": "2011-05"
+    },
+    {
+      "name": "D├⌐couvrir la science politique",
+      "issuer": "edX",
+      "url": "https://s3.amazonaws.com/verify.edx.org/downloads/d69a32f62e0540df81df5d775e4e3aff/Certificate.pdf"
     }
   ],
-  "publications": [],
   "skills": [
-    {
-      "name": "SAP BI",
-      "level": "Expert",
-      "keywords": ["BI"]
-    },
-    {
-      "name": "Spatial Analysis",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "Spatial Databases",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "Spatial Data Management",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "Blockchain",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "SAP Enable Now",
-      "level": "",
-      "keywords": ["SAP"]
-    },
-    {
-      "name": "Application Programming Interfaces (API)",
-      "level": "",
-      "keywords": ["IT"]
-    },
-    {
-      "name": "Operations Management",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "Spatial Modeling",
-      "level": "",
-      "keywords": ["Data Modeling"]
-    },
-    {
-      "name": "Policy Analysis",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "Public Relations",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "SAP HANA",
-      "level": "",
-      "keywords": ["SAP"]
-    },
-    {
-      "name": "Management Consulting",
-      "level": "",
-      "keywords": ["Management"]
-    },
-    {
-      "name": "Marketing Strategy",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "API",
-      "level": "",
-      "keywords": ["IT"]
-    },
-    {
-      "name": "Business Strategy",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "REST APIs",
-      "level": "",
-      "keywords": ["IT"]
-    },
-    {
-      "name": "Strategic Communications",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "Social Media",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "Business Intelligence (BI)",
-      "level": "",
-      "keywords": ["BI"]
-    },
-    {
-      "name": "API Development",
-      "level": "",
-      "keywords": ["IT"]
-    },
-    {
-      "name": "Artificial Intelligence (AI)",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "Team Leadership",
-      "level": "",
-      "keywords": ["Management", "Leadership"]
-    },
-    {
-      "name": "Intelligence Analysis",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "Accounting",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "Web Services API",
-      "level": "",
-      "keywords": ["IT"]
-    },
-    {
-      "name": "Budgeting",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "SAP Model Company",
-      "level": "",
-      "keywords": ["SAP"]
-    },
-    {
-      "name": "Data Visualization",
-      "level": "",
-      "keywords": ["Data Vizaulization"]
-    },
-    {
-      "name": "IT Strategy",
-      "level": "",
-      "keywords": ["IT"]
-    },
-    {
-      "name": "SAP Business Technology Platform",
-      "level": "",
-      "keywords": ["SAP", "BTP"]
-    },
-    {
-      "name": "API Testing",
-      "level": "",
-      "keywords": ["IT", "Test Management"]
-    },
-    {
-      "name": "Data Warehousing",
-      "level": "",
-      "keywords": ["SAP", "Data Storage", "Data Modeling"]
-    },
-    {
-      "name": "SAP BTP",
-      "level": "",
-      "keywords": ["SAP", "BTP"]
-    },
-    {
-      "name": "Business Development",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "Planning",
-      "level": "",
-      "keywords": ["Planning"]
-    },
-    {
-      "name": "SAP Integrated Business Processes",
-      "level": "",
-      "keywords": ["SAP", "Business Processes"]
-    },
-    {
-      "name": "Strategic Consulting",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "Customer Relations",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "Process Management",
-      "level": "",
-      "keywords": ["Management","Business Processes"]
-    },
-    {
-      "name": "Business Intelligence",
-      "level": "",
-      "keywords": ["BI"]
-    },
-    {
-      "name": "Postman API",
-      "level": "",
-      "keywords": ["IT"]
-    },
-    {
-      "name": "Strategic Planning",
-      "level": "",
-      "keywords": ["Management", "Planning"]
-    },
-    {
-      "name": "Risk Management",
-      "level": "",
-      "keywords": ["Management"]
-    },
-    {
-      "name": "Project Management",
-      "level": "",
-      "keywords": ["Management", "Planning"]
-    },
-    {
-      "name": "Business Analysis",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "Intercultural Management",
-      "level": "",
-      "keywords": ["Management"]
-    },
-    {
-      "name": "Competitive Intelligence",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "Team Building",
-      "level": "",
-      "keywords": ["Management"]
-    },
-    {
-      "name": "SAP Implementation",
-      "level": "",
-      "keywords": ["SAP", "Project Management", "Planning"]
-    }
+    { "name": "Architecture Data & Solutions", "level": "Expert", "keywords": ["Data", "Solutions", "Enterprise Architecture"] },
+    { "name": "Business Intelligence (BI)", "level": "Expert", "keywords": ["BI", "Reporting", "D├⌐cisionnel"] },
+    { "name": "Process Mining & Process Intelligence", "level": "Avanc├⌐", "keywords": ["Celonis", "Value Stream Mapping", "Process Discovery"] },
+    { "name": "Data Products", "level": "Avanc├⌐", "keywords": ["Data Product Management", "Data Mesh", "Data Marketplace"] },
+    { "name": "SAP S/4HANA", "level": "Avanc├⌐", "keywords": ["SAP", "ERP", "Migration", "Implementation"] },
+    { "name": "SAP HANA", "level": "Expert", "keywords": ["SAP", "In-Memory", "Modelisation"] },
+    { "name": "SAP Business Warehouse (BW)", "level": "Expert", "keywords": ["SAP", "Data Warehousing", "Reporting"] },
+    { "name": "SAP Analytics Cloud (SAC)", "level": "Avanc├⌐", "keywords": ["SAP", "Dashboard", "Planning"] },
+    { "name": "SAP Customer Activity Repository (CAR)", "level": "Avanc├⌐", "keywords": ["SAP", "POSDM", "POS DTA", "Retail"] },
+    { "name": "SAP EWM", "level": "Avanc├⌐", "keywords": ["SAP", "Warehouse Management", "Supply Chain"] },
+    { "name": "SAP PI/PO", "level": "Avanc├⌐", "keywords": ["SAP", "Integration", "Orchestration"] },
+    { "name": "SAP ECC", "level": "Avanc├⌐", "keywords": ["SAP", "Materials Management", "IDOC", "ABAP"] },
+    { "name": "SAP BTP", "level": "Interm├⌐diaire", "keywords": ["SAP", "Business Technology Platform", "Cloud"] },
+    { "name": "SAP Implementation", "level": "Expert", "keywords": ["SAP", "Brownfield", "Greenfield", "Migration"] },
+    { "name": "Snowflake", "level": "Avanc├⌐", "keywords": ["Cloud Data Warehouse", "Data Lake", "SQL"] },
+    { "name": "Power BI", "level": "Avanc├⌐", "keywords": ["Microsoft", "Dashboard", "DAX", "Power Automate", "Power Apps"] },
+    { "name": "ETL & Data Integration", "level": "Expert", "keywords": ["Talend", "Dataiku", "Data Pipelines", "EAI"] },
+    { "name": "Dataiku", "level": "Avanc├⌐", "keywords": ["Data Science", "AI Recipes", "OCR", "MLOps"] },
+    { "name": "LeanIX", "level": "Interm├⌐diaire", "keywords": ["Enterprise Architecture", "BPMN", "Process Mapping"] },
+    { "name": "Agentic AI & Architecture IA", "level": "Avanc├⌐", "keywords": ["AI Agents", "Multi-Agent", "Automatisation", "IA g├⌐n├⌐rative"] },
+    { "name": "Data Engineering", "level": "Avanc├⌐", "keywords": ["Python", "R", "SQL", "PostgreSQL"] },
+    { "name": "Cloud & DevOps", "level": "Avanc├⌐", "keywords": ["AWS", "S3", "Redshift", "Git", "Jenkins", "CI/CD"] },
+    { "name": "Enterprise Content Management (ECM)", "level": "Avanc├⌐", "keywords": ["GED", "xECM", "Migration"] },
+    { "name": "Gouvernance des donn├⌐es", "level": "Avanc├⌐", "keywords": ["Data Quality", "Data Governance", "GRC"] },
+    { "name": "Project Management", "level": "Expert", "keywords": ["Management", "Planning", "MOA", "MOE"] },
+    { "name": "Management Consulting", "level": "Expert", "keywords": ["Conseil", "Strat├⌐gie", "Organisation", "Processus"] },
+    { "name": "Business Analysis", "level": "Expert", "keywords": ["Analyse fonctionnelle", "Sp├⌐cifications", "Recueil besoin"] },
+    { "name": "Strategic Consulting", "level": "Expert", "keywords": ["Strat├⌐gie", "Gouvernance", "Transformation"] },
+    { "name": "Operations Management", "level": "Avanc├⌐", "keywords": ["Supply Chain", "Manufacturing", "Process"] },
+    { "name": "Risk Management", "level": "Avanc├⌐", "keywords": ["Audit", "Contr├┤le", "Conformit├⌐", "ISO 9001"] },
+    { "name": "Process Management", "level": "Expert", "keywords": ["Management", "Business Processes", "BPMN"] },
+    { "name": "Competitive Intelligence", "level": "Avanc├⌐", "keywords": ["Veille strat├⌐gique", "Analyse", "Renseignement"] },
+    { "name": "Team Leadership", "level": "Expert", "keywords": ["Management", "Leadership", "Coaching", "Inclusion"] },
+    { "name": "Intercultural Management", "level": "Avanc├⌐", "keywords": ["Management", "Multi-culturel", "International"] },
+    { "name": "R├⌐daction & Conception p├⌐dagogique", "level": "Avanc├⌐", "keywords": ["MOOC", "Formation", "Documentation technique"] },
+    { "name": "Lobbying & Affaires europ├⌐ennes", "level": "Avanc├⌐", "keywords": ["Policy", "Institutions europ├⌐ennes", "ONG"] }
   ],
   "languages": [
+    { "language": "Fran├ºais", "fluency": "Langue maternelle" },
+    { "language": "Anglais", "fluency": "Courant (professionnel)" },
+    { "language": "Espagnol", "fluency": "D├⌐butant" },
+    { "language": "Langue des Signes Fran├ºaise (LSF)", "fluency": "D├⌐butant" }
+  ],
+  "interests": [
     {
-      "language": "fr",
-      "fluency": "Native Speaker"
+      "name": "Intelligence Strat├⌐gique & ├ëconomique",
+      "keywords": ["Veille", "Prospective", "Innovation", "├ëcosyst├¿mes"]
     },
     {
-      "fluency": "Professional Working",
-      "language": "Anglais"
+      "name": "Intelligence Collective",
+      "keywords": ["Co-construction", "Facilitation", "M├⌐thodes collaboratives"]
     },
     {
-      "fluency": "Elementary",
-      "language": "Espagnol"
+      "name": "IA Agentique & Architecture cognitive",
+      "keywords": ["AI Agents", "Automatisation", "Deuxi├¿me cerveau", "Obsidian"]
     },
     {
-      "fluency": "Native Speaker",
-      "language": "Français"
-    },
-    {
-      "fluency": "Elementary",
-      "language": "Langues des Signes - Française"
+      "name": "Formation continue & P├⌐dagogie",
+      "keywords": ["MOOC", "AFEST", "Transmission", "Ing├⌐nierie p├⌐dagogique"]
     }
   ],
-  "interests": [],
   "references": [
     {
       "name": "ANTHONY ALONGI",
-      "reference": "Une capacité de travail exemplaire, une analyse fine et efficace. Organisation et méthode sont les maîtres mots pour définir Amaury. "
+      "reference": "Une capacit├⌐ de travail exemplaire, une analyse fine et efficace. Organisation et m├⌐thode sont les ma├«tres mots pour d├⌐finir Amaury. "
     },
     {
       "name": "Thomas Broussaud",
       "reference": " had the pleasure of meeting Amaury when I was investigating regional Innovation environment and stakeholders. He provided useful and accurate insights in regard to current innovation policies, opportunities and constraints. He proved to show leadership and strong ability to trigger actions, motivate and support several collaborative efforts in a non profit framework aiming at fostering cross-fertilization and filling the gap between academics and private sector, which is consistent with his positive attitude against status-quo. He is also very proactive and has acquired a adequate knowledge and skills in several domains which he manages to put into perspective toward actionable solutions. He is always ready to take initiatives as soon as he has targeted major issues to address, which is an added-value in our current fast-paced environment. Last but not the least, Amaury is a reliable partner and advisor you can trust."
     },
     {
-      "name": "Fatoumata Kanté",
-      "reference": "J’ai eu le plaisir de travailler avec Amaury. Il a été d’une grande aide en data analyse sur  SAP BW et m’a pas mal conseillé lors de la rédaction de mon mémoire. "
+      "name": "Fatoumata Kant├⌐",
+      "reference": "J'ai eu le plaisir de travailler avec Amaury. Il a ├⌐t├⌐ d'une grande aide en data analyse sur SAP BW et m'a pas mal conseill├⌐ lors de la r├⌐daction de mon m├⌐moire. "
     },
     {
       "name": "Jean-luc GREBAUT",
-      "reference": "J'ai eu l'occasion de croiser Amaury chez Decathlon pour ses demandes d'accès sur SAP. \nIl a un grand soucis du détail et connait parfaitement son sujet. \nj'ai apprécié sa disponibilité et son sens du relationnel. \nToujours prêt à apporter son expertise sur les domaines qu'il maitrise.\nJ'ai toujours un réel plaisir de travailler avec lui."
+      "reference": "J'ai eu l'occasion de croiser Amaury chez Decathlon pour ses demandes d'acc├¿s sur SAP. \nIl a un grand soucis du d├⌐tail et connait parfaitement son sujet. \nj'ai appr├⌐ci├⌐ sa disponibilit├⌐ et son sens du relationnel. \nToujours pr├¬t ├á apporter son expertise sur les domaines qu'il maitrise.\nJ'ai toujours un r├⌐el plaisir de travailler avec lui."
     },
     {
       "name": "Lloyd Oliver DMello(On H1B visa)",
@@ -613,71 +402,69 @@
     },
     {
       "name": "Julien Bouret",
-      "reference": "J’ai eu le plaisir d’avoir Amaury en tant que participant au module « Communication professionnelle » dans le cadre de sa formation SAP à l’EPSI.  Sa participation et son implication ont réellement contribué à la richesse de l’expérience de formation. En partageant notamment ses expériences professionnelles, Amaury a contribué à mettre en avant les enjeux du développement des soft skills dans le cadre d’une communication professionnelle. C’est donc sans hésitation que je recommande son professionnalisme. "
+      "reference": "J'ai eu le plaisir d'avoir Amaury en tant que participant au module ┬½ Communication professionnelle ┬╗ dans le cadre de sa formation SAP ├á l'EPSI.  Sa participation et son implication ont r├⌐ellement contribu├⌐ ├á la richesse de l'exp├⌐rience de formation. En partageant notamment ses exp├⌐riences professionnelles, Amaury a contribu├⌐ ├á mettre en avant les enjeux du d├⌐veloppement des soft skills dans le cadre d'une communication professionnelle. C'est donc sans h├⌐sitation que je recommande son professionnalisme. "
     },
     {
       "name": "Ludovic Bu",
-      "reference": "J'ai connu Amaury alors qu'il était bénévole pour l'association que je présidais. J'ai toujours eu grand plaisir à aller sur le terrain avec lui, qui était très impliqué et un véritable moteur pour ses équipes. Ensemble, nous avons fait du joli travail de sécurité routière et de mise en place de covoiturage sur des événements festifs. Encore merci à lui !"
+      "reference": "J'ai connu Amaury alors qu'il ├⌐tait b├⌐n├⌐vole pour l'association que je pr├⌐sidais. J'ai toujours eu grand plaisir ├á aller sur le terrain avec lui, qui ├⌐tait tr├¿s impliqu├⌐ et un v├⌐ritable moteur pour ses ├⌐quipes. Ensemble, nous avons fait du joli travail de s├⌐curit├⌐ routi├¿re et de mise en place de covoiturage sur des ├⌐v├⌐nements festifs. Encore merci ├á lui !"
     },
     {
       "name": "Karine Zaborowski",
-      "reference": "Amaury possède une expertise impressionnante sur les enjeux de communication (stratégie,veille, proactivité sur les réseaux sociaux)\r\nSon intérêt pour les travaux d'intelligence collective en font un partenaire de qualité."
+      "reference": "Amaury poss├¿de une expertise impressionnante sur les enjeux de communication (strat├⌐gie, veille, proactivit├⌐ sur les r├⌐seaux sociaux).\nSon int├⌐r├¬t pour les travaux d'intelligence collective en font un partenaire de qualit├⌐."
     },
     {
       "name": "Guillaume Bruna",
-      "reference": "Dans le cadre du projet \"Jeunesse en Action\" organisé par le CRIJ, j'ai eu l'occasion de travailler avec Anaury Van Espen. Sérieux et engagé, Amaury fait partie de ces personnalités necessaires à la dynamique de groupe et a montré la force de ses compétences en termes de team building et de management. Il sait user habilement de son relationnel, de sa connaissance des réseaux sociaux et de son expérience pour parfaire au maximum le produit de son travail et de sa coopération avec ses collègues. Nul doute qu'il s'agit d'un partenaire sur qui l'on peut compter au sein d'un équipe, et ce sur n'importe quel type de projet."
+      "reference": "Dans le cadre du projet \"Jeunesse en Action\" organis├⌐ par le CRIJ, j'ai eu l'occasion de travailler avec Amaury Van Espen. S├⌐rieux et engag├⌐, Amaury fait partie de ces personnalit├⌐s n├⌐cessaires ├á la dynamique de groupe et a montr├⌐ la force de ses comp├⌐tences en termes de team building et de management. Il sait user habilement de son relationnel, de sa connaissance des r├⌐seaux sociaux et de son exp├⌐rience pour parfaire au maximum le produit de son travail et de sa coop├⌐ration avec ses coll├¿gues. Nul doute qu'il s'agit d'un partenaire sur qui l'on peut compter au sein d'un ├⌐quipe, et ce sur n'importe quel type de projet."
     }
   ],
   "projects": [
     {
       "name": "SAPZero2Hero",
-      "startDate": "2019-12-31",
-      "summary": "Following the SAP Zero-2-Hero journey, take part in a knowledge sharing adventure with passionates, experts and involved professionals within various vertical industries. Not yet in ? let's visit us\n\nHere we are sharing knowledge about SAP Integration. Our missions are help SAP Beginner from “Zero to Hero” knowledge then they can help SAP Beginner community.",
-      "url": "https://sapzero2hero.com/"
-    },
-    {
-      "name": "Apprenance 3D",
-      "startDate": "2013-11-30",
-      "summary": null,
-      "url": "http://apprenance3d.org/",
-      "endDate": "2013-11-30"
+      "startDate": "2019-12",
+      "summary": "Adventure in knowledge sharing with SAP passionates, experts and involved professionals. Helping SAP beginners from 'Zero to Hero' through community knowledge sharing.",
+      "keywords": ["SAP", "Communaut├⌐", "Knowledge Sharing"],
+      "url": "https://github.com/AmauryVanEspen/SAPZero2Hero"
     },
     {
       "name": "Manifeste de l'Intelligence Collective",
-      "startDate": "2013-03-31",
-      "summary": "Mobiliser l’IC, c’est mettre en synergie les modalités de fonctionnement des discussions au sein d’un groupe de personnes pour qu’elles soient plus stimulantes, opérantes et créatives. Il s’agit de faire en sorte que chacun donne le meilleur de lui-même et se sente faire partie intégrante du groupe. Mais aussi, que chacun ait conscience de faire partie d’un tout avec les autres membres, et d’avoir un rôle important à jouer dans le groupe. L’IC peut être mise au profit d’un changement de culture organisationnelle ou communautaire, d’une recherche de solutions de performance et d’efficacité ou de partage et de création de nouvelles connaissances.\nSi le principe général de ces engagements passe par un nouvel apprentissage des relations, nous savons que sa réalisation ne peut se décréter, ni être imposée, mais résulte d’une action transformatrice créative et inventive. Elle doit toucher les structures internes de nos comportements et modifier les rapports aux autres. D’une manière non exhaustive, nous soutenons que cette action doit viser à récapituler l’ensemble des règles qui convergent vers un dialogue qui favorise la reconnaissance des talents et des rôles, les prises de conscience qui ne peuvent être faites dans la mobilisation de l’intelligence collective.\nNotre but est de favoriser l’expression des idées et règles fonctionnelles reconnues comme nouveau levier du changement et de développer la capacité à voir collectivement. Notre action vise à développer et à soutenir les expériences de mobilisation de l’intelligence collective dans tous les domaines de la pensée, des arts et des savoirs.\nCréation d’un observatoire des disciplines de l’intelligence collective, la création d’un référentiel de l’IC, la production d’un livre blanc de l’IC globale, la mise en œuvre d’un manifeste des règles de l’intelligence collective, un outil de quotient d’intelligence collective et enfin un livre sur les invariants de l’IC ou l’ADN de l’intelligence collective.",
-      "url": "http://ifcic.blogspot.fr/2013/03/manifeste-de-lintelligence-collective.html"
+      "startDate": "2013-03",
+      "summary": "Mobilisation de l'intelligence collective : cr├⌐ation d'un observatoire, d'un r├⌐f├⌐rentiel et d'un manifeste des r├¿gles de l'intelligence collective.",
+      "keywords": ["Intelligence Collective", "Observatoire", "Manifeste"]
     },
     {
-      "name": "Jeunesses En Europe | Youth In Europe - Projet Européen Jeunesse en Action (PEJA)",
-      "startDate": "2012-09-30",
-      "summary": "Dans le but de favoriser la mobilité européenne et internationale, l’action consiste à effectuer un travail commun de réflexion entre jeunes européens autour d’une thématique du quotidien : La jeunesse, l'employabilité et la mobilité. #JeunessesEnEurope\n\nLe travail de réflexion a pris forme lors de réunions bimensuelles. Un processus d'Intelligence Collective prenant forme peu à peu a permis un enrichissement mutuel des participants. Les réunions de travail se sont faites entre groupes nationaux afin d’avancer sur la thématique transversale choisie. D'autres réunions de travail se sont organisées sous forme de \nvisioconférence pour un temps d’échange avec les autres jeunes à l'international. Le travail est mutualisé, étape par étape, par les comptes-rendus établis par chaque encadrant national et mis en commun sur une plate-forme collaborative internet (une agora). \nLes encadrants nationaux du projet (deux par ville, soit 10 référents) se sont réunis à Lille début octobre 2012 afin de baliser les pistes et les méthodes de travail, puis en Mars 2013 pour un premier bilan et recadrage ainsi que la planification stratégie de l'événement de Mai 2013 : la restitution en présence des Euro-Députés des régions participants au projet.\n\nAu terme du travail de réflexion, une rencontre entre jeunes européens est prévue la semaine du 11 au 17 mai 2013 à Lille. Le but de cette semaine est d’aboutir à une synthèse générale des différentes propositions formulées par les jeunes. Le 15 mai une restitution du travail accompli est organisée sous la forme d’une simulation d’une séance du Parlement européen qui se tiendra dans l'hémicycle institutionnel du Conseil Régional du Nord Pas de Calais.\n\nLa finalité du projet se concrétise par la rédaction d'un Livre Blanc, ainsi que d'une résolution qui sera soumise au Parlement Européen.\n\nUn retour d'expérience, sous forme de vidéo de nos expériences, en collaboration avec l'association KOAN sera disponible à compter de septembre 2013.",
-      "url": "http://www.crij-npdc.fr/site/?page_id=2533"
-    },
-    {
-      "name": "Conférence-Débat \"Réformes de la Carte Judiciaire\"",
-      "startDate": "2008-02-28",
-      "summary": "Organisation de la Conférence-Débat \"Réformes de la Carte Judiciaire\" le Mercredi 13 février 2008 à 18 heures - Faculté Libre de droit, Lille - Salle des Actes, dans le cadre du partenariat Prophètes du Droit - Fédération des Etudiants.\n\nEn présence de :\nM. Alexis MASSART - Doyen de la Faculté Libre de Droit \nM. Philippe LEMAIRE - Procureur de la République \nMe Didier CATTOIR - Ancien Bâtonnier à Hazebrouck \n\nLe projet a été une vive réussite en présence de la presse, de personnalité de la région et d'une forte mobilisation des étudiants pour cet événement. Plus de 200 participants grâce notamment à l'engagement des équipes pédagogiques et administratives dans ce projet.\n\nMerci aux intervenants et à Lille Place Juridique de leurs implications et contributions.",
-      "url": null,
-      "endDate": "2008-02-28"
-    },
-    {
-      "name": "Conférence \"Métiers de l’Entrepreneuriat et du Management\"",
-      "startDate": "2011-09-30",
-      "summary": "En charge de l'équipe et du projet, en collaboration avec Perrine Daubeuf, dans le cadre du cycle de conférence \"Le Management et ses Métiers\", les étudiants de Master Entrepreneuriat et Management de l’Institut d’Administration des Entreprises ont organisés une conférence intitulée \"Métiers de l’Entrepreneuriat et du Management\" à l'IAE de Valenciennes.\n\nUn projet réussi et riche en connaissance, honoré par la présence de la presse et de nombreux professionnels venu témoigner ou participer aux échanges.",
-      "url": "http://www.univ-valenciennes.fr/IAE/conference-debat-sur-les-metiers-de-l-entrepreneuriat-et-du-management-jeudi-24-novembre-10-h-aux-te",
-      "endDate": "2011-12-31"
-    },
-    {
-      "name": "Soutien à \"Aide Tatalon\"",
-      "startDate": "2009-10-31",
-      "summary": "Dans le cadre de mes fonctions de Vice-Président de la Fédération des Etudiants (La FEDE), nous avons ensemble répondu présent à l'appel de nos anciens membres pour les soutenir depuis la France dans leur action à Manille.\nNous sommes un groupe de 15 étudiants de différents pays, résidant actuellement à Manille pour un échange universitaire. Ils ont participé aux opérations de secours qui ont suivi le passage de la tempête \"Ketsana\" le 26 Septembre 2009. Ils décidé de se mobiliser pour un bidonville en particulier - Tatalon.\nC'est une course contre la montre pour organiser une conférence de presse, en collaboration avec la Fondation de Lille et l'Université Catholique de Lille (UCL). Ainsi que de concrétiser des partenariats locaux en France afin d'organiser une levée de fonds rapide et efficace grâce à la CIC-BSD, Babyloan, Entrepreneurs du Monde en faveur de l'INNER CITY DEVELOPMENT COOPERATIVE (ICDC).\n\nManagement des opérations - Lille.\n- Réalisation de plaquettes projets.\n- Élaboration et mise en oeuvre d'un plan de communication (TV, Radio, Web, Conférence de Presse).\n- Négociation des partenariats.",
-      "url": "https://sites.google.com/site/aidetatalon/home",
-      "endDate": "2009-11-30"
+      "name": "Jeunesses En Europe (PEJA)",
+      "startDate": "2012-09",
+      "endDate": "2013-06",
+      "summary": "Projet europ├⌐en de mobilit├⌐ et r├⌐flexion entre jeunes europ├⌐ens sur la th├⌐matique de la jeunesse, de l'employabilit├⌐ et de la mobilit├⌐. R├⌐daction d'un Livre Blanc soumis au Parlement Europ├⌐en.",
+      "keywords": ["Europe", "Jeunesse", "Livre Blanc", "Parlement Europ├⌐en"]
     }
   ],
-  "meta": {
-    "version": "v1.0.0",
-    "canonical": "https://github.com/jsonresume/resume-schema/blob/v1.0.0/schema.json"
-  }
+  "awards": [],
+  "publications": [],
+  "volunteer": [
+    {
+      "organization": "Conseil Lillois de la Jeunesse (CLJ)",
+      "position": "Conseiller ΓÇö Instance de d├⌐mocratie participative",
+      "startDate": "2010-12",
+      "endDate": "2014-12",
+      "summary": "Participation ├á l'instance repr├⌐sentative de d├⌐mocratie participative de la Ville de Lille. Conception et mise en ┼ôuvre de projets d'insertion, de communication et d'influence des politiques publiques destin├⌐es ├á la jeunesse lilloise.",
+      "highlights": [
+        "Membre actif de l'instance de d├⌐mocratie participative de la Ville de Lille",
+        "Participation ├á la conception de projets et actions d'insertion et de communication"
+      ]
+    },
+    {
+      "organization": "Crous de Lille Nord-Pas-de-Calais",
+      "position": "Administrateur ΓÇö Supervision et gouvernance",
+      "startDate": "2014-12",
+      "endDate": "2016-12",
+      "summary": "Fonction de supervision et de contr├┤le de la bonne gestion et de la gouvernance des ressources du r├⌐seau des oeuvres universitaires (restauration, h├⌐bergement, sant├⌐, services sociaux, infrastructures sportives et culturelles). Contribution au d├⌐veloppement de projets innovants pour les ├⌐tudiants.",
+      "highlights": [
+        "Supervision et contr├┤le de la gestion d'un ├⌐tablissement public ├á caract├¿re administratif",
+        "Participation aux d├⌐cisions de gouvernance et aux projets innovants pour la vie ├⌐tudiante"
+      ]
+    }
+  ]
 }
+
+
