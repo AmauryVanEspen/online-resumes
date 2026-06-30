@@ -23,4 +23,4 @@ jobs:
         token: ${{ secrets.PAT }}
         gist_id: 5ce10547d2812fced1c74db0ab816b22
         gist_description: "Curriculum Vitae au format JSON Resume — Amaury Van Espen, Data & Solutions Architect. Version base_full outil-agnostique en français, servant de source unique pour les variantes de CV sectorielles (pharma, SAP, conseil, etc.). Contient l'intégralité du parcours : indépendant, Big 4, Défense, consulting SAP/BI, avec 36 compétences, 11 expériences"
-        file_path: jsonresume-ave-base-full.json
+        file_path: resume-ave-base-full.json
