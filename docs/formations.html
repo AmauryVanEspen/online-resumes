@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashboard — Amaury Van Espen</title>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
-<script>
+  <title>Formations — Assistants_AVE</title>
+  <script>
 const data = {"generated": "02/07/2026", "stats": {"totalFiles": 324, "totalCerts": 127, "totalSkills": 36, "totalPlatforms": 13, "totalFormations": 1387}, "skills": {"labels": ["SAP/ERP", "Power BI/BI", "Conseil & PM", "Azure/Cloud", "Power Platform", "Dynamics 365", "Data Eng/Science", "Process Mining", "IA / Agentic AI", "Transverses"], "current": [10, 9, 9, 7, 7, 7, 6, 6, 4, 8], "target": [10, 10, 9, 9, 7, 7, 8, 8, 8, 8], "levelSummary": "12 Expert | 2 Intermédiaire | 22 Avancé", "detail": [{"id": "01-Architecture-Data-Solutions", "name": "Architecture Data & Solutions", "level": "Expert", "keywords": "Data, Solutions, Enterprise Architecture", "domain": "Data Eng/Science"}, {"id": "02-Business-Intelligence", "name": "Business Intelligence (BI)", "level": "Expert", "keywords": "BI, Reporting, Décisionnel", "domain": "Power BI/BI"}, {"id": "03-Process-Mining", "name": "Process Mining & Process Intelligence", "level": "Avancé", "keywords": "Celonis, Value Stream Mapping, Process Discovery", "domain": "Process Mining"}, {"id": "04-Data-Products", "name": "Data Products", "level": "Avancé", "keywords": "Data Product Management, Data Mesh, Data Marketplace", "domain": "Transverses"}, {"id": "05-SAP-S4HANA", "name": "SAP S/4HANA", "level": "Avancé", "keywords": "SAP, ERP, Migration, Implementation", "domain": "SAP/ERP"}, {"id": "06-SAP-HANA", "name": "SAP HANA", "level": "Expert", "keywords": "SAP, In-Memory, Modélisation", "domain": "SAP/ERP"}, {"id": "07-SAP-BW", "name": "SAP Business Warehouse (BW)", "level": "Expert", "keywords": "SAP, Data Warehousing, Reporting", "domain": "SAP/ERP"}, {"id": "08-SAP-SAC", "name": "SAP Analytics Cloud (SAC)", "level": "Avancé", "keywords": "SAP, Dashboard, Planning", "domain": "SAP/ERP"}, {"id": "09-SAP-CAR", "name": "SAP Customer Activity Repository (CAR)", "level": "Avancé", "keywords": "SAP, POSDM, POS DTA, Retail", "domain": "SAP/ERP"}, {"id": "10-SAP-EWM", "name": "SAP EWM", "level": "Avancé", "keywords": "SAP, Warehouse Management, Supply Chain", "domain": "SAP/ERP"}, {"id": "11-SAP-PIPO", "name": "SAP PI/PO", "level": "Avancé", "keywords": "SAP, Integration, Orchestration", "domain": "SAP/ERP"}, {"id": "12-SAP-ECC", "name": "SAP ECC", "level": "Avancé", "keywords": "SAP, Materials Management, IDOC, ABAP", "domain": "SAP/ERP"}, {"id": "13-SAP-BTP", "name": "SAP BTP", "level": "Intermédiaire", "keywords": "SAP, Business Technology Platform, Cloud", "domain": "SAP/ERP"}, {"id": "14-SAP-Implementation", "name": "SAP Implementation", "level": "Expert", "keywords": "SAP, Brownfield, Greenfield, Migration", "domain": "SAP/ERP"}, {"id": "15-Snowflake", "name": "Snowflake", "level": "Avancé", "keywords": "Cloud Data Warehouse, Data Lake, SQL", "domain": "Transverses"}, {"id": "16-Power-BI", "name": "Power BI", "level": "Avancé", "keywords": "Microsoft, Dashboard, DAX, Power Automate, Power Apps", "domain": "Power BI/BI"}, {"id": "17-ETL-Data-Integration", "name": "ETL & Data Integration", "level": "Expert", "keywords": "Talend, Dataiku, Data Pipelines, EAI", "domain": "Data Eng/Science"}, {"id": "18-Dataiku", "name": "Dataiku", "level": "Avancé", "keywords": "Data Science, AI Recipes, OCR, MLOps", "domain": "Data Eng/Science"}, {"id": "19-LeanIX", "name": "LeanIX", "level": "Intermédiaire", "keywords": "Enterprise Architecture, BPMN, Process Mapping", "domain": "Transverses"}, {"id": "20-Agentic-AI", "name": "Agentic AI & Architecture IA", "level": "Avancé", "keywords": "AI Agents, Multi-Agent, Automatisation, IA générative", "domain": "IA / Agentic AI"}, {"id": "21-Data-Engineering", "name": "Data Engineering", "level": "Avancé", "keywords": "Python, R, SQL, PostgreSQL, Data Pipeline", "domain": "Data Eng/Science"}, {"id": "22-Cloud-DevOps", "name": "Cloud & DevOps", "level": "Avancé", "keywords": "AWS, S3, Redshift, Git, Jenkins, CI/CD", "domain": "Azure/Cloud"}, {"id": "23-ECM", "name": "Enterprise Content Management (ECM)", "level": "Avancé", "keywords": "GED, ECM, OpenText, Document Management", "domain": "Transverses"}, {"id": "24-Project-Management", "name": "Project Management", "level": "Expert", "keywords": "Management, Planning, MOA, MOE", "domain": "Conseil & PM"}, {"id": "25-Management-Consulting", "name": "Management Consulting", "level": "Expert", "keywords": "Conseil, Stratégie, Organisation", "domain": "Conseil & PM"}, {"id": "26-Business-Analysis", "name": "Business Analysis", "level": "Expert", "keywords": "Analyse fonctionnelle, Spécifications, AMOA", "domain": "Conseil & PM"}, {"id": "27-Strategic-Consulting", "name": "Strategic Consulting", "level": "Expert", "keywords": "Stratégie, Gouvernance, Transformation", "domain": "Conseil & PM"}, {"id": "28-Operations-Management", "name": "Operations Management", "level": "Avancé", "keywords": "Supply Chain, Manufacturing, Opérations", "domain": "Conseil & PM"}, {"id": "29-Data-Governance", "name": "Gouvernance des données", "level": "Avancé", "keywords": "Data Governance, Data Quality, MDM", "domain": "Data Eng/Science"}, {"id": "30-Risk-Management", "name": "Risk Management", "level": "Avancé", "keywords": "Gestion des risques, Conformité, Audit", "domain": "Transverses"}, {"id": "31-Process-Management", "name": "Process Management", "level": "Expert", "keywords": "BPMN, Business Processes, Process Mapping, Optimisation", "domain": "Process Mining"}, {"id": "32-Competitive-Intelligence", "name": "Competitive Intelligence", "level": "Avancé", "keywords": "Veille, Analyse marché, Intelligence économique", "domain": "Conseil & PM"}, {"id": "33-Team-Leadership", "name": "Team Leadership", "level": "Expert", "keywords": "Management d'équipe, Leadership, Coaching", "domain": "Conseil & PM"}, {"id": "34-Intercultural-Management", "name": "Intercultural Management", "level": "Avancé", "keywords": "Multiculturel, International, Europe", "domain": "Conseil & PM"}, {"id": "35-Redaction-Pedagogique", "name": "Rédaction & Conception pédagogique", "level": "Avancé", "keywords": "Pédagogie, Formation, Documentation", "domain": "Transverses"}, {"id": "36-Lobbying-Europe", "name": "Lobbying & Affaires européennes", "level": "Avancé", "keywords": "Lobbying, Europe, EU Affairs, Institutions", "domain": "Transverses"}]}, "platforms": {"labels": ["MS Learn", "Udemy\n(catalogue)", "LinkedIn\nLearning", "SAP\n/openSAP", "Credly", "DataCoach", "Formation\nPowerBI", "DataCamp"], "volumes": [684, 399, 153, 113, 19, 15, 3, 1], "colors": ["#0f3460", "#a435f0", "#0077b5", "#0a6e33", "#ff6b35", "#00b894", "#e17055", "#636e72"], "platSummary": "684 MS Learn | 399 Udemy | 153 LinkedIn | 113 SAP | 19 Credly | 15 DataCoach | 3 Formation | 1 DataCamp"}, "mslearn": {"labels": ["Azure", "Power BI", "Power Platform", "Dynamics 365", "GitHub/DevOps", "Securite", "M365", "Dev Web", "Education", "SAP", "IA/Copilot"], "counts": [160, 120, 80, 80, 25, 20, 15, 15, 20, 5, 15], "colors": ["#0078d4", "#f2c811", "#742774", "#002050", "#171515", "#00bcf2", "#e81123", "#512bd4", "#107c10", "#0a6e33", "#9b59b6"]}, "certIssuers": {"labels": ["SAP/openSAP", "Skillsoft", "European Computer Driving Licence Foundation", "edX", "DataCamp", "UVHC — Université de Valenciennes et du Hainaut-Cambrésis", "Pearson", "ETS Global"], "counts": [119, 2, 1, 1, 1, 1, 1, 1], "colors": ["#0a6e33", "#6c5ce7", "#fdcb6e", "#02262a", "#e17055", "#95a5a6", "#00b894", "#e74c3c"]}, "certifications": [{"year": "2011", "cert": "EDCL/PCIE — European Computer Driving Licence", "issuer": "European Computer Driving Licence Foundation"}, {"year": "2012", "cert": "CLES II Anglais — Certificat de compétences en langue de l'enseignement supérieur", "issuer": "UVHC — Université de Valenciennes et du Hainaut-Cambrésis"}, {"year": "2014", "cert": "TOEIC — 795 points", "issuer": "ETS Global"}, {"year": "2017", "cert": ">> SAP/openSAP (4 cours)", "issuer": "SAP"}, {"year": "2017", "cert": "Introduction to R", "issuer": "DataCamp"}, {"year": "2018", "cert": ">> SAP/openSAP (12 cours)", "issuer": "SAP"}, {"year": "2019", "cert": ">> SAP/openSAP (27 cours) dont UX, Analytics, Machine Learning", "issuer": "SAP"}, {"year": "2019", "cert": "LinguaSkill C1+ — Anglais", "issuer": "Pearson"}, {"year": "2020", "cert": ">> SAP/openSAP (12 cours)", "issuer": "SAP"}, {"year": "2021", "cert": ">> SAP/openSAP (12 cours) dont Design Thinking, RISE", "issuer": "SAP"}, {"year": "2022", "cert": ">> SAP/openSAP (17 cours) dont Python, BTP, SAC", "issuer": "SAP"}, {"year": "2022", "cert": "Getting Started with Snowflake", "issuer": "Skillsoft"}, {"year": "2023", "cert": ">> SAP/openSAP (23 cours) dont GenAI, Signavio, Datasphere", "issuer": "SAP"}, {"year": "2023", "cert": "Project Management (PMBOK® Guide Sixth Edition)", "issuer": "Skillsoft"}, {"year": "2024", "cert": "SAP Business AI Portfolio", "issuer": "SAP"}, {"year": "2024", "cert": "RISE with SAP Methodology", "issuer": "SAP"}, {"year": "2024", "cert": "SAP S/4HANA Manufacturing", "issuer": "SAP"}, {"year": "2024", "cert": "SAP Business Object — Business Intelligence", "issuer": "SAP"}, {"year": "2024", "cert": ">> SAP/openSAP (10 cours) dont BTP/AWS, Signavio avance", "issuer": "SAP"}, {"year": "2024", "cert": "Getting Started with Support from SAP", "issuer": "SAP"}, {"year": "2024", "cert": "Large Language Models (LLMs) Fundamentals and Techniques", "issuer": "SAP"}, {"year": "2026", "cert": "SAP Business Data Cloud", "issuer": "SAP"}, {"year": "2026", "cert": "Introducing Joule — SAP Artificial Intelligence Augmented", "issuer": "SAP"}, {"year": "2026", "cert": ">> SAP/openSAP (2 cours)", "issuer": "SAP"}], "allCertificates": [{"year": "2017", "title": "Introduction to R", "issuer": "DataCamp", "url": "https://www.datacamp.com/courses/free-introduction-to-r", "code": ""}, {"year": "2012", "title": "CLES II Anglais — Certificat de compétences en langue de l'enseignement supérieur", "issuer": "UVHC — Université de Valenciennes et du Hainaut-Cambrésis", "url": "", "code": ""}, {"year": "2011", "title": "EDCL/PCIE — European Computer Driving Licence", "issuer": "European Computer Driving Licence Foundation", "url": "", "code": ""}, {"year": "", "title": "Découvrir la science politique", "issuer": "edX", "url": "https://s3.amazonaws.com/verify.edx.org/downloads/d69a32f62e0540df81df5d775e4e3aff/Certificate.pdf", "code": ""}, {"year": "2020", "title": "SAP Customer Experience – Commerce and Sales", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xuvok-matac-fodiv-kibav-pezot", "code": "cx2"}, {"year": "2019", "title": "SAP Customer Experience – The Big Picture", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xogag-norut-democ-bosyh-romor", "code": "cx1"}, {"year": "2019", "title": "SAP Enable Now Framework", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xogem-gahop-vimul-dozeb-bufuv", "code": "sen1"}, {"year": "2023", "title": "SAP Focused Run – Operations of Hybrid Landscapes", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xonov-hymil-pukes-kevad-kogon", "code": "frun1"}, {"year": "2018", "title": "SAP HANA Dynamic Modeling and Scripting", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xenev-nateh-nytoh-vomyk-nyzyc", "code": "hdms1"}, {"year": "2019", "title": "SAP Intelligent Robotic Process Automation in a Nutshell", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xukik-hesib-fehul-repek-pelys", "code": "rpa1"}, {"year": "2020", "title": "SAP Internet of Things for the Intelligent Enterprise", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xulil-miryc-hibom-hucyn-lolov", "code": "iot4"}, {"year": "2019", "title": "SAP Leonardo – An Introduction to Blockchain", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xonah-pomus-tybyb-dehad-dizan", "code": "leo4"}, {"year": "2018", "title": "SAP Leonardo – Enabling the Intelligent Enterprise", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xesib-kelad-zomit-vikyb-tutys", "code": "leo1"}, {"year": "2018", "title": "SAP Leonardo for Digital Transformation", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xeder-razih-nadur-dulyr-lomuk", "code": "dleo1"}, {"year": "2026", "title": "Introducing Joule — SAP Artificial Intelligence Augmented", "issuer": "SAP", "url": "https://learning.sap.com", "code": ""}, {"year": "2018", "title": "SAP Leonardo – IoT for the Intelligent Enterprise", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xohoz-pamif-vipab-lubil-mokif", "code": "leo2"}, {"year": "2023", "title": "SAP PLM for Discrete Industries", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xepam-zuryl-fypet-hucef-lamyz", "code": "plm1-1"}, {"year": "2023", "title": "SAP PLM for Process Industries", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xodel-denag-conat-rycel-gecas", "code": "plm2-1"}, {"year": "2024", "title": "SAP Profitability and Performance Management Cloud", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xihev-hozer-rodop-rabof-timob", "code": "ppm1"}, {"year": "2023", "title": "SAP S/4HANA Cloud – Strategy and Implementation", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xirid-zomis-cikyb-soluc-rofuc", "code": "s4h34"}, {"year": "2023", "title": "SAP S/4HANA – Deep Dive", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xugip-runuh-fekup-pydez-ridis", "code": "s4h32"}, {"year": "2022", "title": "SAP S/4HANA in a Nutshell", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xehef-kubus-pegeh-gunun-cuduz", "code": "s4h29"}, {"year": "2023", "title": "SAP S/4HANA – Use Cases", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xovak-defut-lozal-melor-lefit", "code": "s4h33"}, {"year": "2019", "title": "SAP Solution Manager for Operations", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xofop-hemad-cizuh-vymyv-lurat", "code": "solman2"}, {"year": "2017", "title": "SAP Solution Manager for SAP S/4HANA Implementation in a Nutshell", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xudor-hihyg-bozyn-fypap-pakob", "code": "solman1"}, {"year": "2026", "title": "SAP Business Data Cloud", "issuer": "SAP", "url": "https://learning.sap.com", "code": ""}, {"year": "2022", "title": "SAP SuccessFactors Employee Central – Advanced Topics", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xumep-zomyn-pahot-sygop-pocud", "code": "sf10"}, {"year": "2019", "title": "SAP User Experience Strategy and Design", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xigok-hovag-lacid-mutug-vacyz", "code": "ieux1"}, {"year": "2017", "title": "Spatial Analysis with SAP HANA Platform", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xezet-secad-mycym-tydih-disub", "code": "hsgs1"}, {"year": "2023", "title": "SuccessFactors Hire to Retire Process (Track)", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xukem-fenyc-ferer-rybyk-kykef", "code": "sfh2rc2-tr"}, {"year": "2023", "title": "Sustainability and ESG Reporting", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xufev-rogyz-vyraf-pidyv-tyhuh", "code": "esg1"}, {"year": "2017", "title": "The Impact of Digitization on Leadership and Work", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xebok-zityc-dadeb-vykev-nivit", "code": "next1-tl"}, {"year": "2019", "title": "The Power of Experience Management", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xupoh-maviz-copoz-rodav-bikuk", "code": "xm1"}, {"year": "2023", "title": "Transforming Business Processes with SAP Signavio", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xisop-dehov-kebim-zabas-fulim", "code": "signavio1"}, {"year": "2024", "title": "Transforming Business Processes with SAP Signavio and SAP Build", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xulad-zirok-vupok-pemas-tarup", "code": "tbp1"}, {"year": "2022", "title": "Understanding the Core Concepts of SAP HANA", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xosad-pogas-ziryr-hagac-hobis", "code": "hana8"}, {"year": "2024", "title": "SAP Business AI Portfolio", "issuer": "SAP", "url": "https://learning.sap.com", "code": ""}, {"year": "2019", "title": "Upgrade2Success – Making SAP ERP HCM Migration Easier", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xibot-kybav-himyl-lunud-huryv", "code": "sf6"}, {"year": "2019", "title": "Virtualize and Automate Your SAP Testing Using Int4 IFTT", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xifid-biret-bukub-typid-zynag", "code": "iftt1-pc"}, {"year": "2022", "title": "Virtualize and Automate Your SAP Testing Using Int4 IFTT 2.0", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xoloc-zavyp-zipyp-gyhyn-buhyn", "code": "iftt1-2-pc"}, {"year": "2023", "title": "Working with Calculation Views in SAP HANA Cloud", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xebat-kucoz-gapig-caver-gukyb", "code": "hanasql2"}, {"year": "2024", "title": "SAP Business Object — Business Intelligence", "issuer": "SAP", "url": "https://learning.sap.com", "code": ""}, {"year": "2024", "title": "Getting Started with Support from SAP", "issuer": "SAP", "url": "https://learning.sap.com", "code": ""}, {"year": "2024", "title": "Large Language Models (LLMs) Fundamentals and Techniques", "issuer": "SAP", "url": "https://learning.sap.com", "code": ""}, {"year": "2024", "title": "SAP S/4HANA Manufacturing", "issuer": "SAP", "url": "https://learning.sap.com", "code": ""}, {"year": "2024", "title": "RISE with SAP Methodology", "issuer": "SAP", "url": "https://learning.sap.com", "code": ""}, {"year": "2023", "title": "Project Management (PMBOK® Guide Sixth Edition)", "issuer": "Skillsoft", "url": "https://www.skillsoft.com", "code": ""}, {"year": "2022", "title": "Getting Started with Snowflake", "issuer": "Skillsoft", "url": "https://www.skillsoft.com", "code": ""}, {"year": "2019", "title": "LinguaSkill C1+ — Anglais", "issuer": "Pearson", "url": "https://www.pearson.com/language-test", "code": ""}, {"year": "2014", "title": "TOEIC — 795 points", "issuer": "ETS Global", "url": "https://www.ets.org/toeic", "code": ""}, {"year": "2022", "title": "Adapting the UI in SAP S/4HANA Cloud Using SAP Screen Personas", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xelif-kefom-fazup-zefyt-muhip", "code": "sps5"}, {"year": "2023", "title": "Advanced Business Process Transformation with SAP Signavio", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xedod-batil-nanuv-tysem-supan", "code": "signavio2"}, {"year": "2024", "title": "AI Ethics at SAP", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xoliz-vulim-nisir-mamup-kafyn", "code": "aie1-2"}, {"year": "2019", "title": "AI Ethics at SAP (Track)", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xedaz-bozuv-delak-fogis-ruzup", "code": "aie1-tl"}, {"year": "2019", "title": "Basics of Design Testing", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xizen-lenud-lozip-norac-recir", "code": "ut1-2"}, {"year": "2018", "title": "Be Visual! Sketching Basics for IT Business", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xopol-bovyb-mopoh-sival-movyt", "code": "bvis1-3"}, {"year": "2022", "title": "Build Better Products with a Human Centered Product Backlog (Repeat)", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xigef-cydom-larep-sokev-safyl", "code": "pbl1-1"}, {"year": "2021", "title": "Building Apps with the ABAP RESTful Application Programming Model", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xecov-rusor-mocud-ducac-nusor", "code": "abap1"}, {"year": "2018", "title": "Building Portal Sites on SAP Cloud Platform (2018 Edition)", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xunaf-lakot-licel-tozut-fugab", "code": "portal2"}, {"year": "2024", "title": "Build Resilient Applications on SAP BTP with Amazon Web Services", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xigov-zupef-gamon-rosoc-kozal", "code": "btp4"}, {"year": "2020", "title": "Business Model Innovation", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xelip-rofum-nedup-vymyn-cobyf", "code": "bizmooc1"}, {"year": "2020", "title": "Business Process Automation in SAP S/4HANA with SAP Intelligent RPA", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xumom-fanyd-telom-kahym-mabes", "code": "rpa3"}, {"year": "2023", "title": "Crisis Management and Resilience", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xiken-satas-kegec-nefoz-ponab", "code": "ce2"}, {"year": "2019", "title": "Data Analysis and Applications with SAP HANA", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xoged-rihak-lucuh-hicak-sybil", "code": "dafie1"}, {"year": "2020", "title": "Designing and Implementing a Data Lake with SAP Data Intelligence", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xenok-zehaz-dyras-fabol-polon", "code": "di1"}, {"year": "2019", "title": "Design-Led Approach for the Intelligent Enterprise", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xigem-besuf-pusyp-gocum-fupym", "code": "ko1-tl"}, {"year": "2021", "title": "Design Thinking in a Nutshell", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xezeh-pifor-nicyg-gadop-dogul", "code": "dt2"}, {"year": "2022", "title": "Developing and Extending SAP Fiori Elements Apps", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xugov-zeryk-kisyc-felaz-macih", "code": "fiori-ea1"}, {"year": "2019", "title": "Developing Applications in SAP BTP", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xesom-lalyt-dugyt-cefum-fyfob", "code": "kyma1"}, {"year": "2023", "title": "DevOps for ABAP with gCTS in SAP S/4HANA", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xotit-difuh-rogos-nudar-bivib", "code": "s4h28-1"}, {"year": "2019", "title": "Digital Supply Chain Management", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xomab-ziryd-cytes-cabor-gygyp", "code": "dscm1"}, {"year": "2019", "title": "Digital Transformation Track", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xizes-mofir-guman-kizus-hurah", "code": "dtc1-tr"}, {"year": "2022", "title": "Enterprise Goes Cloud", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xevek-tyzum-rored-cidyn-hirym", "code": "egc1"}, {"year": "2019", "title": "Enterprise Machine Learning in a Nutshell", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xesog-tibef-vybaz-dosiv-kegab", "code": "ml1-1"}, {"year": "2019", "title": "Experience SAP Cloud for Customer", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xosit-zytev-penol-dozan-ticuk", "code": "c4h4"}, {"year": "2020", "title": "Extending SAP S/4HHA with SAP BTP", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xelav-vibog-vafal-hobin-dedal", "code": "s4h17"}, {"year": "2018", "title": "Freedom to Calculate with SAP Product Lifecycle Costing", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xitoz-tymur-lusut-socun-sutiv", "code": "plc1"}, {"year": "2021", "title": "Gain Experience with a System Conversion to SAP S/4HANA", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xigav-ryben-kyduh-bydyh-suviz", "code": "s4h25"}, {"year": "2023", "title": "Gain Experience with a System Conversion to SAP S/4HANA (Repeat)", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xofan-tuted-gerob-vepip-civat", "code": "s4h25-1"}, {"year": "2021", "title": "Gain Experience with Business Partner for SAP S/4HANA Conversion", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xenel-cicib-kytom-febyn-sotup", "code": "s4h24"}, {"year": "2021", "title": "Gain Experience with SAP S/4HANA – Logistics", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xehag-nysef-nyzud-pycab-fabab", "code": "s4h26"}, {"year": "2023", "title": "Gain Experience with SAP S/4HANA – Logistics (Repeat)", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xovef-dohut-tizik-gyrik-nufav", "code": "s4h26-1"}, {"year": "2022", "title": "Gain Technical Knowledge on SAP S/4HANA Cloud", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xurof-nikif-kykaz-zagyp-vakus", "code": "s4cpe1"}, {"year": "2023", "title": "Generative AI for the Intelligent Enterprise", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xivam-locel-sysyf-bolov-nanom", "code": "genai1"}, {"year": "2019", "title": "Get Coding with Snap! (French Edition)", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xosiv-fykoh-tysiv-hific-dufav", "code": "snap1-fr"}, {"year": "2023", "title": "Get Started with Innovation Culture", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xebek-puvut-mipyg-secov-bofez", "code": "ico20"}, {"year": "2017", "title": "Getting Started with SAP BusinessObjects Roambi", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xuger-dibef-tusam-cufih-hufih", "code": "roambi1"}, {"year": "2020", "title": "Getting Started with SAP Model Company", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xecos-ritiz-pizip-nudil-panyz", "code": "mod1"}, {"year": "2023", "title": "Hire to Retire Process in the Intelligent Enterprise", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xepef-bepyz-lehyh-gidac-ratiz", "code": "sf9"}, {"year": "2020", "title": "Implementation of SAP S/4HANA", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xusof-cyvan-tyfuh-legin-sybad", "code": "s4h19"}, {"year": "2021", "title": "Improve Business Processes with SAP Workflow Management", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xiden-hifyv-hilan-migaf-nebal", "code": "btp2"}, {"year": "2018", "title": "Improving Confidence in Sustainability Performance Data", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xehah-vikup-hyfip-nynud-hytup", "code": "ima1-tl"}, {"year": "2019", "title": "Information Security Management in a Nutshell", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xugel-zipov-nolyb-vulam-sivat", "code": "ism1-tl"}, {"year": "2021", "title": "Insights into Selected Logistics Innovations in SAP S/4HANA", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xufar-siliv-pabep-byvaf-kahik", "code": "s4h27"}, {"year": "2023", "title": "Integration for the Intelligent", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xivoh-delyp-bybaz-tydor-nodap", "code": "iis2"}, {"year": "2018", "title": "Integration with SAP S/4HANA Cloud", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xubis-rigyh-vefod-lemyf-besyl", "code": "s4h10"}, {"year": "2019", "title": "Intelligent Decisions with SAP Analytics Cloud", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xumec-nuhug-ganub-robor-bylav", "code": "sac1"}, {"year": "2019", "title": "Introduction to SAP Ariba and SAP Fieldglass", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xitos-fobyk-darim-pinil-sykul", "code": "hub1"}, {"year": "2020", "title": "Introduction to SAP Cloud Platform Integration", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xelav-pofez-puzyk-retab-vyvyh", "code": "ic1"}, {"year": "2023", "title": "Introduction to SAP Datasphere", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xukor-labyl-zulig-hihek-zyman", "code": "dsp1"}, {"year": "2023", "title": "Introduction to SAP Datasphere (Repeat)", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xelam-pulur-basiz-budem-lyfys", "code": "dsp1-1"}, {"year": "2022", "title": "Introduction to SAP Digital Manufacturing Cloud", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xebid-tecet-dohuc-lodev-lasac", "code": "dmc1"}, {"year": "2023", "title": "Introduction to SAP Digital Manufacturing Cloud (Repeat)", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xutoz-gurym-fypyb-synop-lakiv", "code": "dmc1-1"}, {"year": "2018", "title": "Introduction to SAP Enterprise Architecture Designer", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xibev-loveb-gefil-kemon-nykul", "code": "hsead1"}, {"year": "2019", "title": "Introduction to SAP HANA", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xokan-hozeg-koryh-fuceg-surim", "code": "hana7"}, {"year": "2019", "title": "Introduction to Statistics for Data Science", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xehig-macor-fubus-cicag-suvah", "code": "ds0"}, {"year": "2021", "title": "Managing SAP BTP Accounts Using the BTP CLI", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xizik-fuliv-micah-dofek-vidub", "code": "btpma1"}, {"year": "2021", "title": "openSAP Summer School Coffee Corner", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xufet-purod-zagub-dahum-fatem", "code": "coco1"}, {"year": "2022", "title": "Operating Cloud-Centric Solutions with SAP Cloud ALM", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xeral-mimoh-rabyt-cyvyg-denik", "code": "calm3"}, {"year": "2019", "title": "People Analytics and Evidence-Based Management", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xibab-tudiz-hifen-fikel-demav", "code": "pa1-tl"}, {"year": "2020", "title": "Planning with SAP Analytics Cloud", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xohod-pofab-symef-boken-vepal", "code": "sac3"}, {"year": "2021", "title": "Planning with SAP Analytics Cloud – Advanced Topics", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xutog-bagyt-cigov-girum-vulyz", "code": "sac4"}, {"year": "2022", "title": "Product Compliance in a Nutshell", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xosog-cocyn-zarip-gylur-gomeg", "code": "pc1"}, {"year": "2022", "title": "Python for Beginners", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xuhim-mecaf-reluv-bumah-pevuv", "code": "python1"}, {"year": "2019", "title": "Reimagine Customer Experience with SAP C/4HANA", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xodib-huvic-megur-bazif-cicok", "code": "c4h1"}, {"year": "2023", "title": "Reimagine the Customer Journey with SAP Customer Experience Solutions", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xipan-zavag-nakil-fimaz-lemed", "code": "c4h2"}, {"year": "2021", "title": "RISE with SAP", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xunil-hecel-tocyr-bykod-dekis", "code": "rise1"}, {"year": "2022", "title": "SAP Analytics Cloud – Become an Augmented BI Expert", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xebol-hypeh-dasib-vysam-tufif", "code": "sac5"}, {"year": "2019", "title": "SAP Business ByDesign: Adaptive Business Models", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xevog-renur-betod-harok-rulug", "code": "byd8"}, {"year": "2021", "title": "SAP Business ByDesign Administration", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xukev-tozyc-nagyk-fekil-patis", "code": "byd9"}, {"year": "2018", "title": "SAP Business ByDesign: Core Concepts", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xukek-voput-rizuz-zegir-komub", "code": "byd6"}, {"year": "2022", "title": "SAP Business Technology Platform – Essentials for the Intelligent Enterprise", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xekar-zatov-tynyb-tigyf-lybyp", "code": "btp1"}, {"year": "2020", "title": "SAP Cloud ALM for Implementation", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xobor-nygac-soral-dozyf-cyrir", "code": "calm1"}, {"year": "2018", "title": "SAP Cloud Platform – Enterprise Extension", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xopen-pumum-suhen-deniv-kotuz", "code": "cp8"}, {"year": "2020", "title": "SAP Cloud Platform Essentials", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xogap-fipud-sotur-cocos-kelyl", "code": "cp7"}, {"year": "2022", "title": "SAP Cloud Platform – Integration Aspects", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xepoz-hyced-varav-dakar-fudob", "code": "cp10"}, {"year": "2022", "title": "SAP Customer and Market Risk", "issuer": "SAP / openSAP", "url": "https://open.sap.com/verify/xopom-gynoh-gesov-bekeb-gorez", "code": "cmr1"}], "badges": [{"year": "2020", "title": "SAP Customer Experience – Commerce and Sales", "issuer": "SAP / openSAP", "code": "cx2", "color": "#0a6e33", "tags": ["SAP Core", "2020"]}, {"year": "2019", "title": "SAP Customer Experience – The Big Picture", "issuer": "SAP / openSAP", "code": "cx1", "color": "#0a6e33", "tags": ["SAP Core", "Data", "2019"]}, {"year": "2019", "title": "SAP Enable Now Framework", "issuer": "SAP / openSAP", "code": "sen1", "color": "#0a6e33", "tags": ["SAP Core", "2019"]}, {"year": "2023", "title": "SAP Focused Run – Operations of Hybrid Landscapes", "issuer": "SAP / openSAP", "code": "frun1", "color": "#0a6e33", "tags": ["SAP Core", "Cloud", "2023"]}, {"year": "2018", "title": "SAP HANA Dynamic Modeling and Scripting", "issuer": "SAP / openSAP", "code": "hdms1", "color": "#0a6e33", "tags": ["SAP Core", "Data", "2018"]}, {"year": "2019", "title": "SAP Intelligent Robotic Process Automation in a Nutshell", "issuer": "SAP / openSAP", "code": "rpa1", "color": "#0a6e33", "tags": ["SAP Core", "Process", "2019"]}, {"year": "2020", "title": "SAP Internet of Things for the Intelligent Enterprise", "issuer": "SAP / openSAP", "code": "iot4", "color": "#0a6e33", "tags": ["SAP Core", "Cloud", "2020"]}, {"year": "2019", "title": "SAP Leonardo – An Introduction to Blockchain", "issuer": "SAP / openSAP", "code": "leo4", "color": "#0a6e33", "tags": ["SAP Core", "AI", "2019"]}, {"year": "2018", "title": "SAP Leonardo – Enabling the Intelligent Enterprise", "issuer": "SAP / openSAP", "code": "leo1", "color": "#0a6e33", "tags": ["SAP Core", "Cloud", "2018"]}, {"year": "2018", "title": "SAP Leonardo for Digital Transformation", "issuer": "SAP / openSAP", "code": "dleo1", "color": "#0a6e33", "tags": ["SAP Core", "Strategy", "2018"]}, {"year": "2026", "title": "Introducing Joule — SAP Artificial Intelligence Augmented", "issuer": "SAP", "code": "", "color": "#0a6e33", "tags": ["SAP Core", "AI", "2026"]}, {"year": "2018", "title": "SAP Leonardo – IoT for the Intelligent Enterprise", "issuer": "SAP / openSAP", "code": "leo2", "color": "#0a6e33", "tags": ["SAP Core", "Cloud", "2018"]}, {"year": "2023", "title": "SAP PLM for Discrete Industries", "issuer": "SAP / openSAP", "code": "plm1-1", "color": "#0a6e33", "tags": ["SAP Core", "2023"]}, {"year": "2023", "title": "SAP PLM for Process Industries", "issuer": "SAP / openSAP", "code": "plm2-1", "color": "#0a6e33", "tags": ["SAP Core", "Process", "2023"]}, {"year": "2024", "title": "SAP Profitability and Performance Management Cloud", "issuer": "SAP / openSAP", "code": "ppm1", "color": "#0a6e33", "tags": ["SAP Core", "Data", "Cloud", "Strategy", "2024"]}, {"year": "2023", "title": "SAP S/4HANA Cloud – Strategy and Implementation", "issuer": "SAP / openSAP", "code": "s4h34", "color": "#0a6e33", "tags": ["SAP Core", "Data", "Cloud", "Strategy", "2023"]}, {"year": "2023", "title": "SAP S/4HANA – Deep Dive", "issuer": "SAP / openSAP", "code": "s4h32", "color": "#0a6e33", "tags": ["SAP Core", "Data", "2023"]}, {"year": "2022", "title": "SAP S/4HANA in a Nutshell", "issuer": "SAP / openSAP", "code": "s4h29", "color": "#0a6e33", "tags": ["SAP Core", "Data", "2022"]}, {"year": "2023", "title": "SAP S/4HANA – Use Cases", "issuer": "SAP / openSAP", "code": "s4h33", "color": "#0a6e33", "tags": ["SAP Core", "Data", "2023"]}, {"year": "2019", "title": "SAP Solution Manager for Operations", "issuer": "SAP / openSAP", "code": "solman2", "color": "#0a6e33", "tags": ["SAP Core", "2019"]}, {"year": "2017", "title": "SAP Solution Manager for SAP S/4HANA Implementation in a Nutshell", "issuer": "SAP / openSAP", "code": "solman1", "color": "#0a6e33", "tags": ["SAP Core", "Data", "2017"]}, {"year": "2026", "title": "SAP Business Data Cloud", "issuer": "SAP", "code": "", "color": "#0a6e33", "tags": ["SAP Core", "Data", "Cloud", "2026"]}, {"year": "2022", "title": "SAP SuccessFactors Employee Central – Advanced Topics", "issuer": "SAP / openSAP", "code": "sf10", "color": "#0a6e33", "tags": ["SAP Core", "2022"]}, {"year": "2019", "title": "SAP User Experience Strategy and Design", "issuer": "SAP / openSAP", "code": "ieux1", "color": "#0a6e33", "tags": ["SAP Core", "UX", "Strategy", "2019"]}, {"year": "2017", "title": "Spatial Analysis with SAP HANA Platform", "issuer": "SAP / openSAP", "code": "hsgs1", "color": "#0a6e33", "tags": ["SAP Core", "Data", "Cloud", "2017"]}, {"year": "2023", "title": "SuccessFactors Hire to Retire Process (Track)", "issuer": "SAP / openSAP", "code": "sfh2rc2-tr", "color": "#e67e22", "tags": ["Process", "2023"]}, {"year": "2023", "title": "Sustainability and ESG Reporting", "issuer": "SAP / openSAP", "code": "esg1", "color": "#9b59b6", "tags": ["AI", "Data", "Security", "2023"]}, {"year": "2017", "title": "The Impact of Digitization on Leadership and Work", "issuer": "SAP / openSAP", "code": "next1-tl", "color": "#34495e", "tags": ["Strategy", "2017"]}, {"year": "2019", "title": "The Power of Experience Management", "issuer": "SAP / openSAP", "code": "xm1", "color": "#34495e", "tags": ["Strategy", "2019"]}, {"year": "2023", "title": "Transforming Business Processes with SAP Signavio", "issuer": "SAP / openSAP", "code": "signavio1", "color": "#0a6e33", "tags": ["SAP Core", "Process", "2023"]}, {"year": "2024", "title": "Transforming Business Processes with SAP Signavio and SAP Build", "issuer": "SAP / openSAP", "code": "tbp1", "color": "#0a6e33", "tags": ["SAP Core", "Process", "2024"]}, {"year": "2022", "title": "Understanding the Core Concepts of SAP HANA", "issuer": "SAP / openSAP", "code": "hana8", "color": "#0a6e33", "tags": ["SAP Core", "Data", "2022"]}, {"year": "2024", "title": "SAP Business AI Portfolio", "issuer": "SAP", "code": "", "color": "#0a6e33", "tags": ["SAP Core", "AI", "2024"]}, {"year": "2019", "title": "Upgrade2Success – Making SAP ERP HCM Migration Easier", "issuer": "SAP / openSAP", "code": "sf6", "color": "#0a6e33", "tags": ["SAP Core", "2019"]}, {"year": "2019", "title": "Virtualize and Automate Your SAP Testing Using Int4 IFTT", "issuer": "SAP / openSAP", "code": "iftt1-pc", "color": "#0a6e33", "tags": ["SAP Core", "Dev", "2019"]}, {"year": "2022", "title": "Virtualize and Automate Your SAP Testing Using Int4 IFTT 2.0", "issuer": "SAP / openSAP", "code": "iftt1-2-pc", "color": "#0a6e33", "tags": ["SAP Core", "Dev", "2022"]}, {"year": "2023", "title": "Working with Calculation Views in SAP HANA Cloud", "issuer": "SAP / openSAP", "code": "hanasql2", "color": "#0a6e33", "tags": ["SAP Core", "Data", "Cloud", "2023"]}, {"year": "2024", "title": "SAP Business Object — Business Intelligence", "issuer": "SAP", "code": "", "color": "#0a6e33", "tags": ["SAP Core", "AI", "2024"]}, {"year": "2024", "title": "Getting Started with Support from SAP", "issuer": "SAP", "code": "", "color": "#0a6e33", "tags": ["SAP Core", "2024"]}, {"year": "2024", "title": "Large Language Models (LLMs) Fundamentals and Techniques", "issuer": "SAP", "code": "", "color": "#95a5a6", "tags": ["General", "2024"]}, {"year": "2024", "title": "SAP S/4HANA Manufacturing", "issuer": "SAP", "code": "", "color": "#0a6e33", "tags": ["SAP Core", "Data", "2024"]}, {"year": "2024", "title": "RISE with SAP Methodology", "issuer": "SAP", "code": "", "color": "#0a6e33", "tags": ["SAP Core", "Cloud", "2024"]}, {"year": "2022", "title": "Adapting the UI in SAP S/4HANA Cloud Using SAP Screen Personas", "issuer": "SAP / openSAP", "code": "sps5", "color": "#0a6e33", "tags": ["SAP Core", "Data", "UX", "Cloud", "2022"]}, {"year": "2023", "title": "Advanced Business Process Transformation with SAP Signavio", "issuer": "SAP / openSAP", "code": "signavio2", "color": "#0a6e33", "tags": ["SAP Core", "Process", "Strategy", "2023"]}, {"year": "2024", "title": "AI Ethics at SAP", "issuer": "SAP / openSAP", "code": "aie1-2", "color": "#0a6e33", "tags": ["SAP Core", "AI", "2024"]}, {"year": "2019", "title": "AI Ethics at SAP (Track)", "issuer": "SAP / openSAP", "code": "aie1-tl", "color": "#0a6e33", "tags": ["SAP Core", "AI", "2019"]}, {"year": "2019", "title": "Basics of Design Testing", "issuer": "SAP / openSAP", "code": "ut1-2", "color": "#f39c12", "tags": ["UX", "Dev", "2019"]}, {"year": "2018", "title": "Be Visual! Sketching Basics for IT Business", "issuer": "SAP / openSAP", "code": "bvis1-3", "color": "#f39c12", "tags": ["UX", "2018"]}, {"year": "2022", "title": "Build Better Products with a Human Centered Product Backlog (Repeat)", "issuer": "SAP / openSAP", "code": "pbl1-1", "color": "#f39c12", "tags": ["UX", "2022"]}, {"year": "2021", "title": "Building Apps with the ABAP RESTful Application Programming Model", "issuer": "SAP / openSAP", "code": "abap1", "color": "#2ecc71", "tags": ["Dev", "2021"]}, {"year": "2018", "title": "Building Portal Sites on SAP Cloud Platform (2018 Edition)", "issuer": "SAP / openSAP", "code": "portal2", "color": "#0a6e33", "tags": ["SAP Core", "Cloud", "2018"]}, {"year": "2024", "title": "Build Resilient Applications on SAP BTP with Amazon Web Services", "issuer": "SAP / openSAP", "code": "btp4", "color": "#0a6e33", "tags": ["SAP Core", "Cloud", "2024"]}, {"year": "2020", "title": "Business Model Innovation", "issuer": "SAP / openSAP", "code": "bizmooc1", "color": "#e67e22", "tags": ["Process", "Strategy", "2020"]}, {"year": "2020", "title": "Business Process Automation in SAP S/4HANA with SAP Intelligent RPA", "issuer": "SAP / openSAP", "code": "rpa3", "color": "#0a6e33", "tags": ["SAP Core", "Data", "Process", "2020"]}, {"year": "2023", "title": "Crisis Management and Resilience", "issuer": "SAP / openSAP", "code": "ce2", "color": "#34495e", "tags": ["Strategy", "2023"]}, {"year": "2019", "title": "Data Analysis and Applications with SAP HANA", "issuer": "SAP / openSAP", "code": "dafie1", "color": "#0a6e33", "tags": ["SAP Core", "Data", "2019"]}, {"year": "2020", "title": "Designing and Implementing a Data Lake with SAP Data Intelligence", "issuer": "SAP / openSAP", "code": "di1", "color": "#0a6e33", "tags": ["SAP Core", "AI", "Data", "UX", "2020"]}, {"year": "2019", "title": "Design-Led Approach for the Intelligent Enterprise", "issuer": "SAP / openSAP", "code": "ko1-tl", "color": "#0a6e33", "tags": ["SAP Core", "UX", "Cloud", "2019"]}, {"year": "2021", "title": "Design Thinking in a Nutshell", "issuer": "SAP / openSAP", "code": "dt2", "color": "#f39c12", "tags": ["UX", "2021"]}, {"year": "2022", "title": "Developing and Extending SAP Fiori Elements Apps", "issuer": "SAP / openSAP", "code": "fiori-ea1", "color": "#0a6e33", "tags": ["SAP Core", "Dev", "2022"]}, {"year": "2019", "title": "Developing Applications in SAP BTP", "issuer": "SAP / openSAP", "code": "kyma1", "color": "#0a6e33", "tags": ["SAP Core", "Cloud", "Dev", "2019"]}, {"year": "2023", "title": "DevOps for ABAP with gCTS in SAP S/4HANA", "issuer": "SAP / openSAP", "code": "s4h28-1", "color": "#0a6e33", "tags": ["SAP Core", "Data", "Dev", "2023"]}, {"year": "2019", "title": "Digital Supply Chain Management", "issuer": "SAP / openSAP", "code": "dscm1", "color": "#0a6e33", "tags": ["SAP Core", "AI", "Strategy", "2019"]}, {"year": "2019", "title": "Digital Transformation Track", "issuer": "SAP / openSAP", "code": "dtc1-tr", "color": "#34495e", "tags": ["Strategy", "2019"]}, {"year": "2022", "title": "Enterprise Goes Cloud", "issuer": "SAP / openSAP", "code": "egc1", "color": "#0a6e33", "tags": ["SAP Core", "Cloud", "2022"]}, {"year": "2019", "title": "Enterprise Machine Learning in a Nutshell", "issuer": "SAP / openSAP", "code": "ml1-1", "color": "#0a6e33", "tags": ["SAP Core", "AI", "Cloud", "2019"]}, {"year": "2019", "title": "Experience SAP Cloud for Customer", "issuer": "SAP / openSAP", "code": "c4h4", "color": "#0a6e33", "tags": ["SAP Core", "Cloud", "2019"]}, {"year": "2020", "title": "Extending SAP S/4HHA with SAP BTP", "issuer": "SAP / openSAP", "code": "s4h17", "color": "#0a6e33", "tags": ["SAP Core", "Cloud", "2020"]}, {"year": "2018", "title": "Freedom to Calculate with SAP Product Lifecycle Costing", "issuer": "SAP / openSAP", "code": "plc1", "color": "#0a6e33", "tags": ["SAP Core", "UX", "2018"]}, {"year": "2021", "title": "Gain Experience with a System Conversion to SAP S/4HANA", "issuer": "SAP / openSAP", "code": "s4h25", "color": "#0a6e33", "tags": ["SAP Core", "AI", "Data", "2021"]}, {"year": "2023", "title": "Gain Experience with a System Conversion to SAP S/4HANA (Repeat)", "issuer": "SAP / openSAP", "code": "s4h25-1", "color": "#0a6e33", "tags": ["SAP Core", "AI", "Data", "2023"]}, {"year": "2021", "title": "Gain Experience with Business Partner for SAP S/4HANA Conversion", "issuer": "SAP / openSAP", "code": "s4h24", "color": "#0a6e33", "tags": ["SAP Core", "AI", "Data", "2021"]}, {"year": "2021", "title": "Gain Experience with SAP S/4HANA – Logistics", "issuer": "SAP / openSAP", "code": "s4h26", "color": "#0a6e33", "tags": ["SAP Core", "AI", "Data", "2021"]}, {"year": "2023", "title": "Gain Experience with SAP S/4HANA – Logistics (Repeat)", "issuer": "SAP / openSAP", "code": "s4h26-1", "color": "#0a6e33", "tags": ["SAP Core", "AI", "Data", "2023"]}, {"year": "2022", "title": "Gain Technical Knowledge on SAP S/4HANA Cloud", "issuer": "SAP / openSAP", "code": "s4cpe1", "color": "#0a6e33", "tags": ["SAP Core", "AI", "Data", "Cloud", "2022"]}, {"year": "2023", "title": "Generative AI for the Intelligent Enterprise", "issuer": "SAP / openSAP", "code": "genai1", "color": "#0a6e33", "tags": ["SAP Core", "AI", "Cloud", "2023"]}, {"year": "2019", "title": "Get Coding with Snap! (French Edition)", "issuer": "SAP / openSAP", "code": "snap1-fr", "color": "#2ecc71", "tags": ["Dev", "2019"]}, {"year": "2023", "title": "Get Started with Innovation Culture", "issuer": "SAP / openSAP", "code": "ico20", "color": "#e67e22", "tags": ["Process", "2023"]}, {"year": "2017", "title": "Getting Started with SAP BusinessObjects Roambi", "issuer": "SAP / openSAP", "code": "roambi1", "color": "#0a6e33", "tags": ["SAP Core", "Data", "2017"]}, {"year": "2020", "title": "Getting Started with SAP Model Company", "issuer": "SAP / openSAP", "code": "mod1", "color": "#0a6e33", "tags": ["SAP Core", "2020"]}, {"year": "2023", "title": "Hire to Retire Process in the Intelligent Enterprise", "issuer": "SAP / openSAP", "code": "sf9", "color": "#0a6e33", "tags": ["SAP Core", "Process", "Cloud", "2023"]}, {"year": "2020", "title": "Implementation of SAP S/4HANA", "issuer": "SAP / openSAP", "code": "s4h19", "color": "#0a6e33", "tags": ["SAP Core", "Data", "2020"]}, {"year": "2021", "title": "Improve Business Processes with SAP Workflow Management", "issuer": "SAP / openSAP", "code": "btp2", "color": "#0a6e33", "tags": ["SAP Core", "Process", "Strategy", "2021"]}, {"year": "2018", "title": "Improving Confidence in Sustainability Performance Data", "issuer": "SAP / openSAP", "code": "ima1-tl", "color": "#9b59b6", "tags": ["AI", "Data", "2018"]}, {"year": "2019", "title": "Information Security Management in a Nutshell", "issuer": "SAP / openSAP", "code": "ism1-tl", "color": "#e74c3c", "tags": ["Security", "Strategy", "2019"]}, {"year": "2021", "title": "Insights into Selected Logistics Innovations in SAP S/4HANA", "issuer": "SAP / openSAP", "code": "s4h27", "color": "#0a6e33", "tags": ["SAP Core", "Data", "Process", "2021"]}, {"year": "2023", "title": "Integration for the Intelligent", "issuer": "SAP / openSAP", "code": "iis2", "color": "#95a5a6", "tags": ["General", "2023"]}, {"year": "2018", "title": "Integration with SAP S/4HANA Cloud", "issuer": "SAP / openSAP", "code": "s4h10", "color": "#0a6e33", "tags": ["SAP Core", "Data", "Cloud", "2018"]}, {"year": "2019", "title": "Intelligent Decisions with SAP Analytics Cloud", "issuer": "SAP / openSAP", "code": "sac1", "color": "#0a6e33", "tags": ["SAP Core", "Data", "Cloud", "2019"]}, {"year": "2019", "title": "Introduction to SAP Ariba and SAP Fieldglass", "issuer": "SAP / openSAP", "code": "hub1", "color": "#0a6e33", "tags": ["SAP Core", "2019"]}, {"year": "2020", "title": "Introduction to SAP Cloud Platform Integration", "issuer": "SAP / openSAP", "code": "ic1", "color": "#0a6e33", "tags": ["SAP Core", "Cloud", "2020"]}, {"year": "2023", "title": "Introduction to SAP Datasphere", "issuer": "SAP / openSAP", "code": "dsp1", "color": "#0a6e33", "tags": ["SAP Core", "Data", "2023"]}, {"year": "2023", "title": "Introduction to SAP Datasphere (Repeat)", "issuer": "SAP / openSAP", "code": "dsp1-1", "color": "#0a6e33", "tags": ["SAP Core", "Data", "2023"]}, {"year": "2022", "title": "Introduction to SAP Digital Manufacturing Cloud", "issuer": "SAP / openSAP", "code": "dmc1", "color": "#0a6e33", "tags": ["SAP Core", "Cloud", "2022"]}, {"year": "2023", "title": "Introduction to SAP Digital Manufacturing Cloud (Repeat)", "issuer": "SAP / openSAP", "code": "dmc1-1", "color": "#0a6e33", "tags": ["SAP Core", "Cloud", "2023"]}, {"year": "2018", "title": "Introduction to SAP Enterprise Architecture Designer", "issuer": "SAP / openSAP", "code": "hsead1", "color": "#0a6e33", "tags": ["SAP Core", "UX", "Cloud", "2018"]}, {"year": "2019", "title": "Introduction to SAP HANA", "issuer": "SAP / openSAP", "code": "hana7", "color": "#0a6e33", "tags": ["SAP Core", "Data", "2019"]}, {"year": "2019", "title": "Introduction to Statistics for Data Science", "issuer": "SAP / openSAP", "code": "ds0", "color": "#1abc9c", "tags": ["Data", "2019"]}, {"year": "2021", "title": "Managing SAP BTP Accounts Using the BTP CLI", "issuer": "SAP / openSAP", "code": "btpma1", "color": "#0a6e33", "tags": ["SAP Core", "Cloud", "Dev", "2021"]}, {"year": "2021", "title": "openSAP Summer School Coffee Corner", "issuer": "SAP / openSAP", "code": "coco1", "color": "#0a6e33", "tags": ["SAP Core", "2021"]}, {"year": "2022", "title": "Operating Cloud-Centric Solutions with SAP Cloud ALM", "issuer": "SAP / openSAP", "code": "calm3", "color": "#0a6e33", "tags": ["SAP Core", "Cloud", "2022"]}, {"year": "2019", "title": "People Analytics and Evidence-Based Management", "issuer": "SAP / openSAP", "code": "pa1-tl", "color": "#1abc9c", "tags": ["Data", "Strategy", "2019"]}, {"year": "2020", "title": "Planning with SAP Analytics Cloud", "issuer": "SAP / openSAP", "code": "sac3", "color": "#0a6e33", "tags": ["SAP Core", "Data", "Cloud", "2020"]}, {"year": "2021", "title": "Planning with SAP Analytics Cloud – Advanced Topics", "issuer": "SAP / openSAP", "code": "sac4", "color": "#0a6e33", "tags": ["SAP Core", "Data", "Cloud", "2021"]}, {"year": "2022", "title": "Product Compliance in a Nutshell", "issuer": "SAP / openSAP", "code": "pc1", "color": "#e74c3c", "tags": ["Security", "UX", "2022"]}, {"year": "2022", "title": "Python for Beginners", "issuer": "SAP / openSAP", "code": "python1", "color": "#95a5a6", "tags": ["General", "2022"]}, {"year": "2019", "title": "Reimagine Customer Experience with SAP C/4HANA", "issuer": "SAP / openSAP", "code": "c4h1", "color": "#0a6e33", "tags": ["SAP Core", "Data", "2019"]}, {"year": "2023", "title": "Reimagine the Customer Journey with SAP Customer Experience Solutions", "issuer": "SAP / openSAP", "code": "c4h2", "color": "#0a6e33", "tags": ["SAP Core", "2023"]}, {"year": "2021", "title": "RISE with SAP", "issuer": "SAP / openSAP", "code": "rise1", "color": "#0a6e33", "tags": ["SAP Core", "Cloud", "2021"]}, {"year": "2022", "title": "SAP Analytics Cloud – Become an Augmented BI Expert", "issuer": "SAP / openSAP", "code": "sac5", "color": "#0a6e33", "tags": ["SAP Core", "Data", "Cloud", "2022"]}, {"year": "2019", "title": "SAP Business ByDesign: Adaptive Business Models", "issuer": "SAP / openSAP", "code": "byd8", "color": "#0a6e33", "tags": ["SAP Core", "UX", "Strategy", "2019"]}, {"year": "2021", "title": "SAP Business ByDesign Administration", "issuer": "SAP / openSAP", "code": "byd9", "color": "#0a6e33", "tags": ["SAP Core", "UX", "2021"]}, {"year": "2018", "title": "SAP Business ByDesign: Core Concepts", "issuer": "SAP / openSAP", "code": "byd6", "color": "#0a6e33", "tags": ["SAP Core", "UX", "2018"]}, {"year": "2022", "title": "SAP Business Technology Platform – Essentials for the Intelligent Enterprise", "issuer": "SAP / openSAP", "code": "btp1", "color": "#0a6e33", "tags": ["SAP Core", "Cloud", "2022"]}, {"year": "2020", "title": "SAP Cloud ALM for Implementation", "issuer": "SAP / openSAP", "code": "calm1", "color": "#0a6e33", "tags": ["SAP Core", "Cloud", "2020"]}, {"year": "2018", "title": "SAP Cloud Platform – Enterprise Extension", "issuer": "SAP / openSAP", "code": "cp8", "color": "#0a6e33", "tags": ["SAP Core", "Cloud", "Dev", "2018"]}, {"year": "2020", "title": "SAP Cloud Platform Essentials", "issuer": "SAP / openSAP", "code": "cp7", "color": "#0a6e33", "tags": ["SAP Core", "Cloud", "2020"]}, {"year": "2022", "title": "SAP Cloud Platform – Integration Aspects", "issuer": "SAP / openSAP", "code": "cp10", "color": "#0a6e33", "tags": ["SAP Core", "Cloud", "2022"]}, {"year": "2022", "title": "SAP Customer and Market Risk", "issuer": "SAP / openSAP", "code": "cmr1", "color": "#0a6e33", "tags": ["SAP Core", "Security", "2022"]}], "progressGaps": [{"domain": "Certification Microsoft", "priority": "Haute", "action": "PL-300 (Power BI Data Analyst)"}, {"domain": "Agentic AI", "priority": "Prioritaire", "action": "Parcours Microsoft AI Agents for Beginners"}, {"domain": "SAP BTP", "priority": "Moyenne", "action": "Parcours SAP Learning Hub"}, {"domain": "Microsoft Fabric", "priority": "Moyenne", "action": "DP-600 (Fabric Analytics Engineer)"}, {"domain": "Python applique", "priority": "Faible", "action": "Projet data science"}, {"domain": "SAP Signavio", "priority": "Faible", "action": "Badge expire -> renouvellement"}, {"domain": "Celonis pratique", "priority": "Faible", "action": "Projet process mining concret"}]};
 </script>
   <style>
@@ -13,20 +12,21 @@ const data = {"generated": "02/07/2026", "stats": {"totalFiles": 324, "totalCert
     body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,sans-serif;background:#f0f2f5;color:#1a1a2e;padding:20px}
     .container{max-width:1400px;margin:0 auto}
 
-    .stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin-bottom:16px}
-    .stat-card{background:#fff;border-radius:14px;padding:18px 16px;box-shadow:0 2px 8px rgba(0,0,0,0.06);text-align:center;cursor:pointer;transition:transform .12s,box-shadow .12s;text-decoration:none;color:inherit;display:block}
-    .stat-card:hover{transform:translateY(-2px);box-shadow:0 4px 16px rgba(0,0,0,0.1)}
-    .stat-card .icon{font-size:28px;margin-bottom:4px}
-    .stat-card .number{font-size:26px;font-weight:700}
-    .stat-card .label{font-size:12px;color:#666;margin-top:2px}
-    .stat-card .sub{font-size:10px;color:#999;margin-top:1px}
+    .header{background:linear-gradient(135deg,#1a1a2e 0%,#16213e 50%,#0f3460 100%);color:#fff;border-radius:16px;padding:20px 28px;margin-bottom:16px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+    .header h1{font-size:20px;font-weight:700}
+    .header .sub{font-size:12px;opacity:.8;margin-top:2px}
+    .header .nav a{color:#fff;text-decoration:underline;margin-left:12px;font-size:13px;opacity:.85}
+    .header .nav a:hover{opacity:1}
+    .header .nav a.active{font-weight:700;opacity:1}
 
-    /* Filter bar with slider */
-    .filter-bar{background:#fff;border-radius:12px;padding:12px 20px;box-shadow:0 2px 8px rgba(0,0,0,0.06);margin-bottom:16px}
+    .filter-bar{background:#fff;border-radius:12px;padding:12px 18px;box-shadow:0 2px 8px rgba(0,0,0,0.06);margin-bottom:16px}
     .filter-row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
-    .filter-row input[type=text]{flex:1;min-width:140px;padding:8px 12px;border:2px solid #e0e0e0;border-radius:8px;font-size:13px;outline:none}
-    .filter-row input[type=text]:focus{border-color:#0f3460}
+    .filter-row input{flex:1;min-width:140px;padding:8px 12px;border:2px solid #e0e0e0;border-radius:8px;font-size:13px;outline:none}
+    .filter-row input:focus{border-color:#0f3460}
+    .filter-row select{padding:8px 10px;border:2px solid #e0e0e0;border-radius:8px;font-size:12px;outline:none;background:#fff}
+    .filter-row label{font-size:11px;color:#555;font-weight:500}
     .filter-row .count{font-size:12px;color:#666;white-space:nowrap}
+
     .year-slider-wrap{display:flex;align-items:center;gap:10px;min-width:180px;flex:1;max-width:300px}
     .year-slider-wrap label{font-size:11px;font-weight:600;color:#555;white-space:nowrap}
     .year-slider-wrap input[type=range]{flex:1;-webkit-appearance:none;appearance:none;height:5px;background:linear-gradient(to right,#0a6e33,#3498db,#0f3460);border-radius:3px;outline:none;cursor:pointer}
@@ -34,43 +34,41 @@ const data = {"generated": "02/07/2026", "stats": {"totalFiles": 324, "totalCert
     .year-slider-wrap input[type=range]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;background:#0f3460;border:2px solid #fff;box-shadow:0 1px 3px rgba(0,0,0,0.3);cursor:pointer}
     .slider-value{min-width:42px;text-align:center;font-size:13px;font-weight:700;color:#0f3460;background:#f0f2f5;padding:2px 8px;border-radius:5px}
 
-    .charts-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:16px}
-    @media(max-width:900px){.charts-grid{grid-template-columns:1fr}}
-    .chart-card{background:#fff;border-radius:12px;padding:18px;box-shadow:0 2px 8px rgba(0,0,0,0.06)}
-    .chart-card h2{font-size:13px;font-weight:600;color:#1a1a2e;margin-bottom:10px;padding-bottom:5px;border-bottom:1px solid #eee}
-    .chart-card .chart-container{position:relative;height:260px}
-    .full-width{grid-column:1/-1}
-    .chart-error{text-align:center;padding:40px;color:#999;font-size:13px}
+    .collapse-bar{display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap}
+    .btn-collapse-all{padding:5px 14px;border-radius:8px;font-size:11px;font-weight:600;border:1.5px solid #0f3460;background:#fff;color:#0f3460;cursor:pointer;transition:all .12s}
+    .btn-collapse-all:hover{background:#0f3460;color:#fff}
 
-    .timeline{position:relative;padding:6px 0;max-height:380px;overflow-y:auto}
-    .timeline::before{content:'';position:absolute;left:18px;top:0;bottom:0;width:2px;background:#e0e0e0}
-    .timeline-item{position:relative;padding:2px 0 2px 44px;margin-bottom:8px}
-    .timeline-item::before{content:'';position:absolute;left:10px;top:6px;width:14px;height:14px;border-radius:50%;background:#0f3460;border:3px solid #e0e0e0}
-    .timeline-item .year-label{font-size:11px;color:#0f3460;font-weight:600;margin-left:-22px}
-    .timeline-item .title{font-size:12px;font-weight:500}
-    .timeline-item .issuer{font-size:10px;color:#888}
-    .timeline-header{font-weight:700;font-size:13px;color:#0f3460;padding:4px 0 4px 44px;margin-top:6px}
+    .formations-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    @media(max-width:900px){.formations-grid{grid-template-columns:1fr}}
 
-    .gaps-table{width:100%;border-collapse:collapse;font-size:12px}
-    .gaps-table th{text-align:left;padding:6px 8px;background:#f8f9fa;font-weight:600;color:#333;border-bottom:2px solid #ddd}
-    .gaps-table td{padding:6px 8px;border-bottom:1px solid #eee}
-    .priority-high{color:#e74c3c;font-weight:600}
-    .priority-medium{color:#e67e22;font-weight:600}
-    .priority-low{color:#27ae60;font-weight:600}
+    .plat-block{background:#fff;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.06);overflow:hidden}
+    .plat-header{padding:12px 16px 8px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:4px;cursor:pointer;user-select:none}
+    .plat-header:hover{background:#f8f9fa}
+    .plat-header h2{font-size:14px;font-weight:700}
+    .plat-header .stat{font-size:10px;color:#888}
+    .plat-header .toggle-icon{font-size:12px;color:#aaa;transition:transform .2s}
+    .plat-header .toggle-icon.open{transform:rotate(180deg)}
+
+    .plat-body{padding:0 16px 14px;display:block;overflow-x:auto}
+    .plat-body table{width:100%;border-collapse:collapse;font-size:11px;margin-top:6px}
+    .plat-body th{text-align:left;padding:4px 6px;font-weight:600;color:#555;border-bottom:1px solid #e0e0e0}
+    .plat-body td{padding:3px 6px;border-bottom:1px solid #f0f0f0;vertical-align:middle}
+    .plat-body tr:hover td{background:#f0f4ff}
+    .plat-body .code-badge{font-family:monospace;font-size:9px;color:#999;background:#f0f2f5;padding:1px 4px;border-radius:3px}
+
+    .progress-label{font-size:9px;padding:1px 6px;border-radius:6px;white-space:nowrap}
+    .progress-label.completed{background:#0a6e3318;color:#0a6e33}
+    .progress-label.in-progress{background:#f39c1218;color:#b87a00}
+    .progress-label.planned{background:#95a5a618;color:#666}
 
     .theme-toggle{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);color:#fff;padding:6px 14px;border-radius:8px;cursor:pointer;font-size:12px;text-decoration:none}
 .btn-refresh{display:inline-flex;align-items:center;gap:6px;padding:8px 20px;background:#0f3460;color:#fff;border:none;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;transition:background .15s;text-decoration:none}
     .btn-refresh:hover{background:#16213e}
     .btn-refresh:active{background:#0a2647}
-
+    .empty-state{text-align:center;padding:60px 20px;color:#999;font-size:14px}
     .footer{text-align:center;color:#999;font-size:11px;padding:16px 0 4px;display:flex;justify-content:center;gap:16px;align-items:center;flex-wrap:wrap}
-
-    .header{background:linear-gradient(135deg,#1a1a2e 0%,#16213e 50%,#0f3460 100%);color:#fff;border-radius:16px;padding:20px 28px;margin-bottom:16px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
-    .header h1{font-size:20px;font-weight:700}
-    .header .sub{font-size:12px;opacity:.8;margin-top:2px}
-    .header .nav a{color:#fff;text-decoration:underline;margin-left:12px;font-size:13px;opacity:.85}
-    .header .nav a:hover{opacity:1}
-    .header .nav a.active{font-weight:700;opacity:1}
+    .link-broken{opacity:0.35;text-decoration:line-through}
+    .link-fixed{color:#e74c3c!important;border-bottom:1px dashed #e74c3c}
   
 [data-theme="dark"] body{background:#1a1a2e!important;color:#eaeaea!important}
 [data-theme="dark"] .filter-bar,[data-theme="dark"] .table-wrap,[data-theme="dark"] .domain-block,[data-theme="dark"] .plat-block,[data-theme="dark"] .chart-card,[data-theme="dark"] .stat-card,[data-theme="dark"] .badge-card,[data-theme="dark"] .stats-grid .stat-card{background:#16213e!important;color:#eaeaea!important}
@@ -92,182 +90,210 @@ const data = {"generated": "02/07/2026", "stats": {"totalFiles": 324, "totalCert
 
   <div class="header">
     <div>
-      <h1>Dashboard Compétences &amp; Formations</h1>
-      <div class="sub" id="subHeader">Vault Assistants_AVE</div>
+      <h1>Catalogue des formations</h1>
+      <div class="sub" id="subHeader"></div>
     </div>
     <div class="nav" style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
-      <a href="index.html" class="active">Dashboard</a>
+      <a href="index.html">Dashboard</a>
       <a href="certifications.html">Certifications</a>
       <a href="skills.html">Compétences</a>
       <a href="badges.html">Badges SAP</a>
-      <a href="formations.html">Formations</a>
-    </div>
+      <a href="formations.html" class="active">Formations</a>
+    </div><button class="theme-toggle" onclick="var d=document.documentElement;d.getAttribute('data-theme')=='dark'?d.setAttribute('data-theme','light'):d.setAttribute('data-theme','dark')">🌓 Theme</button>
   </div>
 
-  <!-- Stats cards = navigation + indicators -->
-  <div class="stats-grid" id="statsGrid"></div>
-
-  <!-- Filter bar: year slider + text search -->
   <div class="filter-bar">
     <div class="filter-row">
-      <input type="text" id="searchInput" placeholder="Filtrer le dashboard..." oninput="renderAll()">
+      <input type="text" id="searchInput" placeholder="Rechercher..." oninput="render()">
+      <select id="platFilter" onchange="render()"><option value="">Toutes plateformes</option></select>
       <div class="year-slider-wrap">
         <label>Année</label>
-        <input type="range" id="yearSlider" min="2011" max="2026" value="2026" oninput="renderAll()">
+        <input type="range" id="yearSlider" min="2011" max="2026" value="2026" oninput="render()">
         <span class="slider-value" id="yearDisplay">Tout</span>
       </div>
+      <select id="progressFilter" onchange="render()">
+        <option value="">Toute progression</option>
+        <option value="Acquis">Acquis ✓</option>
+        <option value="Planifié">Planifié ○</option>
+      </select>
       <span class="count" id="resultCount"></span>
     </div>
   </div>
 
-  <!-- Charts -->
-  <div class="charts-grid">
-    <div class="chart-card"><h2>📡 Domaines de compétence</h2><div class="chart-container"><canvas id="radarChart"></canvas></div></div>
-    <div class="chart-card"><h2>📊 Volume par plateforme</h2><div class="chart-container"><canvas id="barChart"></canvas></div></div>
+  <div class="collapse-bar">
+    <button class="btn-collapse-all" onclick="toggleAll()">⊞ Tout ouvrir / Tout fermer</button>
   </div>
-  <div class="charts-grid">
-    <div class="chart-card"><h2>🏅 Certifications par émetteur</h2><div class="chart-container"><canvas id="donutChart"></canvas></div></div>
-    <div class="chart-card"><h2>📈 Axes de progression</h2><div style="max-height:260px;overflow-y:auto"><table class="gaps-table"><thead><tr><th>Domaine</th><th>Priorité</th><th>Action</th></tr></thead><tbody id="gapsBody"></tbody></table></div></div>
-  </div>
-  <div class="charts-grid">
-    <div class="chart-card full-width"><h2>📅 Chronologie des certifications</h2><div class="timeline" id="timeline"></div></div>
-  </div>
+
+  <div class="formations-grid" id="formationsContainer"></div>
 
   <div class="footer">
     <span>Données du profil <strong>Amaury Van Espen</strong> · <span id="footerUpdate"></span></span>
     <a href="https://github.com/AmauryVanEspen/online-resumes" target="_blank" class="btn-refresh">↻ Voir sur GitHub</a>
   </div>
-
 </div>
 
 <script>
 (function() {
-  if (typeof data === 'undefined' || !data.stats) { return; }
+  if (typeof data === 'undefined' || !data.allCertificates) {
+    document.getElementById('formationsContainer').innerHTML = '<div class="empty-state">Données non disponibles.</div>';
+    return;
+  }
 
-  var d = data, s = d.stats, sk = d.skills || {}, pl = d.platforms || {}, ci = d.certIssuers || {}, certs = d.certifications || [], gaps = d.progressGaps || [];
+  var certs = data.allCertificates;
+  var gaps = data.progressGaps || [];
+  var allCollapsed = false;
 
-  // Collect year range from certs
-  var minYear = 9999, maxYear = 0;
-  certs.forEach(function(c) { var y = parseInt(c.year,10); if (y) { if (y<minYear) minYear=y; if (y>maxYear) maxYear=y; } });
+  // Collect issuers and years
+  var issuers = [], issuerSet = {}, years = [], yearSet = {};
+  certs.forEach(function(c) {
+    if (c.issuer && !issuerSet[c.issuer]) { issuerSet[c.issuer] = true; issuers.push(c.issuer); }
+    if (c.year && !yearSet[c.year]) { yearSet[c.year] = true; years.push(c.year); }
+  });
+  issuers.sort(); years.sort();
+
+  var pSel = document.getElementById('platFilter');
+  issuers.forEach(function(i) { var o = document.createElement('option'); o.value = i; o.textContent = i; pSel.appendChild(o); });
+
+  var minYear = years.length ? parseInt(years[0],10) : 2011;
+  var maxYear = years.length ? parseInt(years[years.length-1],10) : 2026;
+
   var slider = document.getElementById('yearSlider');
-  slider.min = minYear;
-  slider.max = maxYear || 2026;
-  slider.value = maxYear || 2026;
+  slider.min = minYear; slider.max = maxYear; slider.value = maxYear;
+  var yearDisp = document.getElementById('yearDisplay');
 
-  // Build stat cards (clickable, color-coded, with emoji)
-  var statCards = [
-    { icon: '🧠', num: s.totalSkills||0, label: 'Compétences', sub: sk.levelSummary||'', link: 'skills.html', color: '#0f3460' },
-    { icon: '🏅', num: s.totalCerts||0, label: 'Certifications', sub: (ci.labels||[]).slice(0,2).join(' · '), link: 'certifications.html', color: '#0a6e33' },
-    { icon: '📚', num: (s.totalFormations||0).toLocaleString(), label: 'Formations & Badges', sub: pl.platSummary ? pl.platSummary.split(' | ').slice(0,2).join(' · ') : '', link: 'formations.html', color: '#9b59b6' },
-    { icon: '📗', num: '—', label: 'Cours SAP', sub: '', link: 'badges.html', color: '#1abc9c' },
-    { icon: '📡', num: (sk.labels||[]).length, label: 'Domaines', sub: 'couvert au radar', link: 'skills.html', color: '#3498db' },
-    { icon: '📁', num: s.totalFiles||0, label: 'Fichiers vault', sub: 'mis à jour ' + (d.generated||''), link: '', color: '#95a5a6' }
-  ];
-  // SAP count from certIssuers
-  if (ci.labels) { var sapIdx = ci.labels.indexOf('SAP/openSAP'); if (sapIdx >= 0) statCards[3].num = ci.counts[sapIdx]; }
+  // Progress: all certs are "Acquis" by default (completed)
+  var progressMap = {};
+  certs.forEach(function(c) { progressMap[c.title + '|' + c.issuer] = 'Acquis'; });
 
-  var grid = document.getElementById('statsGrid');
-  statCards.forEach(function(card) {
-    var a = document.createElement(card.link ? 'a' : 'div');
-    if (card.link) { a.href = card.link; a.target = '_self'; }
-    a.className = 'stat-card';
-    a.style.borderTop = '3px solid ' + card.color;
-    a.innerHTML = '<div class="icon">' + card.icon + '</div><div class="number">' + card.num + '</div><div class="label">' + card.label + '</div>' + (card.sub ? '<div class="sub">' + card.sub + '</div>' : '');
-    grid.appendChild(a);
+  // Add planned items from progressGaps (only unique ones not already in certs)
+  gaps.forEach(function(g) {
+    var key = g.action + '|Recommandation';
+    if (!progressMap[key]) progressMap[key] = 'Planifié';
   });
 
-  // Year slider display
-  var yearDisplay = document.getElementById('yearDisplay');
-  slider.oninput = function() {
-    if (parseInt(this.value,10) >= maxYear) { yearDisplay.textContent = 'Tout'; }
-    else { yearDisplay.textContent = minYear + '–' + this.value; }
-    renderAll();
+  var issuerColors = { 'SAP':'#0a6e33','SAP / openSAP':'#0a6e33','Skillsoft':'#6c5ce7','Pearson':'#00b894','ETS Global':'#e74c3c','DataCamp':'#e17055','edX':'#02262a','UVHC - Université de Valenciennes et du Hainaut-Cambrésis':'#636e72','European Computer Driving Licence Foundation':'#fdcb6e' };
+  var issuerOrder = ['SAP','SAP / openSAP','DataCamp','Skillsoft','Pearson','edX','UVHC - Université de Valenciennes et du Hainaut-Cambrésis','ETS Global','European Computer Driving Licence Foundation','Recommandation'];
+
+  function googleLink(label) {
+    return 'https://www.google.com/search?q=' + encodeURIComponent(label) + '&btnI=1';
+  }
+
+  window.toggleAll = function() {
+    allCollapsed = !allCollapsed;
+    document.querySelectorAll('.plat-body').forEach(function(b) { b.style.display = allCollapsed ? 'none' : 'block'; });
+    document.querySelectorAll('.toggle-icon').forEach(function(i) { i.classList.toggle('open', !allCollapsed); });
   };
 
-  function filterByYear(items, yearField) {
+  window.render = function() {
+    var q = document.getElementById('searchInput').value.toLowerCase();
+    var plat = document.getElementById('platFilter').value;
     var sv = parseInt(slider.value, 10);
-    if (!sv || sv >= maxYear) return items;
-    return items.filter(function(i) { var y = parseInt(i[yearField], 10); return !y || y <= sv; });
-  }
+    var prog = document.getElementById('progressFilter').value;
+    yearDisp.textContent = (sv >= maxYear) ? 'Tout' : (minYear + '–' + sv);
 
-  // Charts — load Chart.js dynamically
-  function loadChartJS(cb) { cb(); }
-    var sc = document.createElement('script');
-    sc.src = 'https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js';
-    sc.onload = cb;
-    sc.onerror = function() { document.querySelectorAll('.chart-container').forEach(function(el) { el.innerHTML = '<div class="chart-error">⚠️ Chart.js non chargé</div>'; }); };
-    document.head.appendChild(sc);
-  }
-
-  window.renderAll = function() {
-    document.getElementById('footerUpdate').textContent = 'Dernière màj : ' + (d.generated || '?');
-
-    // Timeline
-    var timeline = document.getElementById('timeline');
-    timeline.innerHTML = '';
-    var filteredCerts = filterByYear(certs, 'year');
-    var curYear = '';
-    filteredCerts.forEach(function(c) {
-      if (c.year !== curYear) { curYear = c.year; var h = document.createElement('div'); h.className = 'timeline-header'; h.textContent = curYear; timeline.appendChild(h); }
-      var item = document.createElement('div'); item.className = 'timeline-item';
-      item.innerHTML = '<div class="title">' + (c.cert||c.title||'') + '</div><div class="issuer">' + (c.issuer||'') + '</div>';
-      timeline.appendChild(item);
+    // Build item list: certs + planned recommendations
+    var items = certs.map(function(c) {
+      return { year: c.year, title: c.title, issuer: c.issuer, url: c.url, code: c.code,
+        status: progressMap[c.title + '|' + c.issuer] || 'Acquis', type: 'cert' };
     });
-
-    // Gaps
-    var gapsBody = document.getElementById('gapsBody');
-    gapsBody.innerHTML = '';
+    // Add planned items from gaps
     gaps.forEach(function(g) {
-      var cls = g.priority === 'Prioritaire' ? 'priority-high' : g.priority === 'Haute' || g.priority === 'Moyenne' ? 'priority-medium' : 'priority-low';
-      var tr = document.createElement('tr');
-      tr.innerHTML = '<td>' + (g.domain||'') + '</td><td class="' + cls + '">' + (g.priority||'') + '</td><td>' + (g.action||'') + '</td>';
-      gapsBody.appendChild(tr);
+      var key = g.action + '|Recommandation';
+      if (progressMap[key] === 'Planifié') {
+        items.push({ year: '', title: g.action, issuer: 'Recommandation', url: '',
+          code: '', status: 'Planifié', type: 'planned', domain: g.domain, priority: g.priority });
+      }
     });
 
-    document.getElementById('resultCount').textContent = filteredCerts.length + ' certs affichés';
+    var filtered = items.filter(function(c) {
+      if (plat && c.issuer !== plat) return false;
+      if (prog && c.status !== prog) return false;
+      var cy = parseInt(c.year, 10);
+      if (!isNaN(cy) && cy > sv) return false;
+      if (q) {
+        var h = (c.title + ' ' + c.issuer + ' ' + c.year + ' ' + (c.code||'') + ' ' + (c.url||'')).toLowerCase();
+        if (h.indexOf(q) < 0) return false;
+      }
+      return true;
+    });
+
+    document.getElementById('resultCount').textContent = filtered.length + ' / ' + items.length;
+    document.getElementById('subHeader').textContent = items.length + ' formations (' + certs.length + ' acquises, ' + gaps.length + ' planifiées)';
+    document.getElementById('footerUpdate').textContent = 'Dernière màj : ' + (data.generated || '?');
+
+    var container = document.getElementById('formationsContainer');
+    container.innerHTML = '';
+    if (!filtered.length) { container.innerHTML = '<div class="empty-state">Aucune formation trouvée</div>'; return; }
+
+    // Group by issuer
+    var byIssuer = {};
+    filtered.forEach(function(c) {
+      var i = c.issuer || 'Inconnu';
+      if (!byIssuer[i]) byIssuer[i] = [];
+      byIssuer[i].push(c);
+    });
+
+    var sortedIssuers = Object.keys(byIssuer).sort(function(a,b) {
+      var ai = issuerOrder.indexOf(a), bi = issuerOrder.indexOf(b);
+      return (ai === -1 ? 99 : ai) - (bi === -1 ? 99 : bi);
+    });
+
+    sortedIssuers.forEach(function(iss) {
+      var items2 = byIssuer[iss].sort(function(a,b) { return ((b.year||'') > (a.year||'')) ? 1 : -1; });
+      var color = issuerColors[iss] || '#95a5a6';
+      var withUrl = items2.filter(function(c) { return c.url && c.url.length > 5; }).length;
+      var acquired = items2.filter(function(c) { return c.status === 'Acquis'; }).length;
+      var pct = items2.length ? Math.round(acquired / items2.length * 100) : 0;
+
+      var block = document.createElement('div');
+      block.className = 'plat-block';
+
+      var tableHtml = '<table><thead><tr><th style="width:35px;">Année</th><th>Formation</th><th style="width:65px;">Progression</th></tr></thead><tbody>';
+      items2.forEach(function(c) {
+        var sClass = c.status === 'Acquis' ? 'completed' : (c.status === 'En cours' ? 'in-progress' : 'planned');
+        var linkUrl, linkTitle;
+        if (c.type === 'planned') {
+          linkUrl = googleLink(c.title);
+          linkTitle = "Google J'ai de la chance";
+        } else if (c.url && c.url.length > 5) {
+          linkUrl = c.url;
+          linkTitle = 'Lien original';
+        } else {
+          linkUrl = googleLink(c.title + ' ' + c.issuer);
+          linkTitle = 'Google';
+        }
+
+        tableHtml += '<tr>' +
+          '<td style="font-weight:600;color:' + color + ';font-size:11px;">' + (c.year || '—') + '</td>' +
+          '<td>' + (c.code ? '<span class="code-badge">' + c.code + '</span> ' : '') +
+            '<a href="' + linkUrl + '" target="_blank" title="' + linkTitle + '" style="font-size:12px;color:#1a1a2e;text-decoration:none;border-bottom:1px dotted #bbb;" data-verify="1" data-type="course" data-title="' + c.title + '" data-issuer="' + c.issuer + '">' + c.title + '</a>' +
+            (c.type === 'planned' ? ' <span style="font-size:10px;color:#e65100;">(Planifié)</span>' : '') + '</td>' +
+          '<td><div style="display:flex;align-items:center;gap:4px;">' +
+            '<div style="flex:1;height:3px;background:#eee;border-radius:2px;overflow:hidden;">' +
+            '<div style="height:3px;width:' + (c.status === 'Acquis' ? 100 : c.status === 'En cours' ? 50 : 0) + '%;background:' + (c.status === 'Acquis' ? '#0a6e33' : c.status === 'En cours' ? '#f39c12' : '#95a5a6') + ';border-radius:2px;"></div></div>' +
+            '<span class="progress-label ' + sClass + '">' + (c.status === 'Acquis' ? '✓' : c.status === 'En cours' ? '◷' : '○') + '</span>' +
+          '</div></td></tr>';
+      });
+      tableHtml += '</tbody></table>';
+
+      block.innerHTML =
+        '<div class="plat-header" onclick="toggleOne(this)">' +
+          '<div><h2 style="color:'+color+'">'+iss+'</h2><div class="stat">'+items2.length+' formations · '+withUrl+' liens · <strong>'+pct+'%</strong> acquises</div></div>' +
+          '<span class="toggle-icon open">▼</span></div>' +
+        '<div class="plat-body">'+tableHtml+'</div>';
+      container.appendChild(block);
+    });
+  }
+
+  window.toggleOne = function(header) {
+    var body = header.nextElementSibling;
+    var icon = header.querySelector('.toggle-icon');
+    if (!body) return;
+    body.style.display = body.style.display === 'none' ? 'block' : 'none';
+    if (icon) icon.classList.toggle('open');
   };
 
-  loadChartJS(function() {
-    // Radar
-    if (sk.labels && sk.labels.length) {
-      new Chart(document.getElementById('radarChart'), {
-        type: 'radar',
-        data: {
-          labels: sk.labels,
-          datasets: [{
-            label: 'Actuel',
-            data: sk.current || [],
-            backgroundColor: 'rgba(15,52,96,0.15)',
-            borderColor: '#0f3460', borderWidth: 2, pointBackgroundColor: '#0f3460', pointRadius: 4
-          }, {
-            label: 'Cible',
-            data: sk.target || [],
-            backgroundColor: 'rgba(231,76,60,0.05)',
-            borderColor: '#e74c3c', borderWidth: 2, borderDash: [5,5], pointBackgroundColor: '#e74c3c', pointRadius: 3
-          }]
-        },
-        options: { responsive: true, maintainAspectRatio: false, scales: { r: { beginAtZero: true, max: 10, ticks: { stepSize: 2 } } }, plugins: { legend: { position: 'bottom', labels: { font: { size: 11 } } } } }
-      });
-    }
-    // Bar
-    if (pl.labels && pl.labels.length) {
-      new Chart(document.getElementById('barChart'), {
-        type: 'bar',
-        data: { labels: pl.labels, datasets: [{ label: 'Volume', data: pl.volumes || [], backgroundColor: pl.colors || [], borderRadius: 4 }] },
-        options: { responsive: true, maintainAspectRatio: false, indexAxis: 'y', scales: { x: { beginAtZero: true } }, plugins: { legend: { display: false } } }
-      });
-    }
-    // Donut
-    if (ci.labels && ci.labels.length) {
-      new Chart(document.getElementById('donutChart'), {
-        type: 'doughnut',
-        data: { labels: ci.labels, datasets: [{ data: ci.counts || [], backgroundColor: ci.colors || [], borderWidth: 2, borderColor: '#fff' }] },
-        options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'right', labels: { font: { size: 10 }, padding: 8, boxWidth: 12 } } } }
-      });
-    }
-  });
-
-  renderAll();
+  render();
 })();
 </script>
 </body>
