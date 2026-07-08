@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Suivi des activités – OpenUI5</title>
+
+<script id="sap-ui-bootstrap"
+  src="https://sdk.openui5.org/1.120.43/resources/sap-ui-core.js"
+  data-sap-ui-theme="sap_horizon"
+  data-sap-ui-libs="sap.m"
+  data-sap-ui-async="true"
+  data-sap-ui-frameOptions="trusted">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+
+<style>
+.sapUiBody { margin: 0; }
+body { background: var(--sapBackgroundColor); }
+.metric-tile { text-align: center; padding: 1rem 1.5rem; border-radius: var(--sapElement_BorderCornerRadius); background: var(--sapTile_Background); box-shadow: var(--sapContent_Shadow0); flex: 1; min-width: 120px; }
+.metric-tile .num { font-size: 2.2rem; font-weight: 700; color: var(--sapHighlightColor); }
+.metric-tile .lbl { font-size: 0.85rem; color: var(--sapContent_LabelColor); }
+.chart-canvas { height: 180px !important; width: 100% !important; max-height: 180px; }
+.chart-canvas-wrapper { height: 180px; overflow: hidden; }
+.chart-row { display: flex; gap: 16px; flex-wrap: wrap; margin: 12px 0; }
+.chart-row > div { flex: 1; min-width: 200px; background: var(--sapTile_Background); border-radius: var(--sapElement_BorderCornerRadius); padding: 12px 12px 4px 12px; box-shadow: var(--sapContent_Shadow0); }
+.chart-row h4 { margin: 0 0 6px 0; font-size: 0.85rem; color: var(--sapTextColor); font-weight: 600; }
+.summary-strip { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 12px; }
+.summary-strip > div { flex: 1; min-width: 120px; text-align: center; padding: 10px; background: var(--sapTile_Background); border-radius: var(--sapElement_BorderCornerRadius); box-shadow: var(--sapContent_Shadow0); }
+.summary-strip .num { font-size: 1.5rem; font-weight: 700; color: var(--sapHighlightColor); }
+.summary-strip .lbl { font-size: 0.75rem; color: var(--sapContent_LabelColor); }
+.chart-row { display: flex; gap: 16px; flex-wrap: wrap; }
+.chart-row > div { flex: 1; min-width: 240px; background: var(--sapTile_Background); border-radius: var(--sapElement_BorderCornerRadius); padding: 12px; box-shadow: var(--sapContent_Shadow0); }
+.chart-row h4 { margin: 0 0 8px 0; font-size: 0.9rem; color: var(--sapTextColor); }
+.footer-text { text-align: center; padding: 1.5rem; font-size: 0.85rem; color: var(--sapContent_LabelColor); }
+.project-badge-IASSIT { color: #4a56e8; font-weight: 600; }
+.project-badge-AVEPERSO { color: #e67e22; font-weight: 600; }
+</style>
+</head>
+<body class="sapUiBody">
+<div id="content"></div>
+
+<script id="mainView" type="sapui5/xmlview">
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:core="sap.ui.core"
+  height="100%" displayBlock="true">
+  <Shell>
+    <App>
+      <Page id="mainPage" showNavButton="false">
+        <customHeader>
+          <Toolbar height="3.5rem">
+            <core:Icon src="sap-icon://business-objects-experience" size="1.5rem" class="sapUiSmallMarginBegin"/>
+            <Title text="Dashboard IASSIT" titleStyle="H4"/>
+            <ToolbarSpacer/>
+            <Button id="themeBtn" icon="sap-icon://light-mode" tooltip="Mode clair/sombre"/>
+            <Button id="pdfBtn" icon="sap-icon://pdf-attachment" tooltip="Exporter PDF"/>
+          </Toolbar>
+        </customHeader>
+        <content>
+          <IconTabBar id="tabBar" expanded="{device>/isNoPhone}" class="sapUiResponsiveContentPadding">
+            <items>
+              <IconTabFilter id="tabOverview" text="Vue d'ensemble" icon="sap-icon://business-objects-experience">
+                <FlexBox direction="Column" class="sapUiSmallMargin">
+                  <FlexBox id="metricsRow" direction="Row" class="sapUiMediumMarginBottom"/>
+                  <HBox id="summaryStrip" class="summary-strip"/>
+                  <HBox id="chartsRow" class="chart-row"/>
+                  <HBox id="chartsRow2" class="chart-row"/>
+                </FlexBox>
+              </IconTabFilter>
+              <IconTabFilter id="tabDetail" text="Détail" icon="sap-icon://table-view">
+                <Panel headerText="Détail des tickets" expandable="false" class="sapUiNoMargin">
+                  <Toolbar id="filterToolbar" design="Transparent">
+                    <SearchField id="searchField" placeholder="Rechercher…" width="14rem"/>
+                    <Select id="statusFilter" forceSelection="false">
+                      <core:Item key="" text="Tous statuts"/>
+                      <core:Item key="A faire" text="À faire"/>
+                      <core:Item key="Terminé" text="Terminé"/>
+                    </Select>
+                    <Select id="priorityFilter" forceSelection="false">
+                      <core:Item key="" text="Toutes priorités"/>
+                      <core:Item key="High" text="High"/>
+                      <core:Item key="Medium" text="Medium"/>
+                    </Select>
+                    <Select id="typeFilter" forceSelection="false" width="8rem">
+                      <core:Item key="" text="Tous types"/>
+                    </Select>
+                    <Select id="assigneeFilter" forceSelection="false"/>
+                    <Select id="projectSelector" forceSelection="false">
+                      <core:Item key="TOUS" text="Tous projets"/>
+                      <core:Item key="IASSIT" text="IASSIT"/>
+                      <core:Item key="AVEPERSO" text="AVEPERSO"/>
+                    </Select>
+                    <Button id="resetBtn" icon="sap-icon://reset" tooltip="Réinitialiser tous les filtres"/>
+                    <ToolbarSpacer/>
+                    <Text id="countInfo" text=""/>
+                  </Toolbar>
+                  <Table id="ticketsTable" growing="true" growingThreshold="10"
+                    noDataText="Aucun ticket trouvé" mode="SingleSelectMaster">
+                    <columns>
+                      <Column sortProperty="key" width="7rem"><Text text="Ticket"/></Column>
+                      <Column sortProperty="summary" width="auto"><Text text="Résumé"/></Column>
+                      <Column sortProperty="status" width="7rem"><Text text="Statut"/></Column>
+                      <Column sortProperty="priority" width="6rem"><Text text="Priorité"/></Column>
+                      <Column sortProperty="type" width="7rem"><Text text="Type"/></Column>
+                      <Column sortProperty="assignee" width="10rem"><Text text="Assigné à"/></Column>
+                      <Column sortProperty="project" width="6rem"><Text text="Projet"/></Column>
+                      <Column sortProperty="hours" width="5rem"><Text text="Temps"/></Column>
+                      <Column sortProperty="due" width="7rem"><Text text="Échéance"/></Column>
+                    </columns>
+                  </Table>
+                </Panel>
+              </IconTabFilter>
+            </items>
+          </IconTabBar>
+          <Text text="Dashboard généré automatiquement par IASSIT Automation — Données Jira: IASSIT, AVEPERSO" class="footer-text"/>
+        </content>
+      </Page>
+    </App>
+  </Shell>
+</mvc:View>
+</script>
+
+<script>
+sap.ui.getCore().attachInit(function() {
+  "use strict";
+
+  sap.ui.require([
+    "sap/ui/model/json/JSONModel",
+    "sap/ui/core/mvc/XMLView",
+    "sap/m/Dialog",
+    "sap/m/Button",
+    "sap/m/Text",
+    "sap/m/FlexBox",
+    "sap/m/ProgressIndicator",
+    "sap/m/ObjectStatus",
+    "sap/m/ColumnListItem",
+    "sap/m/Select",
+    "sap/m/SearchField",
+    "sap/ui/core/Item",
+    "sap/ui/core/Icon"
+  ], function(JSONModel, XMLView, Dialog, MButton, MText, FlexBox, ProgressIndicator, ObjectStatus, ColumnListItem, Select, SearchField, CoreItem, CoreIcon) {
+
+    // ===================== DONNÉES =====================
+    var ticketsRaw = [
+      { key:'IASSIT-32', summary:'Extraction template HTML natif en fichier .tpl séparé + test 40/40', status:'A faire', priority:'Medium', type:'Sous-tâche', project:'IASSIT', created:'2026-07-07', assignee:'Amaury Van Espen', hours:0.0, due:null },
+      { key:'IASSIT-31', summary:'Creation skill meta-search - composante recherche multi-moteurs VAS-IC (LeSCAnning)', status:'A faire', priority:'High', type:'Tâche', project:'IASSIT', created:'2026-07-07', assignee:'Amaury Van Espen', hours:0.0, due:null },
+      { key:'IASSIT-30', summary:'[AGENT] CVE Auditor - Securite dependances', status:'A faire', priority:'High', type:'Tâche', project:'IASSIT', created:'2026-07-07', assignee:'Amaury Van Espen', hours:0.0, due:null },
+      { key:'IASSIT-29', summary:'[AGENT] AFEST - Conception pedagogique', status:'A faire', priority:'High', type:'Tâche', project:'IASSIT', created:'2026-07-07', assignee:'Amaury Van Espen', hours:0.0, due:null },
+      { key:'IASSIT-28', summary:'Refonte dashboards web: Chart.js, IconTabBar, template .tpl, multi-projets', status:'A faire', priority:'Medium', type:'Tâche', project:'IASSIT', created:'2026-07-07', assignee:'Amaury Van Espen', hours:0.0, due:null },
+      { key:'IASSIT-27', summary:'Google Contacts: gestion des contacts, labels et VCARD', status:'A faire', priority:'High', type:'Tâche', project:'IASSIT', created:'2026-07-06', assignee:'', hours:0.0, due:null },
+      { key:'IASSIT-25', summary:'Extraire les certifications edX', status:'A faire', priority:'High', type:'Tâche', project:'IASSIT', created:'2026-07-06', assignee:'Amaury Van Espen', hours:0.0, due:null },
+      { key:'IASSIT-24', summary:'Capitalisation: skills autonomes + nettoyage + documentation', status:'A faire', priority:'Medium', type:'Sous-tâche', project:'IASSIT', created:'2026-07-06', assignee:'Amaury Van Espen', hours:0.0, due:null },
+      { key:'IASSIT-23', summary:'Corrections bugs & configuration générique BASE_URL', status:'A faire', priority:'Medium', type:'Sous-tâche', project:'IASSIT', created:'2026-07-06', assignee:'Amaury Van Espen', hours:0.0, due:null },
+      { key:'IASSIT-22', summary:'Dashboard OpenUI5 - Single-file CDN + binding + liens Jira', status:'A faire', priority:'Medium', type:'Sous-tâche', project:'IASSIT', created:'2026-07-06', assignee:'Amaury Van Espen', hours:0.0, due:null },
+      { key:'IASSIT-21', summary:'Dashboard HTML natif - Template enrichi + liens Jira', status:'A faire', priority:'Medium', type:'Sous-tâche', project:'IASSIT', created:'2026-07-06', assignee:'Amaury Van Espen', hours:0.0, due:null },
+      { key:'IASSIT-20', summary:'MCP: Connecter JSON Resume Registry MCP (@jsonresume/mcp)', status:'A faire', priority:'Medium', type:'Sous-tâche', project:'IASSIT', created:'2026-07-05', assignee:'Amaury Van Espen', hours:0.0, due:null },
+      { key:'IASSIT-19', summary:'MCP: Connecter WhatsApp MCP (delltrak/wamcp)', status:'A faire', priority:'Medium', type:'Sous-tâche', project:'IASSIT', created:'2026-07-05', assignee:'Amaury Van Espen', hours:2.0, due:null },
+      { key:'IASSIT-18', summary:'MCP: Connecter Jira MCP (atlassian-mcp-server)', status:'A faire', priority:'Medium', type:'Sous-tâche', project:'IASSIT', created:'2026-07-05', assignee:'Amaury Van Espen', hours:0.0, due:null },
+      { key:'IASSIT-17', summary:'MCP: Connecter GitHub Connector (Cloud MCP OAuth)', status:'A faire', priority:'Medium', type:'Sous-tâche', project:'IASSIT', created:'2026-07-05', assignee:'Amaury Van Espen', hours:0.0, due:null },
+      { key:'IASSIT-16', summary:'MCP: Connexion des connecteurs externes (GitHub, Jira, WhatsApp, JSON Resume)', status:'A faire', priority:'High', type:'Tâche', project:'IASSIT', created:'2026-07-05', assignee:'Amaury Van Espen', hours:0.0, due:null },
+      { key:'IASSIT-15', summary:'Agent: Session Auditor & Cleaner - Audit et nettoyage des sessions OpenWork', status:'A faire', priority:'Medium', type:'Sous-tâche', project:'IASSIT', created:'2026-07-05', assignee:'Amaury Van Espen', hours:0.0, due:null },
+      { key:'IASSIT-14', summary:'Cost: Implémenter estimation coûts OpenCode + Skill Cost Estimator', status:'A faire', priority:'High', type:'Tâche', project:'IASSIT', created:'2026-07-04', assignee:'Amaury Van Espen', hours:0.0, due:'2026-07-15' },
+      { key:'IASSIT-12', summary:'Revue globale et mise en oeuvre reporting', status:'Terminé', priority:'Medium', type:'Tâche', project:'IASSIT', created:'2026-07-03', assignee:'Amaury Van Espen', hours:4.0, due:null },
+      { key:'IASSIT-11', summary:'Documentation Confluence: Bonnes pratiques et intégration Jira', status:'A faire', priority:'Medium', type:'Tâche', project:'IASSIT', created:'2026-07-03', assignee:'', hours:2.0, due:'2026-07-15' },
+      { key:'IASSIT-10', summary:'Formation des utilisateurs et documentation', status:'A faire', priority:'Medium', type:'Sous-tâche', project:'IASSIT', created:'2026-07-03', assignee:'', hours:0.0, due:'2026-07-20' },
+      { key:'IASSIT-9', summary:'Automatisation des synchronisations périodiques', status:'A faire', priority:'High', type:'Sous-tâche', project:'IASSIT', created:'2026-07-03', assignee:'', hours:0.0, due:'2026-07-18' },
+      { key:'IASSIT-8', summary:'Mise en place des validations et règles de gestion', status:'A faire', priority:'Medium', type:'Sous-tâche', project:'IASSIT', created:'2026-07-03', assignee:'', hours:0.0, due:'2026-07-14' },
+      { key:'IASSIT-7', summary:'Création des templates réutilisables', status:'A faire', priority:'High', type:'Sous-tâche', project:'IASSIT', created:'2026-07-03', assignee:'', hours:0.0, due:'2026-07-12' },
+      { key:'IASSIT-6', summary:'Tests des agents et validation des fonctionnalités', status:'A faire', priority:'High', type:'Sous-tâche', project:'IASSIT', created:'2026-07-03', assignee:'', hours:0.0, due:'2026-07-10' },
+      { key:'IASSIT-5', summary:'Architecture Agents Jira/Confluence/OKR - Résumé du projet', status:'A faire', priority:'High', type:'Tâche', project:'IASSIT', created:'2026-07-03', assignee:'Amaury Van Espen', hours:6.0, due:'2026-07-15' },
+      { key:'IASSIT-4', summary:'Lister les fonctions et actions', status:'Terminé', priority:'High', type:'Tâche', project:'IASSIT', created:'2026-07-03', assignee:'Amaury Van Espen', hours:13.5, due:'2026-07-03' },
+      { key:'IASSIT-3', summary:'Integration Confluence AISSIT: Pages et contenu markdown', status:'A faire', priority:'Medium', type:'Tâche', project:'IASSIT', created:'2026-07-03', assignee:'', hours:4.0, due:'2026-07-15' },
+      { key:'IASSIT-2', summary:'OKR ARD-O-2: Maitriser l\'API Jira IASSIT', status:'A faire', priority:'Medium', type:'Tâche', project:'IASSIT', created:'2026-07-03', assignee:'', hours:3.0, due:null },
+      { key:'IASSIT-1', summary:'Initialisation Jira Assist', status:'A faire', priority:'Medium', type:'Tâche', project:'IASSIT', created:'2026-07-03', assignee:'Amaury Van Espen', hours:2.8, due:null },
+      { key:'AVEPERSO-6', summary:'[SUIVI] Mettre a jour le markdown Obsidian consolide', status:'A faire', priority:'Medium', type:'Tâche', project:'AVEPERSO', created:'2026-07-06', assignee:'Amaury Van Espen', hours:0.0, due:null },
+      { key:'AVEPERSO-5', summary:'[CERTIFICAT] Recuperer les certificats OpenClassrooms', status:'A faire', priority:'Medium', type:'Tâche', project:'AVEPERSO', created:'2026-07-06', assignee:'Amaury Van Espen', hours:0.0, due:null },
+      { key:'AVEPERSO-4', summary:'[PDF] Telecharger les 3 attestations FUN-MOOC', status:'A faire', priority:'Medium', type:'Tâche', project:'AVEPERSO', created:'2026-07-06', assignee:'Amaury Van Espen', hours:0.0, due:null },
+      { key:'AVEPERSO-3', summary:'[EXTRACTION] Extraire les certifications LinkedIn Learning', status:'A faire', priority:'High', type:'Tâche', project:'AVEPERSO', created:'2026-07-06', assignee:'Amaury Van Espen', hours:0.0, due:null },
+      { key:'AVEPERSO-2', summary:'[EXTRACTION] Extraire les certifications DataCamp', status:'A faire', priority:'High', type:'Tâche', project:'AVEPERSO', created:'2026-07-06', assignee:'Amaury Van Espen', hours:0.0, due:null },
+      { key:'AVEPERSO-1', summary:'[EXTRACTION] Extraire les certifications edX', status:'A faire', priority:'High', type:'Tâche', project:'AVEPERSO', created:'2026-07-06', assignee:'Amaury Van Espen', hours:0.0, due:null }
+    ];
+
+    // Enrich data
+    var doneCount = 0, todoCount = 0, totalHours = 0;
+    var statusCount = {}, priorityCount = {};
+    var assigneeSet = {};
+    ticketsRaw.forEach(function(t) {
+      if (t.status === 'Terminé') doneCount++; else todoCount++;
+      totalHours += t.hours;
+      statusCount[t.status] = (statusCount[t.status] || 0) + 1;
+      priorityCount[t.priority] = (priorityCount[t.priority] || 0) + 1;
+      var a = t.assignee || 'Non assigné';
+      assigneeSet[a] = true;
+      t._hoursDisplay = t.hours + 'h';
+      t._dueDisplay = t.due || '—';
+      t._assigneeDisplay = a;
+      t._project = t.project;
+      t._ticketUrl = 'https://alterna-rd.atlassian.net/browse/' + t.key;
+      t._assigneeUrl = a !== 'Non assigné' ? 'https://alterna-rd.atlassian.net/issues/?jql=assignee%20%3D%20' + encodeURIComponent(a) : '';
+    });
+
+    var maxStatus = Math.max.apply(null, Object.values(statusCount));
+    var maxPriority = Math.max.apply(null, Object.values(priorityCount));
+
+    // ===================== CRÉATION DE LA VUE =====================
+    var viewContent = document.getElementById('mainView').textContent;
+    XMLView.create({ definition: viewContent }).then(function(oView) {
+      oView.placeAt('content');
+
+      // ---- Model ----
+      var oModel = new JSONModel({ tickets: ticketsRaw });
+      oView.setModel(oModel);
+      var oTable = oView.byId('ticketsTable');
+
+      // ---- Métriques ----
+      var metricsData = [
+        { icon: 'sap-icon://lead', value: ticketsRaw.length, label: 'Total Tickets' },
+        { icon: 'sap-icon://time-account', value: totalHours.toFixed(1) + 'h', label: 'Temps Total' },
+        { icon: 'sap-icon://accept', value: doneCount, label: 'Terminés' },
+        { icon: 'sap-icon://pending', value: todoCount, label: 'À faire' }
+      ];
+      var metricsRow = oView.byId('metricsRow');
+      metricsData.forEach(function(m) {
+        var numText = new MText({ text: String(m.value) });
+        var lblText = new MText({ text: m.label });
+        numText.addStyleClass('num');
+        lblText.addStyleClass('lbl');
+        var vbox = new FlexBox({ direction: 'Column', alignItems: 'Center', items: [
+          new CoreIcon({ src: m.icon, size: '1.3rem' }).addStyleClass('sapUiSmallMarginBottom'),
+          numText,
+          lblText
+        ]});
+        var tile = new FlexBox({ direction: 'Row', items: [vbox] });
+        tile.addStyleClass('metric-tile');
+        metricsRow.addItem(tile);
+      });
+
+      // ---- Summary Strip ----
+      (function renderSummary() {
+        var strip = oView.byId('summaryStrip');
+        if (!strip) return;
+        var dom = strip.getDomRef();
+        if (!dom) { setTimeout(renderSummary, 200); return; }
+        var types = {};
+        ticketsRaw.forEach(function(t) { if (t.type) types[t.type] = (types[t.type] || 0) + 1; });
+        var typeStats = Object.keys(types).sort().map(function(k) { return k + ': ' + types[k]; }).join(' · ');
+        var assignees = {};
+        ticketsRaw.forEach(function(t) { var a = t.assignee || 'Non assigné'; assignees[a] = (assignees[a] || 0) + 1; });
+        var top = Object.keys(assignees).sort(function(a,b) { return assignees[b] - assignees[a]; })[0];
+        var avgH = totalHours > 0 ? (totalHours / ticketsRaw.length).toFixed(1) : '0.0';
+        dom.innerHTML =
+          '<div><div class="num">' + Object.keys(types).length + '</div><div class="lbl">Types</div></div>' +
+          '<div><div class="num">' + doneCount + '/' + ticketsRaw.length + '</div><div class="lbl">Terminés</div></div>' +
+          '<div><div class="num">' + avgH + 'h</div><div class="lbl">Moy. / ticket</div></div>' +
+          '<div><div class="num">' + (top || 'N/A') + '</div><div class="lbl">Top assigné</div></div>';
+      })();
+
+      // ---- Chart.js : graphiques ----
+      function renderCharts() {
+        var rowControl = oView.byId('chartsRow');
+        if (!rowControl) return;
+        var row = rowControl.getDomRef();
+        if (!row) { setTimeout(renderCharts, 200); return; }
+        row.innerHTML = '';
+        var row2Control = oView.byId('chartsRow2');
+        var row2 = row2Control ? row2Control.getDomRef() : null;
+        if (row2) row2.innerHTML = '';
+
+        function createCard(title, canvasId, isWide) {
+          var container = isWide && row2 ? row2 : row;
+          var card = document.createElement('div');
+          card.innerHTML = '<h4>' + title + '</h4><div class="chart-canvas-wrapper"><canvas id="' + canvasId + '" class="chart-canvas"></canvas></div>';
+          container.appendChild(card);
+          return document.getElementById(canvasId);
+        }
+
+        // Donut : Statut
+        var stCtx = createCard('Répartition par statut', 'chartStatus');
+        new Chart(stCtx, {
+          type: 'doughnut',
+          data: {
+            labels: Object.keys(statusCount),
+            datasets: [{
+              data: Object.values(statusCount),
+              backgroundColor: ['#ffb067', '#9eaaff', '#81c784'],
+              borderWidth: 0
+            }]
+          },
+          options: { responsive: true, maintainAspectRatio: true, plugins: { legend: { position: 'bottom', labels: { boxWidth: 12, padding: 8 } } } }
+        });
+
+        // Donut : Priorité
+        var prCtx = createCard('Répartition par priorité', 'chartPriority');
+        new Chart(prCtx, {
+          type: 'doughnut',
+          data: {
+            labels: Object.keys(priorityCount),
+            datasets: [{
+              data: Object.values(priorityCount),
+              backgroundColor: ['#ff8a80', '#ffd54f', '#81c784'],
+              borderWidth: 0
+            }]
+          },
+          options: { responsive: true, maintainAspectRatio: true, plugins: { legend: { position: 'bottom', labels: { boxWidth: 12, padding: 8 } } } }
+        });
+
+        // Barres : Statut
+        var stBarCtx = createCard('Tickets par statut', 'chartBarsStatus');
+        var stMax = Math.max.apply(null, Object.values(statusCount)) || 1;
+        new Chart(stBarCtx, {
+          type: 'bar',
+          data: {
+            labels: Object.keys(statusCount),
+            datasets: [{ label: 'Tickets', data: Object.values(statusCount), backgroundColor: ['#ffb067', '#81c784'], borderRadius: 4 }]
+          },
+          options: { indexAxis: 'y', responsive: true, maintainAspectRatio: true, scales: { x: { beginAtZero: true, max: Math.max(stMax + 1, 5), grid: { display: false } }, y: { grid: { display: false } } }, plugins: { legend: { display: false } } }
+        });
+
+        // Barres : Priorité
+        var prBarCtx = createCard('Tickets par priorité', 'chartBarsPriority');
+        var prMax = Math.max.apply(null, Object.values(priorityCount)) || 1;
+        new Chart(prBarCtx, {
+          type: 'bar',
+          data: {
+            labels: Object.keys(priorityCount),
+            datasets: [{ label: 'Tickets', data: Object.values(priorityCount), backgroundColor: ['#ff8a80', '#ffd54f', '#81c784'], borderRadius: 4 }]
+          },
+          options: { indexAxis: 'y', responsive: true, maintainAspectRatio: true, scales: { x: { beginAtZero: true, max: Math.max(prMax + 1, 5), grid: { display: false } }, y: { grid: { display: false } } }, plugins: { legend: { display: false } } }
+        });
+
+        // Ligne : Activité hebdomadaire
+        var weekData = {};
+        ticketsRaw.forEach(function(t) {
+          if (!t.created) return;
+          var d = new Date(t.created);
+          if (isNaN(d.getTime())) return;
+          var weekStart = new Date(d.getFullYear(), d.getMonth(), d.getDate() - d.getDay());
+          var key = weekStart.toISOString().slice(0, 10);
+          weekData[key] = (weekData[key] || 0) + 1;
+        });
+        var weekLabels = Object.keys(weekData).sort();
+        if (weekLabels.length > 0) {
+          var lineCtx = createCard('Création par semaine', 'chartLine', true);
+          new Chart(lineCtx, {
+            type: 'line',
+            data: {
+              labels: weekLabels.map(function(k) {
+                var parts = k.split('-');
+                return 'S' + Math.ceil(parseInt(parts[2]) / 7);
+              }),
+              datasets: [{
+                label: 'Tickets créés',
+                data: weekLabels.map(function(k) { return weekData[k]; }),
+                borderColor: '#667eea',
+                backgroundColor: 'rgba(102,126,234,0.1)',
+                tension: 0.3,
+                fill: true,
+                pointRadius: 4
+              }]
+            },
+            options: { responsive: true, maintainAspectRatio: true, plugins: { legend: { display: false } }, scales: { x: { grid: { display: false } }, y: { beginAtZero: true, grid: { display: false } } } }
+          });
+        }
+      }
+
+      // ---- Table binding ----
+      var oTemplate = new ColumnListItem({ type: 'Active', cells: [
+        new sap.m.Link({ text: '{key}', href: '{_ticketUrl}', target: '_blank', wrapping: true }),
+        new MText({ text: '{summary}' }),
+        new ObjectStatus({ text: '{status}', state: '{= ${status} === "Terminé" ? "Success" : "Warning" }' }),
+        new ObjectStatus({ text: '{priority}', state: '{= ${priority} === "High" ? "Error" : ${priority} === "Medium" ? "Warning" : "Success" }' }),
+        new MText({ text: '{type}' }),
+        new sap.m.Link({ text: '{_assigneeDisplay}', href: '{_assigneeUrl}', target: '_blank', wrapping: true, enabled: '{= ${_assigneeUrl} !== ""}' }),
+        new MText({ text: '{_project}' }),
+        new MText({ text: '{_hoursDisplay}' }),
+        new MText({ text: '{_dueDisplay}' })
+      ]});
+      oTable.bindItems({ path: '/tickets', template: oTemplate, sorter: { path: 'key', descending: false } });
+
+      // ---- Charts ----
+      renderCharts();
+      // ---- Assignee filter ----
+      var asFilter = oView.byId('assigneeFilter');
+      var sortedAssignees = Object.keys(assigneeSet).sort();
+      asFilter.addItem(new CoreItem({ key: '', text: 'Tous assignés' }));
+      sortedAssignees.forEach(function(a) {
+        asFilter.addItem(new CoreItem({ key: a, text: a }));
+      });
+
+      // ---- Type filter ----
+      var typeSet = {};
+      ticketsRaw.forEach(function(t) { if (t.type) typeSet[t.type] = true; });
+      var typeFilter = oView.byId('typeFilter');
+      if (typeFilter) {
+        Object.keys(typeSet).sort().forEach(function(k) {
+          typeFilter.addItem(new CoreItem({ key: k, text: k }));
+        });
+      }
+
+      // ---- Filtres ----
+      function applyFilters() {
+        var oBinding = oTable.getBinding('items');
+        if (!oBinding) return;
+        var aFilters = [];
+
+        var sf = oView.byId('searchField');
+        if (sf && sf.getValue()) {
+          aFilters.push(new sap.ui.model.Filter([
+            new sap.ui.model.Filter('key', sap.ui.model.FilterOperator.Contains, sf.getValue()),
+            new sap.ui.model.Filter('summary', sap.ui.model.FilterOperator.Contains, sf.getValue()),
+            new sap.ui.model.Filter('_assigneeDisplay', sap.ui.model.FilterOperator.Contains, sf.getValue())
+          ], false));
+        }
+
+        var st = oView.byId('statusFilter');
+        if (st && st.getSelectedKey()) {
+          aFilters.push(new sap.ui.model.Filter('status', sap.ui.model.FilterOperator.EQ, st.getSelectedKey()));
+        }
+
+        var pr = oView.byId('priorityFilter');
+        if (pr && pr.getSelectedKey()) {
+          aFilters.push(new sap.ui.model.Filter('priority', sap.ui.model.FilterOperator.EQ, pr.getSelectedKey()));
+        }
+
+        var tp = oView.byId('typeFilter');
+        if (tp && tp.getSelectedKey()) {
+          aFilters.push(new sap.ui.model.Filter('type', sap.ui.model.FilterOperator.EQ, tp.getSelectedKey()));
+        }
+
+        var as = oView.byId('assigneeFilter');
+        if (as && as.getSelectedKey()) {
+          aFilters.push(new sap.ui.model.Filter('_assigneeDisplay', sap.ui.model.FilterOperator.EQ, as.getSelectedKey()));
+        }
+
+        var ps = oView.byId('projectSelector');
+        if (ps && ps.getSelectedKey() && ps.getSelectedKey() !== 'TOUS') {
+          aFilters.push(new sap.ui.model.Filter('_project', sap.ui.model.FilterOperator.EQ, ps.getSelectedKey()));
+        }
+
+        oBinding.filter(aFilters);
+        var cnt = oView.byId('countInfo');
+        if (cnt) {
+          cnt.setText(oBinding.getLength() + ' / ' + ticketsRaw.length);
+        }
+      }
+
+      // ---- Détail dialog ----
+      var oDetailDialog = null;
+      oTable.attachItemPress(function(oEvent) {
+        var oCtx = oEvent.getParameter('listItem') ? oEvent.getParameter('listItem').getBindingContext() : null;
+        if (!oCtx) return;
+        var t = oCtx.getObject();
+        if (oDetailDialog) { oDetailDialog.destroy(); oDetailDialog = null; }
+        oDetailDialog = new Dialog({
+          title: t.key + ' — Détail',
+          contentWidth: '32rem',
+          content: [
+            new MText({ text: t.summary }).addStyleClass('sapUiSmallMargin'),
+            (function() {
+              var dbVBox = new FlexBox({ direction: 'Column', items: [
+                new MText({ text: 'Description' }).addStyleClass('sapUiTinyMarginBottom'),
+                new MText({ text: t.summary }),
+                new MText({ text: 'Assigné : ' + t._assigneeDisplay }).addStyleClass('sapUiTinyMarginTop'),
+                new MText({ text: 'Temps : ' + t._hoursDisplay + ' | Priorité : ' + t.priority + ' | Statut : ' + t.status + (t.due ? ' | Échéance : ' + t.due : '') }).addStyleClass('sapUiTinyMarginTop')
+              ]});
+              var db = new FlexBox({ direction: 'Row', items: [dbVBox] });
+              db.addStyleClass('sapUiSmallMargin');
+              return db;
+            })()
+          ],
+          beginButton: new MButton({ text: 'Fermer', press: function() { oDetailDialog.close(); } })
+        });
+        oView.addDependent(oDetailDialog);
+        oDetailDialog.open();
+      });
+
+      // ---- Events ----
+      var currentTheme = 'sap_horizon';
+      oView.byId('themeBtn').attachPress(function() {
+        var next = currentTheme === 'sap_horizon' ? 'sap_horizon_dark' : 'sap_horizon';
+        sap.ui.getCore().applyTheme(next);
+        currentTheme = next;
+        this.setIcon(next === 'sap_horizon_dark' ? 'sap-icon://dark-mode' : 'sap-icon://light-mode');
+      });
+      oView.byId('pdfBtn').attachPress(function() { window.print(); });
+      oView.byId('searchField').attachLiveChange(applyFilters);
+      oView.byId('statusFilter').attachChange(applyFilters);
+      oView.byId('priorityFilter').attachChange(applyFilters);
+      oView.byId('typeFilter').attachChange(applyFilters);
+      oView.byId('assigneeFilter').attachChange(applyFilters);
+      oView.byId('projectSelector').attachChange(function() {
+        applyFilters();
+        var key = this.getSelectedKey();
+        var title = key === 'TOUS' ? 'Tous' : key + ' (' + key + ')';
+        oView.byId('mainPage').setTitle('Suivi des activités — ' + title);
+      });
+      oView.byId('resetBtn').attachPress(function() {
+        oView.byId('searchField').setValue('');
+        oView.byId('statusFilter').setSelectedKey('');
+        oView.byId('priorityFilter').setSelectedKey('');
+        oView.byId('assigneeFilter').setSelectedKey('');
+        oView.byId('projectSelector').setSelectedKey('TOUS');
+        applyFilters();
+        var ttl = 'Tous';
+        oView.byId('mainPage').setTitle('Suivi des activités — ' + ttl);
+      });
+      applyFilters();
+    });
+  });
+});
+</script>
+</body>
+</html>
