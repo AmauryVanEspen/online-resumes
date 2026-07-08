@@ -1,0 +1,52 @@
+name: Smoke test pages
+on:
+  push:
+    branches: [master]
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - name: Wait for Pages deploy + CDN
+        run: sleep 120
+
+      - name: Check 6 pages (2 retries max)
+        run: |
+          pages="index skills badges certifications formations dashboard-skills"
+          failed=""
+          for page in $pages; do
+            code=$(curl -s -o /dev/null -w "%{http_code}" \
+              "https://amauryvanespen.github.io/online-resumes/$page.html")
+            if [ "$code" = "200" ]; then
+              echo "OK $page.html"
+            else
+              echo "RETRY $page.html (HTTP $code)"
+              failed="$failed $page"
+            fi
+          done
+          if [ -n "$failed" ]; then
+            echo "Retrying failed pages in 120s..."
+            sleep 120
+            for page in $failed; do
+              code=$(curl -s -o /dev/null -w "%{http_code}" \
+                "https://amauryvanespen.github.io/online-resumes/${page}.html")
+              if [ "$code" = "200" ]; then
+                echo "OK $page.html (after retry)"
+              else
+                echo "FAIL:$page.html (HTTP $code)"
+                echo "failed=true" >> $GITHUB_ENV
+              fi
+            done
+          fi
+
+      - name: Create issue on persistent failure
+        if: env.failed == 'true'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: 'Smoke test FAILED — pages not responding',
+              body: 'One or more GitHub Pages are not returning HTTP 200.\nCheck the workflow logs for details:\nhttps://github.com/' + context.repo.owner + '/' + context.repo.repo + '/actions'
+            })
