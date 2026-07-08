@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Competences — Amaury Van Espen</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#f0f2f5;--card:#fff;--text:#1a1a2e;--text2:#555;--border:#e0e0e0;--accent:#0f3460;--green:#0a6e33;--shadow:0 2px 8px rgba(0,0,0,0.06)}
+[data-theme="dark"]{--bg:#1a1a2e;--card:#16213e;--text:#eaeaea;--text2:#a0a0b0;--border:#2a2a4e;--accent:#0f3460;--shadow:0 2px 8px rgba(0,0,0,0.3)}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,sans-serif;background:var(--bg);color:var(--text);padding:16px;transition:background .3s,color .3s}
+.container{max-width:1600px;margin:0 auto}
+.header{background:linear-gradient(135deg,#1a1a2e 0%,#16213e 50%,#0f3460 100%);color:#fff;border-radius:16px;padding:20px 28px;margin-bottom:16px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.header h1{font-size:20px;font-weight:700}
+.header .sub{font-size:12px;opacity:.8;margin-top:2px}
+.header .nav a{color:#fff;text-decoration:underline;margin:0 10px;font-size:13px;opacity:.85}
+.header .nav a:hover{opacity:1}
+.header .theme-toggle{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);color:#fff;padding:6px 14px;border-radius:8px;cursor:pointer;font-size:12px;transition:background .2s}
+.stats-bar{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:16px}
+.stat-card{background:var(--card);border-radius:12px;padding:16px 20px;box-shadow:var(--shadow);text-align:center}
+.stat-card .num{font-size:28px;font-weight:800;color:var(--accent)}
+.stat-card .lab{font-size:11px;color:var(--text2);margin-top:2px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px}
+@media(max-width:1100px){.grid{grid-template-columns:1fr}}
+.card{background:var(--card);border-radius:12px;padding:20px;box-shadow:var(--shadow);overflow:hidden}
+.card h2{font-size:14px;font-weight:700;margin-bottom:12px;color:var(--accent)}
+.card-full{grid-column:1/-1}
+.chart-wrap{position:relative;width:100%}
+.chart-wrap canvas{width:100%!important;max-height:280px}
+.tag-cloud{display:flex;flex-wrap:wrap;gap:6px;padding:8px 0}
+.tag{display:inline-block;padding:4px 12px;border-radius:20px;font-size:11px;font-weight:500;cursor:pointer;border:1.5px solid var(--border);background:var(--card);color:var(--text2);transition:all .15s;user-select:none}
+.tag:hover{border-color:var(--accent);color:var(--accent)}
+.tag.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+.gaps-list{list-style:none;padding:0}
+.gaps-list li{padding:10px 14px;border-left:3px solid var(--accent);margin-bottom:8px;background:rgba(15,52,96,.04);border-radius:0 8px 8px 0;font-size:13px}
+.gap-prio{display:inline-block;font-size:10px;font-weight:700;padding:2px 8px;border-radius:4px;margin-right:8px;text-transform:uppercase}
+.prio-haute{background:#e94560;color:#fff}
+.prio-prioritaire{background:#e67e22;color:#fff}
+.prio-moyenne{background:#f39c12;color:#fff}
+.prio-faible{background:#95a5a6;color:#fff}
+.skill-drill{margin-top:12px}
+.skill-drill summary{cursor:pointer;font-size:13px;font-weight:600;color:var(--accent);padding:6px 0}
+.skill-row{display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:1px solid var(--border);font-size:12px;gap:8px}
+.skill-row:last-child{border-bottom:none}
+.s-name{font-weight:600;flex:2}
+.s-domain{font-size:11px;color:var(--text2);flex:1}
+.s-level{font-size:11px;padding:2px 10px;border-radius:4px;font-weight:600;flex-shrink:0}
+.lv-Expert{background:#0a6e33;color:#fff}
+.lv-Avance{background:#0f3460;color:#fff}
+.lv-Inter{background:#f39c12;color:#fff}
+.filter-bar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:12px}
+.filter-bar input{flex:1;min-width:140px;padding:8px 12px;border:2px solid var(--border);border-radius:8px;font-size:13px;background:var(--card);color:var(--text)}
+.filter-bar select{padding:8px 10px;border:2px solid var(--border);border-radius:8px;font-size:12px;background:var(--card);color:var(--text)}
+@media print{body{background:#fff;padding:0}.header{border-radius:0;padding:16px 20px;-webkit-print-color-adjust:exact;print-color-adjust:exact}.card{break-inside:avoid;box-shadow:none;border:1px solid #ddd;border-radius:8px}.theme-toggle{display:none}}
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+<div>
+<h1>Tableau de competences</h1>
+<div class="sub">Amaury Van Espen — Data & Solutions Architect</div>
+</div>
+<div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
+<a href="https://registry.jsonresume.org/AmauryVanEspen" class="nav">CV</a>
+<a href="https://amauryvanespen.github.io/online-resumes/" class="nav">Dashboards</a>
+<button class="theme-toggle" onclick="toggleTheme()">Theme sombre</button>
+</div>
+</div>
+
+<div class="stats-bar" id="statsBar"></div>
+
+<div class="grid">
+<div class="card"><h2>Radar competences (/10)</h2><div class="chart-wrap"><canvas id="radarChart"></canvas></div></div>
+<div class="card"><h2>Volume par plateforme</h2><div class="chart-wrap"><canvas id="platformChart"></canvas></div></div>
+</div>
+
+<div class="grid">
+<div class="card card-full"><h2>Timeline certifications (2011-2026)</h2><div class="chart-wrap"><canvas id="timelineChart"></canvas></div></div>
+</div>
+
+<div class="grid">
+<div class="card"><h2>Repartition Microsoft Learn</h2><div class="chart-wrap"><canvas id="mslearnChart"></canvas></div></div>
+<div class="card"><h2>Emetteurs de certifications</h2><div class="chart-wrap"><canvas id="issuersChart"></canvas></div></div>
+</div>
+
+<div class="grid">
+<div class="card card-full"><h2>Niveaux & ecarts cibles</h2>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+<div class="chart-wrap"><canvas id="levelChart"></canvas></div>
+<div class="chart-wrap"><canvas id="gapChart"></canvas></div>
+</div></div>
+</div>
+
+<div class="grid">
+<div class="card">
+<h2>Mots-cles <span style="font-size:11px;font-weight:400;color:var(--text2)" id="tagCount"></span></h2>
+<div class="filter-bar">
+<input type="text" id="tagSearch" placeholder="Filtrer..." oninput="filterTags()">
+</div>
+<div class="tag-cloud" id="tagCloud"></div>
+</div>
+<div class="card">
+<h2>Gaps & recommandations</h2>
+<ul class="gaps-list" id="gapsList"></ul>
+<details class="skill-drill">
+<summary>Afficher les 36 competences</summary>
+<div id="skillList"></div>
+</details>
+</div>
+</div>
+
+</div>
+
+<script>
+const DATA = {"domains": ["SAP/ERP", "Power BI/BI", "Conseil & PM", "Azure/Cloud", "Power Platform", "Dynamics 365", "Data Eng/Science", "Process Mining", "IA / Agentic AI", "Transverses"], "currentLevels": [10, 9, 9, 7, 7, 7, 6, 6, 4, 8], "targetLevels": [10, 10, 9, 9, 7, 7, 8, 8, 8, 8], "skillDetail": [{"id": "01-Architecture-Data-Solutions", "name": "Architecture Data & Solutions", "level": "Expert", "keywords": "Data, Solutions, Enterprise Architecture", "domain": "Data Eng/Science"}, {"id": "02-Business-Intelligence", "name": "Business Intelligence (BI)", "level": "Expert", "keywords": "BI, Reporting, Décisionnel", "domain": "Power BI/BI"}, {"id": "03-Process-Mining", "name": "Process Mining & Process Intelligence", "level": "Avancé", "keywords": "Celonis, Value Stream Mapping, Process Discovery", "domain": "Process Mining"}, {"id": "04-Data-Products", "name": "Data Products", "level": "Avancé", "keywords": "Data Product Management, Data Mesh, Data Marketplace", "domain": "Transverses"}, {"id": "05-SAP-S4HANA", "name": "SAP S/4HANA", "level": "Avancé", "keywords": "SAP, ERP, Migration, Implementation", "domain": "SAP/ERP"}, {"id": "06-SAP-HANA", "name": "SAP HANA", "level": "Expert", "keywords": "SAP, In-Memory, Modélisation", "domain": "SAP/ERP"}, {"id": "07-SAP-BW", "name": "SAP Business Warehouse (BW)", "level": "Expert", "keywords": "SAP, Data Warehousing, Reporting", "domain": "SAP/ERP"}, {"id": "08-SAP-SAC", "name": "SAP Analytics Cloud (SAC)", "level": "Avancé", "keywords": "SAP, Dashboard, Planning", "domain": "SAP/ERP"}, {"id": "09-SAP-CAR", "name": "SAP Customer Activity Repository (CAR)", "level": "Avancé", "keywords": "SAP, POSDM, POS DTA, Retail", "domain": "SAP/ERP"}, {"id": "10-SAP-EWM", "name": "SAP EWM", "level": "Avancé", "keywords": "SAP, Warehouse Management, Supply Chain", "domain": "SAP/ERP"}, {"id": "11-SAP-PIPO", "name": "SAP PI/PO", "level": "Avancé", "keywords": "SAP, Integration, Orchestration", "domain": "SAP/ERP"}, {"id": "12-SAP-ECC", "name": "SAP ECC", "level": "Avancé", "keywords": "SAP, Materials Management, IDOC, ABAP", "domain": "SAP/ERP"}, {"id": "13-SAP-BTP", "name": "SAP BTP", "level": "Intermédiaire", "keywords": "SAP, Business Technology Platform, Cloud", "domain": "SAP/ERP"}, {"id": "14-SAP-Implementation", "name": "SAP Implementation", "level": "Expert", "keywords": "SAP, Brownfield, Greenfield, Migration", "domain": "SAP/ERP"}, {"id": "15-Snowflake", "name": "Snowflake", "level": "Avancé", "keywords": "Cloud Data Warehouse, Data Lake, SQL", "domain": "Transverses"}, {"id": "16-Power-BI", "name": "Power BI", "level": "Avancé", "keywords": "Microsoft, Dashboard, DAX, Power Automate, Power Apps", "domain": "Power BI/BI"}, {"id": "17-ETL-Data-Integration", "name": "ETL & Data Integration", "level": "Expert", "keywords": "Talend, Dataiku, Data Pipelines, EAI", "domain": "Data Eng/Science"}, {"id": "18-Dataiku", "name": "Dataiku", "level": "Avancé", "keywords": "Data Science, AI Recipes, OCR, MLOps", "domain": "Data Eng/Science"}, {"id": "19-LeanIX", "name": "LeanIX", "level": "Intermédiaire", "keywords": "Enterprise Architecture, BPMN, Process Mapping", "domain": "Transverses"}, {"id": "20-Agentic-AI", "name": "Agentic AI & Architecture IA", "level": "Avancé", "keywords": "AI Agents, Multi-Agent, Automatisation, IA générative", "domain": "IA / Agentic AI"}, {"id": "21-Data-Engineering", "name": "Data Engineering", "level": "Avancé", "keywords": "Python, R, SQL, PostgreSQL, Data Pipeline", "domain": "Data Eng/Science"}, {"id": "22-Cloud-DevOps", "name": "Cloud & DevOps", "level": "Avancé", "keywords": "AWS, S3, Redshift, Git, Jenkins, CI/CD", "domain": "Azure/Cloud"}, {"id": "23-ECM", "name": "Enterprise Content Management (ECM)", "level": "Avancé", "keywords": "GED, ECM, OpenText, Document Management", "domain": "Transverses"}, {"id": "24-Project-Management", "name": "Project Management", "level": "Expert", "keywords": "Management, Planning, MOA, MOE", "domain": "Conseil & PM"}, {"id": "25-Management-Consulting", "name": "Management Consulting", "level": "Expert", "keywords": "Conseil, Stratégie, Organisation", "domain": "Conseil & PM"}, {"id": "26-Business-Analysis", "name": "Business Analysis", "level": "Expert", "keywords": "Analyse fonctionnelle, Spécifications, AMOA", "domain": "Conseil & PM"}, {"id": "27-Strategic-Consulting", "name": "Strategic Consulting", "level": "Expert", "keywords": "Stratégie, Gouvernance, Transformation", "domain": "Conseil & PM"}, {"id": "28-Operations-Management", "name": "Operations Management", "level": "Avancé", "keywords": "Supply Chain, Manufacturing, Opérations", "domain": "Conseil & PM"}, {"id": "29-Data-Governance", "name": "Gouvernance des données", "level": "Avancé", "keywords": "Data Governance, Data Quality, MDM", "domain": "Data Eng/Science"}, {"id": "30-Risk-Management", "name": "Risk Management", "level": "Avancé", "keywords": "Gestion des risques, Conformité, Audit", "domain": "Transverses"}, {"id": "31-Process-Management", "name": "Process Management", "level": "Expert", "keywords": "BPMN, Business Processes, Process Mapping, Optimisation", "domain": "Process Mining"}, {"id": "32-Competitive-Intelligence", "name": "Competitive Intelligence", "level": "Avancé", "keywords": "Veille, Analyse marché, Intelligence économique", "domain": "Conseil & PM"}, {"id": "33-Team-Leadership", "name": "Team Leadership", "level": "Expert", "keywords": "Management d'équipe, Leadership, Coaching", "domain": "Conseil & PM"}, {"id": "34-Intercultural-Management", "name": "Intercultural Management", "level": "Avancé", "keywords": "Multiculturel, International, Europe", "domain": "Conseil & PM"}, {"id": "35-Redaction-Pedagogique", "name": "Rédaction & Conception pédagogique", "level": "Avancé", "keywords": "Pédagogie, Formation, Documentation", "domain": "Transverses"}, {"id": "36-Lobbying-Europe", "name": "Lobbying & Affaires européennes", "level": "Avancé", "keywords": "Lobbying, Europe, EU Affairs, Institutions", "domain": "Transverses"}], "platforms": {"labels": ["MS Learn", "Udemy\n(catalogue)", "LinkedIn\nLearning", "SAP\n/openSAP", "Credly", "DataCoach", "Formation\nPowerBI", "DataCamp"], "volumes": [684, 399, 153, 113, 19, 15, 3, 1]}, "mslearn": {"labels": ["Azure", "Power BI", "Power Platform", "Dynamics 365", "GitHub/DevOps", "Securite", "M365", "Dev Web", "Education", "SAP", "IA/Copilot"], "counts": [160, 120, 80, 80, 25, 20, 15, 15, 20, 5, 15]}, "certIssuers": {"labels": ["SAP/openSAP", "Skillsoft", "European Computer Driving Licence Foundation", "edX", "DataCamp", "UVHC — Université de Valenciennes et du Hainaut-Cambrésis", "Pearson", "ETS Global"], "counts": [119, 2, 1, 1, 1, 1, 1, 1], "colors": ["#0a6e33", "#6c5ce7", "#fdcb6e", "#02262a", "#e17055", "#95a5a6", "#00b894", "#e74c3c"]}, "certifications": [{"year": "2011", "cert": "EDCL/PCIE — European Computer Driving Licence", "issuer": "European Computer Driving Licence Foundation"}, {"year": "2012", "cert": "CLES II Anglais — Certificat de compétences en langue de l'enseignement supérieur", "issuer": "UVHC — Université de Valenciennes et du Hainaut-Cambrésis"}, {"year": "2014", "cert": "TOEIC — 795 points", "issuer": "ETS Global"}, {"year": "2017", "cert": ">> SAP/openSAP (4 cours)", "issuer": "SAP"}, {"year": "2017", "cert": "Introduction to R", "issuer": "DataCamp"}, {"year": "2018", "cert": ">> SAP/openSAP (12 cours)", "issuer": "SAP"}, {"year": "2019", "cert": ">> SAP/openSAP (27 cours) dont UX, Analytics, Machine Learning", "issuer": "SAP"}, {"year": "2019", "cert": "LinguaSkill C1+ — Anglais", "issuer": "Pearson"}, {"year": "2020", "cert": ">> SAP/openSAP (12 cours)", "issuer": "SAP"}, {"year": "2021", "cert": ">> SAP/openSAP (12 cours) dont Design Thinking, RISE", "issuer": "SAP"}, {"year": "2022", "cert": ">> SAP/openSAP (17 cours) dont Python, BTP, SAC", "issuer": "SAP"}, {"year": "2022", "cert": "Getting Started with Snowflake", "issuer": "Skillsoft"}, {"year": "2023", "cert": ">> SAP/openSAP (23 cours) dont GenAI, Signavio, Datasphere", "issuer": "SAP"}, {"year": "2023", "cert": "Project Management (PMBOK® Guide Sixth Edition)", "issuer": "Skillsoft"}, {"year": "2024", "cert": "SAP Business AI Portfolio", "issuer": "SAP"}, {"year": "2024", "cert": "RISE with SAP Methodology", "issuer": "SAP"}, {"year": "2024", "cert": "SAP S/4HANA Manufacturing", "issuer": "SAP"}, {"year": "2024", "cert": "SAP Business Object — Business Intelligence", "issuer": "SAP"}, {"year": "2024", "cert": ">> SAP/openSAP (10 cours) dont BTP/AWS, Signavio avance", "issuer": "SAP"}, {"year": "2024", "cert": "Getting Started with Support from SAP", "issuer": "SAP"}, {"year": "2024", "cert": "Large Language Models (LLMs) Fundamentals and Techniques", "issuer": "SAP"}, {"year": "2026", "cert": "SAP Business Data Cloud", "issuer": "SAP"}, {"year": "2026", "cert": "Introducing Joule — SAP Artificial Intelligence Augmented", "issuer": "SAP"}, {"year": "2026", "cert": ">> SAP/openSAP (2 cours)", "issuer": "SAP"}], "progressGaps": [{"domain": "Certification Microsoft", "priority": "Haute", "action": "PL-300 (Power BI Data Analyst)"}, {"domain": "Agentic AI", "priority": "Prioritaire", "action": "Parcours Microsoft AI Agents for Beginners"}, {"domain": "SAP BTP", "priority": "Moyenne", "action": "Parcours SAP Learning Hub"}, {"domain": "Microsoft Fabric", "priority": "Moyenne", "action": "DP-600 (Fabric Analytics Engineer)"}, {"domain": "Python applique", "priority": "Faible", "action": "Projet data science"}, {"domain": "SAP Signavio", "priority": "Faible", "action": "Badge expire -> renouvellement"}, {"domain": "Celonis pratique", "priority": "Faible", "action": "Projet process mining concret"}], "stats": {"totalFiles": 324, "totalCerts": 127, "totalSkills": 36, "totalPlatforms": 13, "totalFormations": 1387}, "levelSummary": "12 Expert | 2 Intermédiaire | 22 Avancé", "allKeywords": ["ABAP", "AI Agents", "AI Recipes", "AMOA", "AWS", "Analyse fonctionnelle", "Analyse marché", "Audit", "Automatisation", "BI", "BPMN", "Brownfield", "Business Processes", "Business Technology Platform", "CI/CD", "Celonis", "Cloud", "Cloud Data Warehouse", "Coaching", "Conformité", "Conseil", "DAX", "Dashboard", "Data", "Data Governance", "Data Lake", "Data Marketplace", "Data Mesh", "Data Pipeline", "Data Pipelines", "Data Product Management", "Data Quality", "Data Science", "Data Warehousing", "Dataiku", "Document Management", "Documentation", "Décisionnel", "EAI", "ECM", "ERP", "EU Affairs", "Enterprise Architecture", "Europe", "Formation", "GED", "Gestion des risques", "Git", "Gouvernance", "Greenfield", "IA générative", "IDOC", "Implementation", "In-Memory", "Institutions", "Integration", "Intelligence économique", "International", "Jenkins", "Leadership", "Lobbying", "MDM", "MLOps", "MOA", "MOE", "Management", "Management d'équipe", "Manufacturing", "Materials Management", "Microsoft", "Migration", "Modélisation", "Multi-Agent", "Multiculturel", "OCR", "OpenText", "Optimisation", "Opérations", "Orchestration", "Organisation", "POS DTA", "POSDM", "Planning", "PostgreSQL", "Power Apps", "Power Automate", "Process Discovery", "Process Mapping", "Python", "Pédagogie", "R", "Redshift", "Reporting", "Retail", "S3", "SAP", "SQL", "Solutions", "Spécifications", "Stratégie", "Supply Chain", "Talend", "Transformation", "Value Stream Mapping", "Veille", "Warehouse Management"], "skillCount": 36, "platformColors": ["#0f3460", "#a435f0", "#0077b5", "#0a6e33", "#ff6b35", "#00b894", "#e17055", "#636e72"]};
+
+function toggleTheme(){
+  var h = document.documentElement;
+  h.getAttribute('data-theme')==='dark' ? h.setAttribute('data-theme','light') : h.setAttribute('data-theme','dark');
+}
+
+// Stats bar
+var stats = DATA.stats;
+var statLabels = ['totalSkills','totalCerts','totalPlatforms','totalFormations'];
+var statNames = ['Competences','Certifications','Plateformes','Formations'];
+var sb = document.getElementById('statsBar');
+for (var i = 0; i < statLabels.length; i++) {
+  sb.innerHTML += '<div class="stat-card"><div class="num">' + stats[statLabels[i]] + '</div><div class="lab">' + statNames[i] + '</div></div>';
+}
+
+// Configure Chart.js defaults
+Chart.defaults.color = '#555';
+Chart.defaults.font.size = 11;
+
+function isDark() {
+  return document.documentElement.getAttribute('data-theme') === 'dark';
+}
+function chartColors() {
+  return { grid: isDark() ? 'rgba(255,255,255,0.06)' : 'rgba(0,0,0,0.06)', text: isDark() ? '#a0a0b0' : '#555' };
+}
+
+// Chart updater on theme change
+function applyThemeToCharts() {
+  var c = chartColors();
+  Chart.defaults.color = c.text;
+  // re-render all charts
+  window.charts.forEach(function(ch) {
+    if (ch && ch.options && ch.options.scales) {
+      Object.keys(ch.options.scales).forEach(function(sk) {
+        if (ch.options.scales[sk].grid) {
+          ch.options.scales[sk].grid.color = c.grid;
+        }
+      });
+    }
+    ch.update();
+  });
+}
+window.charts = [];
+
+// 1. Radar
+var radarCtx = document.getElementById('radarChart').getContext('2d');
+window.charts.push(new Chart(radarCtx, {
+  type: 'radar',
+  data: {
+    labels: DATA.domains,
+    datasets: [
+      { label: 'Actuel', data: DATA.currentLevels, borderColor: '#0f3460', backgroundColor: 'rgba(15,52,96,0.15)', pointBackgroundColor: '#0f3460', tension: 0.3 },
+      { label: 'Cible', data: DATA.targetLevels, borderColor: '#e94560', backgroundColor: 'rgba(233,69,96,0.08)', pointBackgroundColor: '#e94560', borderDash: [4,4], tension: 0.3 }
+    ]
+  },
+  options: { responsive: true, maintainAspectRatio: true, scales: { r: { min: 0, max: 10, ticks: { stepSize: 2 } } }, plugins: { legend: { position: 'bottom', labels: { boxWidth: 12, font: { size: 10 } } } } }
+}));
+
+// 2. Platform volumes
+var platCtx = document.getElementById('platformChart').getContext('2d');
+var platColors = DATA.platformColors;
+window.charts.push(new Chart(platCtx, {
+  type: 'bar',
+  data: { labels: DATA.platforms.labels, datasets: [{ label: 'Volume', data: DATA.platforms.volumes, backgroundColor: DATA.platforms.volumes.map(function(v,i){ return platColors[i] || '#636e72'; }), borderRadius: 4 }] },
+  options: { indexAxis: 'y', responsive: true, maintainAspectRatio: true, plugins: { legend: { display: false } }, scales: { x: { beginAtZero: true, ticks: { precision: 0 } } } }
+}));
+
+// 3. Timeline
+var tlCtx = document.getElementById('timelineChart').getContext('2d');
+var certs = DATA.certifications;
+var yearMap = {};
+certs.forEach(function(c) {
+  if (c.year) {
+    if (yearMap[c.year] === undefined) yearMap[c.year] = 0;
+    yearMap[c.year]++;
+  }
+});
+var years = Object.keys(yearMap).sort();
+var yearData = years.map(function(y) { return yearMap[y]; });
+var cumul = 0;
+var cumulData = yearData.map(function(v) { cumul += v; return cumul; });
+window.charts.push(new Chart(tlCtx, {
+  type: 'line',
+  data: {
+    labels: years,
+    datasets: [
+      { label: 'Nouvelles certifs', data: yearData, borderColor: '#0f3460', backgroundColor: 'rgba(15,52,96,0.1)', fill: true, tension: 0.3, pointRadius: 4, pointBackgroundColor: '#0f3460', yAxisID: 'y' },
+      { label: 'Cumul', data: cumulData, borderColor: '#e94560', backgroundColor: 'rgba(233,69,96,0.05)', fill: true, tension: 0.3, borderDash: [3,3], pointRadius: 3, yAxisID: 'y1' }
+    ]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: true,
+    scales: { y: { beginAtZero: true, position: 'left', ticks: { precision: 0 } }, y1: { beginAtZero: true, position: 'right', grid: { drawOnChartArea: false }, ticks: { precision: 0 } } },
+    plugins: { legend: { position: 'bottom', labels: { boxWidth: 12, font: { size: 10 } } } }
+  }
+}));
+
+// 4. MS Learn doughnut
+var msCtx = document.getElementById('mslearnChart').getContext('2d');
+var msColors = { 'Azure': '#0078d4', 'Power BI': '#f2c811', 'Power Platform': '#742774', 'Dynamics 365': '#002050', 'GitHub/DevOps': '#171515', 'Securite': '#00bcf2', 'M365': '#e81123', 'Dev Web': '#512bd4', 'Education': '#107c10', 'SAP': '#0a6e33', 'IA/Copilot': '#9b59b6' };
+var msBg = DATA.mslearn.labels.map(function(l) { return msColors[l] || '#636e72'; });
+window.charts.push(new Chart(msCtx, {
+  type: 'doughnut',
+  data: { labels: DATA.mslearn.labels, datasets: [{ data: DATA.mslearn.counts, backgroundColor: msBg, borderWidth: 0 }] },
+  options: { responsive: true, maintainAspectRatio: true, plugins: { legend: { position: 'right', labels: { boxWidth: 10, font: { size: 9 } } } } }
+}));
+
+// 5. Cert issuers doughnut
+var isCtx = document.getElementById('issuersChart').getContext('2d');
+var issColors = ['#0a6e33','#6c5ce7','#fdcb6e','#02262a','#e17055','#95a5a6','#00b894','#e74c3c'];
+window.charts.push(new Chart(isCtx, {
+  type: 'doughnut',
+  data: { labels: DATA.certIssuers.labels, datasets: [{ data: DATA.certIssuers.counts, backgroundColor: issColors, borderWidth: 0 }] },
+  options: { responsive: true, maintainAspectRatio: true, plugins: { legend: { position: 'right', labels: { boxWidth: 10, font: { size: 9 } } } } }
+}));
+
+// 6. Level bars + gap
+var lvCtx = document.getElementById('levelChart').getContext('2d');
+window.charts.push(new Chart(lvCtx, {
+  type: 'bar',
+  data: { labels: DATA.domains, datasets: [{ label: 'Niveau actuel /10', data: DATA.currentLevels, backgroundColor: '#0f3460', borderRadius: 4 }] },
+  options: { indexAxis: 'y', responsive: true, maintainAspectRatio: true, plugins: { legend: { display: false } }, scales: { x: { min: 0, max: 10, ticks: { stepSize: 2 } } } }
+}));
+
+var gpCtx = document.getElementById('gapChart').getContext('2d');
+var gapData = DATA.currentLevels.map(function(v,i) { return DATA.targetLevels[i] - v; });
+window.charts.push(new Chart(gpCtx, {
+  type: 'bar',
+  data: { labels: DATA.domains, datasets: [{ label: 'Ecart cible', data: gapData, backgroundColor: gapData.map(function(v){ return v > 0 ? '#e94560' : '#0a6e33'; }), borderRadius: 4 }] },
+  options: { indexAxis: 'y', responsive: true, maintainAspectRatio: true, plugins: { legend: { display: false } }, scales: { x: { ticks: { stepSize: 1, precision: 0 } } } }
+}));
+
+// 7. Tag cloud
+var tags = DATA.allKeywords;
+function renderTags(filterText) {
+  var cloud = document.getElementById('tagCloud');
+  cloud.innerHTML = '';
+  var filtered = filterText ? tags.filter(function(t) { return t.toLowerCase().indexOf(filterText.toLowerCase()) >= 0; }) : tags;
+  filtered.forEach(function(t) {
+    var el = document.createElement('span');
+    el.className = 'tag';
+    el.textContent = t;
+    el.onclick = function() { this.classList.toggle('active'); };
+    cloud.appendChild(el);
+  });
+  document.getElementById('tagCount').textContent = filtered.length + ' mots-cles';
+}
+function filterTags() {
+  renderTags(document.getElementById('tagSearch').value);
+}
+renderTags('');
+
+// 8. Gaps
+var gaps = DATA.progressGaps;
+var gl = document.getElementById('gapsList');
+gaps.forEach(function(g) {
+  var prioClass = { 'Haute': 'prio-haute', 'Prioritaire': 'prio-prioritaire', 'Moyenne': 'prio-moyenne', 'Faible': 'prio-faible' }[g.priority] || 'prio-moyenne';
+  gl.innerHTML += '<li><span class="gap-prio ' + prioClass + '">' + g.priority + '</span><strong>' + g.domain + '</strong> : ' + g.action + '</li>';
+});
+
+// 9. Skill list
+var sl = document.getElementById('skillList');
+DATA.skillDetail.forEach(function(s) {
+  var lvClass = s.level === 'Expert' ? 'lv-Expert' : (s.level.indexOf('Avanc') >= 0 ? 'lv-Avance' : 'lv-Inter');
+  sl.innerHTML += '<div class="skill-row"><span class="s-name">' + s.name + '</span><span class="s-level ' + lvClass + '">' + s.level + '</span><span class="s-domain">' + s.domain + '</span></div>';
+});
+
+// Theme watcher: reload charts on theme change
+document.querySelector('.theme-toggle').addEventListener('click', function() {
+  setTimeout(function() {
+    var c = chartColors();
+    Chart.defaults.color = c.text;
+    window.charts.forEach(function(ch) {
+      if (ch && ch.options && ch.options.scales) {
+        Object.keys(ch.options.scales).forEach(function(sk) {
+          if (ch.options.scales[sk].grid) ch.options.scales[sk].grid.color = c.grid;
+        });
+      }
+      ch.update();
+    });
+  }, 50);
+});
+</script>
+</body>
+</html>
